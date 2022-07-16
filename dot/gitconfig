@@ -1,0 +1,16 @@
+[user]
+	name = cqroot
+	email = cqroot@outlook.com
+
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
+[push]
+	default = simple
+
+[pager]
+	branch = false
+    	diff = false
+    	show = false
+    	tag = false
