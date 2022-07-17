@@ -2,14 +2,16 @@
 
 mkdir -p ${HOME}/.config
 
-for item in $(ls ./dot/)
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+for item in $(ls ${SCRIPT_DIR}/dot/)
 do
-    ln -s ${PWD}/dot/${item} ${HOME}/.${item}
+    ln -s ${SCRIPT_DIR}/dot/${item} ${HOME}/.${item}
 done
 
-for dir in $(ls -d */)
+for dir in $(ls -d ${SCRIPT_DIR}/*/)
 do
-    if [[ $dir != dot/ ]]; then
-        ln -s ${PWD}/${dir::-1} ${HOME}/.config/
+    if [[ $dir != ${SCRIPT_DIR}/dot/ ]]; then
+        ln -s ${dir::-1} ${HOME}/.config/
     fi
 done
