@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 alias ll='ls -l --group-directories-first'
+alias la='ls -la --group-directories-first'
 alias nvi=nvim
 
 # tmux
