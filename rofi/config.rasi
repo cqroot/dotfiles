@@ -1,0 +1,11 @@
+@theme "/home/cqroot/.config/rofi/nord"
+
+configuration {
+  terminal: "/usr/local/bin/st";
+  run-shell-command: "{terminal} -e {cmd}";
+  modi: "window,drun,run";
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
