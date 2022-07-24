@@ -3,12 +3,12 @@
 pacman -S --noconfirm \
     yay vim base-devel nodejs npm \
     ttf-cascadia-code noto-fonts-emoji \
-    tmux fzf neofetch ripgrep bottom tig bat glow
+    tmux ranger fzf neofetch ripgrep bottom tig bat glow
 
 # gui
 pacman -S --noconfirm telegram-desktop obsidian polybar vlc nutstore
 # i3wm
-pacman -S --noconfirm polybar feh tk
+pacman -S --noconfirm i3-gaps i3exit polybar feh tk lxappearance
 
 # *********************************************************
 # neovim **************************************************
