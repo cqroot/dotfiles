@@ -63,3 +63,7 @@ let g:coc_global_extensions = [
             \ 'coc-vimlsp',
             \ 'coc-webview',
             \ ]
+
+
+" coc-explorer
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
