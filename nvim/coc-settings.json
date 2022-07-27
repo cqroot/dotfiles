@@ -27,5 +27,8 @@
         "icon": {
             "enableNerdfont": true
         }
+    },
+    "diagnostic-languageserver.filetypes": {
+        "sh": "shellcheck"
     }
 }
