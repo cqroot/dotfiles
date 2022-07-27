@@ -1,25 +1,36 @@
 #!/usr/bin/env bash
 
-pacman -S --noconfirm \
-    yay vim base-devel nodejs npm \
+# dev
+pacman -S base-devel nodejs npm go
+# ops
+pacman -S strace net-tools
+# other
+pacman -S \
+    yay vim \
     ttf-cascadia-code noto-fonts-emoji \
     tmux ranger fzf neofetch ripgrep bottom tig bat glow
 
-# gui
-pacman -S --noconfirm telegram-desktop obsidian polybar vlc nutstore
+yay -S google-chrome
+
 # i3wm
-pacman -S --noconfirm i3-gaps i3exit polybar feh tk lxappearance
+pacman -S i3-gaps i3exit xautolock polybar feh tk lxappearance dunst
+
+# gui
+pacman -S telegram-desktop obsidian polybar vlc nutstore
+
+# optional
+yay -S baidunetdisk-electron microsoft-edge-stable-bin
 
 # *********************************************************
 # neovim **************************************************
 # *********************************************************
-pacman -S --noconfirm neovim-git nvim-packer-git
+pacman -S neovim-git nvim-packer-git
 
 pip install -y pynvim
 
 # Bash
-pacman -S --noconfirm shfmt
+pacman -S shfmt shellcheck
 # C/CPP
-pacman -S --noconfirm uncrustify ccls
+pacman -S uncrustify ccls
 # Lua
-pacman -S --noconfirm stylua
+pacman -S stylua
