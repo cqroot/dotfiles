@@ -18,6 +18,7 @@ utils.enable_options({
 	"showcmd",
 	"list",
 	"cursorline",
+	"cursorcolumn",
 	"termguicolors",
 })
 

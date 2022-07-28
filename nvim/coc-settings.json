@@ -29,6 +29,7 @@
         }
     },
     "diagnostic-languageserver.filetypes": {
-        "sh": "shellcheck"
+        "sh": "shellcheck",
+        "markdown": "markdownlint"
     }
 }
