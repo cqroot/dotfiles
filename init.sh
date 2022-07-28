@@ -51,8 +51,8 @@ link_config() {
 main() {
     mkdir -p "${HOME}/.config"
 
-    # for item in $(ls "${SCRIPT_DIR}/dot/"); do
-    for item in "${SCRIPT_DIR}"/dot/*; do
+    # for item in $(ls "${SCRIPT_DIR}/home/"); do
+    for item in "${SCRIPT_DIR}"/home/*; do
         f1=${item}
         name=$(echo "${item}" | sed 's/\/$//' | awk -F/ '{print $NF}')
         f2=${HOME}/.${name}
@@ -61,7 +61,7 @@ main() {
     done
 
     for item in "${SCRIPT_DIR}"/*/; do
-        if [[ ${item} != ${SCRIPT_DIR}/dot/ ]]; then
+        if [[ ${item} != ${SCRIPT_DIR}/home/ ]]; then
             name=$(echo "${item}" | sed 's/\/$//' | awk -F/ '{print $NF}')
 
             f1=$(echo "$item" | sed 's/\/$//')
