@@ -1,0 +1,36 @@
+[global]
+    follow = mouse
+
+    markup = full
+
+    # The format of the message.  Possible variables are:
+    #   %a  appname
+    #   %s  summary
+    #   %b  body
+    #   %i  iconname (including its path)
+    #   %I  iconname (without its path)
+    #   %p  progress value if set ([  0%] to [100%]) or nothing
+    #   %n  progress value if set without any extra characters
+    #   %%  Literal %
+    # Markup is allowed
+    format = "<b>%s</b>\n%b"
+
+    frame_width = 2
+
+[urgency_low]
+    background = "#232323"
+    foreground = "#a8a8a8"
+    timeout = 10
+
+[urgency_normal]
+    background = "#232323"
+    foreground = "#a8a8a8"
+    timeout = 10
+
+[urgency_critical]
+    background = "#d64e4e"
+    foreground = "#f0e0e0"
+    frame_color = "#d64e4e"
+    timeout = 0
+
+# vim: ft=cfg
