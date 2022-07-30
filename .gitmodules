@@ -1,6 +1,0 @@
-[submodule "tmux/tmux-power"]
-	path = tmux/tmux-power
-	url = https://github.com/wfxr/tmux-power
-[submodule "tmux/tmux-prefix-highlight"]
-	path = tmux/tmux-prefix-highlight
-	url = https://github.com/tmux-plugins/tmux-prefix-highlight
