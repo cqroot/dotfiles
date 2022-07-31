@@ -35,6 +35,7 @@ utils.disable_options({
 
 utils.set_options({
 	mouse = "",
+	colorcolumn = "81",
 	scrolloff = 3,
 	background = "dark",
 	encoding = "utf-8",

@@ -22,6 +22,9 @@ vim.g.neoformat_javascript_prettier = {
 }
 vim.g.neoformat_enabled_javascript = { "prettier" }
 
+-- Markdown
+vim.g.neoformat_enabled_markdown = { "prettier" }
+
 -- Vue
 vim.g.neoformat_vue_prettier = {
 	exe = "./node_modules/.bin/prettier",
