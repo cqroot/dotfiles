@@ -6,12 +6,14 @@ set $mod Mod4
 # font xft:URWGothic-Book 11
 font pango:Caskaydia Cove Nerd Font 11
 
+default_border pixel 2
+default_floating_border normal
+hide_edge_borders none
+for_window [urgent=latest] focus
+
 include ~/.config/i3/colors.conf
-include ~/.config/i3/system.conf
-include ~/.config/i3/layout.conf
-include ~/.config/i3/window.conf
+include ~/.config/i3/keys.conf
 include ~/.config/i3/workspace.conf
 include ~/.config/i3/applications.conf
-
 include ~/.config/i3/gaps.conf
 include ~/.config/i3/others.conf
