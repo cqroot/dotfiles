@@ -2,12 +2,12 @@
 
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
-source ${SCRIPT_DIR}/aliases.sh
-source ${SCRIPT_DIR}/scripts/git-prompt.sh
+source "${SCRIPT_DIR}/aliases.sh"
+source "${SCRIPT_DIR}/scripts/git-prompt.sh"
 
 # fzf
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
+source "/usr/share/fzf/key-bindings.bash"
+source "/usr/share/fzf/completion.bash"
 
 # Go
 export GOPATH=$HOME/go

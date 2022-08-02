@@ -4,6 +4,8 @@ alias ll='ls -l --group-directories-first'
 alias la='ls -la --group-directories-first'
 alias nvi=nvim
 
+alias ra=ranger
+
 # tmux
 alias tmux='tmux -u -2'
 alias tn='tmux new -s $(basename $PWD)'
