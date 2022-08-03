@@ -10,23 +10,25 @@ pacman -S \
     ttf-cascadia-code noto-fonts-emoji \
     tmux ranger fzf neofetch ripgrep bottom tig bat glow
 
-yay -S google-chrome
-
 # i3wm
-pacman -S i3-gaps i3exit xautolock polybar feh tk lxappearance dunst
+pacman -S i3-gaps i3exit xautolock polybar feh tk dunst
+pacman -S lxappearance papirus-icon-theme
 
 # gui
-pacman -S telegram-desktop obsidian polybar vlc nutstore
+pacman -S firefox telegram-desktop obsidian polybar vlc nutstore
 
 # optional
-yay -S baidunetdisk-electron microsoft-edge-stable-bin
+yay -S google-chrome
+sudo pacman -S netease-cloud-music simplescreenrecorder
+yay -S baidunetdisk-electron microsoft-edge-stable-bin sublime-text-4 jetbrains-toolbox
 
 # *********************************************************
 # neovim **************************************************
 # *********************************************************
 pacman -S neovim-git nvim-packer-git
 
-pip install -y pynvim
+# pip install -y pynvim
+pacman -Ss python-pynvim
 
 # Bash
 pacman -S shfmt shellcheck
@@ -34,3 +36,7 @@ pacman -S shfmt shellcheck
 pacman -S uncrustify ccls
 # Lua
 pacman -S stylua
+# Python
+pacman -S python-black
+# Others
+pacman -S prettier
