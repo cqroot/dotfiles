@@ -17,4 +17,6 @@ alias aaabashsource='source ~/.bashrc'
 # proxy
 alias aaaproxyon='export all_proxy=http://127.0.0.1:7890'
 alias aaaproxyoff='unset all_proxy'
-alias aaaproxycheck='curl -s cip.cc'
+alias aaaproxycheck='curl -s cip.cc; echo $all_proxy'
+
+alias obinskit='sudo obinskit --no-sandbox'

@@ -36,7 +36,7 @@ tmux set-option -gq status-attr none
 # *********************************************************
 # Modules *************************************************
 # *********************************************************
-session_module="#[fg=$fg_session,bg=$bg_session]  #S "
+session_module="#[fg=$fg_session,bg=$bg_session,bold]  #S "
 prefix_module="#{?client_prefix,~, }"
 
 # *********************************************************
