@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-vim.cmd("let mapleader = ' '")
+vim.cmd("let mapleader = ';'")
 
 utils.set_mappings({
 	-- Buffer mapping
@@ -26,14 +26,14 @@ utils.set_mappings({
 	-- Commenter
 	{ "n", "<C-c>", "<Plug>NERDCommenterToggle", {} },
 	{ "x", "<C-c>", "<Plug>NERDCommenterToggle", {} },
-	{ "i", "<C-c>", "<Plug>NERDCommenterToggle", {} },
 	{ "n", "<C-_>", "<Plug>NERDCommenterToggle", {} },
 	{ "x", "<C-_>", "<Plug>NERDCommenterToggle", {} },
-	{ "i", "<C-_>", "<Plug>NERDCommenterToggle", {} },
 
 	-- Sidebar
 	{ "n", "<M-f>", ":CocCommand explorer<CR>" },
 	{ "n", "<M-w>", ":Vista!!<CR>" },
+	{ "n", "<leader>sf", ":CocCommand explorer<CR>" },
+	{ "n", "<leader>so", ":Vista!!<CR>" },
 
 	-- Telescope
 	{ "n", "<M-p>", "<cmd>Telescope find_files<cr>" },
@@ -44,4 +44,7 @@ utils.set_mappings({
 
 	-- Coc
 	{ "n", "<C-p>", ":CocCommand<CR>" },
+
+	-- WhichKey
+	{ "n", "<leader>", ":WhichKey ';'<CR>" },
 })

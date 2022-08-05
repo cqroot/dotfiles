@@ -33,6 +33,7 @@ return require("packer").startup(function()
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "inside/vim-search-pulse" })
 	use({ "lilydjwg/colorizer" })
+	use({ "liuchengxu/vim-which-key" })
 
 	-- Language -------------------------------------------
 	use({ "sbdchd/neoformat" })

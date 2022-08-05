@@ -56,4 +56,5 @@ utils.set_options({
 	completeopt = { "menuone", "noselect" },
 	foldmethod = "syntax",
 	foldlevelstart = 99,
+	timeoutlen = 500,
 })
