@@ -25,7 +25,7 @@ yay -S baidunetdisk-electron microsoft-edge-stable-bin sublime-text-4 jetbrains-
 # *********************************************************
 # neovim **************************************************
 # *********************************************************
-pacman -S neovim-git nvim-packer-git
+pacman -S neovim nvim-packer-git
 
 # pip install -y pynvim
 pacman -Ss python-pynvim
