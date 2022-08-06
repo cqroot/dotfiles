@@ -34,6 +34,8 @@ pacman -Ss python-pynvim
 pacman -S shfmt shellcheck
 # C/CPP
 pacman -S uncrustify ccls
+# CMake
+yay -S python-cmakelang
 # Lua
 pacman -S stylua
 # Python
