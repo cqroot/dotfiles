@@ -51,8 +51,11 @@ link_config() {
 main() {
     mkdir -p "${HOME}/.config"
 
-    # for item in $(ls "${SCRIPT_DIR}/home/"); do
     for item in "${SCRIPT_DIR}"/home/*; do
+        if [[ "${item}" == *"deprecated"* ]]; then
+            continue
+        fi
+
         f1=${item}
         name=$(echo "${item}" | sed 's/\/$//' | awk -F/ '{print $NF}')
         f2=${HOME}/.${name}
@@ -62,6 +65,10 @@ main() {
 
     for item in "${SCRIPT_DIR}"/*/; do
         if [[ ${item} != ${SCRIPT_DIR}/home/ ]]; then
+            if [[ "${item}" == *"deprecated"* ]]; then
+                continue
+            fi
+
             name=$(echo "${item}" | sed 's/\/$//' | awk -F/ '{print $NF}')
 
             f1=$(echo "$item" | sed 's/\/$//')
