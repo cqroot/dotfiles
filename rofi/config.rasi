@@ -1,9 +1,9 @@
-@theme "/home/cqroot/.config/rofi/nord"
+@theme "~/.config/rofi/nord"
 
 configuration {
-  terminal: "/usr/local/bin/st";
+  terminal: "/usr/bin/alacritty";
   run-shell-command: "{terminal} -e {cmd}";
-  modi: "window,drun,run";
+  modi: "drun,run,calc,emoji";
   filebrowser {
       directories-first: true;
       sorting-method:    "name";

@@ -13,6 +13,14 @@ configuration {
     display-name: "";
   }
 
+  calc {
+    display-name: "";
+  }
+
+  emoji {
+    display-name: "";
+  }
+
   timeout {
     delay: 10;
     action: "kb-cancel";
@@ -20,67 +28,91 @@ configuration {
 }
 
 * {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  spacing: 0;
+    BG0:     #2E3440;
+    BG1:     #3B4252;
+    FG0:     #D8DEE9;
 
-  bg: #2E3440;
-  bg-alt: #3B4252;
-  bg-selected: #8FBCBB;
-  fg: #ECEFF4;
-  /* fg-alt: #EBCB8B; */
-  fg-alt: #2E3440;
+    accent-color:     #88C0D0;
+    urgent-color:     #EBCB8B;
 
-  background-color: @bg;
-  text-color: @fg;
+    background-color:   transparent;
+    text-color:         @FG0;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
 }
 
 window {
-  transparency: "real";
-}
+    location:   center;
+    width:      480;
+    y-offset:   -160;
 
-mainbox {
-  children: [inputbar, listview];
+    background-color:   @BG0;
 }
 
 inputbar {
-  background-color: @bg-alt;
-  children: [prompt, entry];
+    spacing:    8px; 
+    padding:    8px;
+
+    background-color:   @BG1;
 }
 
-entry {
-  background-color: inherit;
-  padding: 12px 3px;
+prompt, entry, element-icon, element-text {
+    vertical-align: 0.5;
 }
 
 prompt {
-  background-color: inherit;
-  padding: 12px;
+    text-color: @accent-color;
+}
+
+textbox {
+    padding:            8px;
+    background-color:   @BG1;
 }
 
 listview {
-  lines: 8;
+    padding:    4px 0;
+    lines:      8;
+    columns:    1;
+
+    fixed-height:   false;
 }
 
 element {
-  children: [element-icon, element-text];
+    padding:    8px;
+    spacing:    8px;
+}
+
+element normal normal {
+    text-color: @FG0;
+}
+
+element normal urgent {
+    text-color: @urgent-color;
+}
+
+element normal active {
+    text-color: @accent-color;
+}
+
+element selected {
+    text-color: @BG0;
+}
+
+element selected normal, element selected active {
+    background-color:   @accent-color;
+}
+
+element selected urgent {
+    background-color:   @urgent-color;
 }
 
 element-icon {
-  padding: 10px 10px;
-}
-
-element-icon selected {
-  padding: 10px 10px;
-  background-color: @bg-selected;
+    size:   0.8em;
 }
 
 element-text {
-  padding: 10px 0;
+    text-color: inherit;
 }
 
-element-text selected {
-  text-color: @fg-alt;
-  background-color: @bg-selected;
-}
