@@ -1,44 +1,45 @@
 #!/usr/bin/env bash
 
-# dev
-pacman -S base-devel nodejs npm go
-# ops
-pacman -S strace net-tools
-# other
-pacman -S \
-    yay vim \
-    ttf-cascadia-code noto-fonts-emoji \
-    tmux ranger fzf neofetch ripgrep bottom tig bat glow
+pacman -S --noconfirm base-devel strace net-tools
+pacman -S --noconfirm nodejs npm go
+pacman -S --noconfirm yay vim tmux ranger fzf neofetch ripgrep glow htop
+pacman -S --noconfirm pavucontrol
 
-# i3wm
-pacman -S i3-gaps i3exit xautolock polybar feh tk dunst
-pacman -S lxappearance papirus-icon-theme
+pacman -S --noconfirm firefox alacritty clash nemo
+pacman -S --noconfirm telegram-desktop obsidian mpv vlc nutstore
+# rofi
+pacman -S --noconfirm rofi rofi-calc rofi-emoji
+# fonts
+pacman -S --noconfirm \
+    ttf-cascadia-code nerd-fonts-cascadia-code noto-fonts-emoji
 
-# gui
-pacman -S firefox telegram-desktop obsidian polybar vlc nutstore
+# wm
+pacman -S --noconfirm lxappearance xautolock xsecurelock feh tk dunst
+yay    -S --noconfirm picom-jonaburg-git
 
-# optional
-yay -S google-chrome
-sudo pacman -S netease-cloud-music simplescreenrecorder
-yay -S baidunetdisk-electron microsoft-edge-stable-bin sublime-text-4 jetbrains-toolbox
+# appearance
+pacman -S --noconfirm bibata-cursor-theme
+
+# yay
+yay    -S --noconfirm \
+    clash-for-windows-bin \
+    baidunetdisk-electron \
+    sublime-text-4
 
 # *********************************************************
 # neovim **************************************************
 # *********************************************************
-pacman -S neovim nvim-packer-git
-
-# pip install -y pynvim
-pacman -Ss python-pynvim
+pacman -S --noconfirm neovim nvim-packer-git python-pynvim
 
 # Bash
-pacman -S shfmt shellcheck
+pacman -S --noconfirm shfmt shellcheck
 # C/CPP
-pacman -S uncrustify ccls
+pacman -S --noconfirm uncrustify ccls
 # CMake
-yay -S python-cmakelang
+yay    -S --noconfirm python-cmakelang
 # Lua
-pacman -S stylua
+pacman -S --noconfirm stylua
 # Python
-pacman -S python-black
+pacman -S --noconfirm python-black
 # Others
-pacman -S prettier
+pacman -S --noconfirm prettier

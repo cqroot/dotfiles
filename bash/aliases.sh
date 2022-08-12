@@ -3,6 +3,7 @@
 alias ll='ls -l --group-directories-first'
 alias la='ls -la --group-directories-first'
 alias nvi=nvim
+alias yay='proxy=socks5://127.0.0.1:7890 yay'
 
 alias ra=ranger
 

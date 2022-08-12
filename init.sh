@@ -44,7 +44,6 @@ link_config() {
         return
     fi
 
-    # echo "Yes"
     if ln -s "$1" "$2"; then
         echo -e "${FG_GREEN} OK${FG_NC}"
     else
