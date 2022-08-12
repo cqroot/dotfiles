@@ -29,15 +29,22 @@ check_link() {
 # Arguments:
 #   config to link
 #   the target linked to
+#   exec to check
 #######################################
 link_config() {
     echo -ne "${FG_GREEN}$3${FG_NC}: $1 ${FG_GREEN}->${FG_NC} $2 : "
+
+    if ! command -v "$3" > /dev/null; then
+        echo -e "${FG_YELLOW} Ignored${FG_NC}"
+        return
+    fi
 
     if [[ "$(check_link "$1" "$2")" -eq 0 ]]; then
         echo -e "${FG_YELLOW} Linked${FG_NC}"
         return
     fi
 
+    # echo "Yes"
     if ln -s "$1" "$2"; then
         echo -e "${FG_GREEN} OK${FG_NC}"
     else
@@ -49,34 +56,22 @@ link_config() {
 # Main.
 #######################################
 main() {
-    mkdir -p "${HOME}/.config"
+    while read -r line; do
+        file=$(echo "$line" | awk -F '|' '{print $1}' | xargs)
+        exec=$(echo "$line" | awk -F '|' '{print $2}' | xargs)
+        link=${HOME}/.config/${file}
+        link_config "${SCRIPT_DIR}/$file" "$link" "$exec"
+    done <"${SCRIPT_DIR}/list-xdg_config"
 
-    for item in "${SCRIPT_DIR}"/home/*; do
-        if [[ "${item}" == *"deprecated"* ]]; then
-            continue
-        fi
+    while read -r line; do
+        file=$(echo "$line" | awk -F '|' '{print $1}' | xargs)
+        exec=$(echo "$line" | awk -F '|' '{print $2}' | xargs)
 
-        f1=${item}
-        name=$(echo "${item}" | sed 's/\/$//' | awk -F/ '{print $NF}')
-        f2=${HOME}/.${name}
+        link_file=$(basename "${file}")
+        link="${HOME}/.${link_file}"
 
-        link_config "${f1}" "${f2}" "${name}"
-    done
-
-    for item in "${SCRIPT_DIR}"/*/; do
-        if [[ ${item} != ${SCRIPT_DIR}/home/ ]]; then
-            if [[ "${item}" == *"deprecated"* ]]; then
-                continue
-            fi
-
-            name=$(echo "${item}" | sed 's/\/$//' | awk -F/ '{print $NF}')
-
-            f1=$(echo "$item" | sed 's/\/$//')
-            f2=${HOME}/.config/${name}
-
-            link_config "${f1}" "${f2}" "${name}"
-        fi
-    done
+        link_config "${SCRIPT_DIR}/$file" "$link" "$exec"
+    done <"${SCRIPT_DIR}/list-home"
 }
 
 main "$@"
