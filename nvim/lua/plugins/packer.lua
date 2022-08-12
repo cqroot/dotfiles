@@ -24,7 +24,6 @@ return require("packer").startup(function()
 
 	-- Sidebar --------------------------------------------
 	use({ "kyazdani42/nvim-tree.lua" })
-	use({ "simrat39/symbols-outline.nvim" })
 	use({ "liuchengxu/vista.vim" })
 
 	-- Appearance -----------------------------------------
