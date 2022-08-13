@@ -1,42 +1,121 @@
 #!/usr/bin/env bash
 
-pacman -S --noconfirm base-devel strace net-tools
-pacman -S --noconfirm nodejs npm go
-pacman -S --noconfirm yay vim tmux ranger fzf neofetch ripgrep glow htop
+pacman -S --noconfirm yay
+pacman -S --noconfirm base-devel
+
+# *********************************************************
+# Development                                             *
+# *********************************************************
+pacman -S --noconfirm strace
+
+# *********************************************************
+# System                                                  *
+# *********************************************************
 pacman -S --noconfirm pavucontrol
+pacman -S --noconfirm xautolock
+pacman -S --noconfirm xsecurelock
+pacman -S --noconfirm tk
+pacman -S --noconfirm dunst
+yay -S --noconfirm picom-jonaburg-git
 
-pacman -S --noconfirm firefox alacritty clash nemo
-pacman -S --noconfirm telegram-desktop obsidian mpv vlc nutstore
-# rofi
-pacman -S --noconfirm rofi rofi-calc rofi-emoji
-# fonts
-pacman -S --noconfirm \
-    ttf-cascadia-code nerd-fonts-cascadia-code noto-fonts-emoji
+# *********************************************************
+# Programming language                                    *
+# *********************************************************
+pacman -S --noconfirm nodejs
+pacman -S --noconfirm npm
+pacman -S --noconfirm go
 
-# wm
-pacman -S --noconfirm lxappearance xautolock xsecurelock feh tk dunst
-yay    -S --noconfirm picom-jonaburg-git
+# *********************************************************
+# Text editor                                             *
+# *********************************************************
+pacman -S --noconfirm vim
+yay -S --noconfirm sublime-text-4
 
-# appearance
+# *********************************************************
+# Terminals                                               *
+# *********************************************************
+pacman -S --noconfirm alacritty tmux
+
+# *********************************************************
+# Internet                                                *
+# *********************************************************
+pacman -S --noconfirm net-tools
+pacman -S --noconfirm firefox
+pacman -S --noconfirm mailspring
+pacman -S --noconfirm nutstore
+pacman -S --noconfirm clash
+yay -S --noconfirm clash-for-windows-bin
+yay -S --noconfirm baidunetdisk-electron
+
+# *********************************************************
+# Communication                                           *
+# *********************************************************
+pacman -S --noconfirm telegram-desktop
+
+# *********************************************************
+# File manager                                            *
+# *********************************************************
+pacman -S --noconfirm ranger
+pacman -S --noconfirm nemo
+
+# *********************************************************
+# Image viewer                                            *
+# *********************************************************
+pacman -S --noconfirm feh nomacs
+
+# *********************************************************
+# Multimedia                                              *
+# *********************************************************
+pacman -S --noconfirm mpv vlc
+
+# *********************************************************
+# Note-taking                                             *
+# *********************************************************
+pacman -S --noconfirm obsidian
+pacman -S --noconfirm notion-app-enhanced
+pacman -S --noconfirm glow
+
+# *********************************************************
+# Appearance                                              *
+# *********************************************************
+pacman -S --noconfirm lxappearance
 pacman -S --noconfirm bibata-cursor-theme
 
-# yay
-yay    -S --noconfirm \
-    clash-for-windows-bin \
-    baidunetdisk-electron \
-    sublime-text-4
+# *********************************************************
+# Fonts                                                   *
+# *********************************************************
+pacman -S --noconfirm ttf-cascadia-code
+pacman -S --noconfirm nerd-fonts-cascadia-code
+pacman -S --noconfirm noto-fonts-emoji
 
 # *********************************************************
-# neovim **************************************************
+# Tools                                                   *
 # *********************************************************
-pacman -S --noconfirm neovim nvim-packer-git python-pynvim
+pacman -S --noconfirm fzf
+pacman -S --noconfirm neofetch
+pacman -S --noconfirm ripgrep
+pacman -S --noconfirm htop
+
+# *********************************************************
+# Rofi                                                    *
+# *********************************************************
+pacman -S --noconfirm rofi rofi-calc rofi-emoji
+
+# *********************************************************
+# Neovim                                                  *
+# *********************************************************
+pacman -S --noconfirm neovim
+pacman -S --noconfirm nvim-packer-git
+pacman -S --noconfirm python-pynvim
 
 # Bash
-pacman -S --noconfirm shfmt shellcheck
+pacman -S --noconfirm shfmt
+pacman -S --noconfirm shellcheck
 # C/CPP
-pacman -S --noconfirm uncrustify ccls
+pacman -S --noconfirm uncrustify
+pacman -S --noconfirm ccls
 # CMake
-yay    -S --noconfirm python-cmakelang
+yay -S --noconfirm python-cmakelang
 # Lua
 pacman -S --noconfirm stylua
 # Python
