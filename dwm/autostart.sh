@@ -14,7 +14,7 @@ done &
 
 picom --experimental-backend &
 dunst &
-xautolock -time 10 -corners 00+- -cornerdelay 1 -locker "xsecurelock; xset dpms force off" &
+xautolock -time 10 -corners 00+- -cornerdelay 1 -locker "xsecurelock & xset dpms force off" &
 nm-applet &
 fcitx &
 pamac-tray &
