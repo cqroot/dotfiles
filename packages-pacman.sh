@@ -28,6 +28,7 @@ pacman -S --noconfirm go
 # *********************************************************
 # Text editor                                             *
 # *********************************************************
+pacman -S --noconfirm xed
 pacman -S --noconfirm vim
 yay -S --noconfirm sublime-text-4
 
@@ -61,7 +62,9 @@ pacman -S --noconfirm nemo
 # *********************************************************
 # Image viewer                                            *
 # *********************************************************
-pacman -S --noconfirm feh nomacs
+pacman -S --noconfirm feh
+pacman -S --noconfirm nomacs
+pacman -S --noconfirm xviewer
 
 # *********************************************************
 # Multimedia                                              *
