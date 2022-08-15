@@ -1,5 +1,6 @@
 alacritty              | alacritty
 bash                   | bash
+zsh                    | zsh
 dunst                  | dunst
 go                     | go
 mpv                    | mpv
