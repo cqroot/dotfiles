@@ -1,0 +1,14 @@
+super + Return
+	alacritty
+
+super + p
+	sh ~/.bin/rofi/power.sh
+
+super + s
+	rofi -show drun -show-icons -no-history
+
+XF86Audio{LowerVolume,RaiseVolume,Mute}
+	pulseaudio-ctl {down,up,mute}; sh ~/.bin/volume-notify.sh
+
+super + r
+	pkill -USR1 -x sxhkd
