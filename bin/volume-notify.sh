@@ -12,7 +12,7 @@ else
     icon="/usr/share/icons/Papirus/24x24/panel/audio-volume-high.svg"
 fi
 
-notify-send \
+dunstify \
     -h "int:value:${volume_value}" \
     -h string:category:volume \
     -i ${icon} \
