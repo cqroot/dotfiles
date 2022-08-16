@@ -3,8 +3,8 @@ env:
   TERM: screen-256color
   WINIT_X11_SCALE_FACTOR: "1"
 
-shell:
-  program: /usr/bin/zsh
+# shell:
+#   program: /usr/bin/zsh
 
 # Font configuration
 font:
