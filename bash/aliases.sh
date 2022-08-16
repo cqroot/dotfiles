@@ -1,7 +1,8 @@
-#!/usr/bin/env bash
+alias ls='ls --color=auto'
+alias ll='ls -lh --group-directories-first'
+alias la='ls -lha --group-directories-first'
+alias l.="ls -A | grep -E '^\.'"
 
-alias ll='ls -l --group-directories-first'
-alias la='ls -la --group-directories-first'
 alias nvi=nvim
 alias yay='proxy=socks5://127.0.0.1:7890 yay'
 
@@ -21,3 +22,5 @@ alias aaaproxyoff='unset all_proxy'
 alias aaaproxycheck='curl -s cip.cc; echo $all_proxy'
 
 alias obinskit='sudo obinskit --no-sandbox'
+
+source ~/.config/shell/aliases_typo.sh
