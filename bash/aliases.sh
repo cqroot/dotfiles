@@ -22,5 +22,3 @@ alias aaaproxyoff='unset all_proxy'
 alias aaaproxycheck='curl -s cip.cc; echo $all_proxy'
 
 alias obinskit='sudo obinskit --no-sandbox'
-
-source ~/.config/shell/aliases_typo.sh
