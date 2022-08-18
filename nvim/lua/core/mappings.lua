@@ -42,8 +42,11 @@ utils.set_mappings({
 	-- Neoformat
 	{ "n", "<C-M-l>", ":Neoformat<CR>" },
 
+    -- Git
+    { "n", "<leader>gd", ":Gitsigns diffthis<CR>" },
+
 	-- Coc
-	{ "n", "<C-p>", ":CocCommand<CR>" },
+	-- { "n", "<C-p>", ":CocCommand<CR>" },
 
 	-- WhichKey
 	{ "n", "<leader>", ":WhichKey ';'<CR>" },
