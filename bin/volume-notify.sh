@@ -16,4 +16,4 @@ dunstify \
     -h "int:value:${volume_value}" \
     -h string:category:volume \
     -i ${icon} \
-    "Volume"
+    "${volume_value}%"
