@@ -1,86 +1,89 @@
 #!/usr/bin/env bash
 
+pacman -S --noconfirm --disable-download-timeout xorg-server
+
 # *********************************************************
 # System                                                  *
 # *********************************************************
-pacman -S --noconfirm sxhkd
-pacman -S --noconfirm pavucontrol
-pacman -S --noconfirm xautolock
-pacman -S --noconfirm xsecurelock
-pacman -S --noconfirm lxappearance
-pacman -S --noconfirm tk
-pacman -S --noconfirm dunst
-pacman -S --noconfirm network-manager-applet
-# yay -S --noconfirm picom-jonaburg-git
+pacman -S --noconfirm --disable-download-timeout sxhkd
+pacman -S --noconfirm --disable-download-timeout pavucontrol
+pacman -S --noconfirm --disable-download-timeout xautolock
+pacman -S --noconfirm --disable-download-timeout xsecurelock
+pacman -S --noconfirm --disable-download-timeout lxappearance
+pacman -S --noconfirm --disable-download-timeout tk
+pacman -S --noconfirm --disable-download-timeout dunst
+pacman -S --noconfirm --disable-download-timeout network-manager-applet
+# yay -S --noconfirm --disable-download-timeout picom-jonaburg-git
 
 # *********************************************************
 # Terminals                                               *
 # *********************************************************
-pacman -S --noconfirm alacritty tmux
+pacman -S --noconfirm --disable-download-timeout alacritty tmux
 
 # File manager
-pacman -S --noconfirm nemo
+pacman -S --noconfirm --disable-download-timeout nemo
 
 # Internet
-pacman -S --noconfirm firefox
-pacman -S --noconfirm mailspring
+pacman -S --noconfirm --disable-download-timeout firefox
+pacman -S --noconfirm --disable-download-timeout mailspring
 
 # *********************************************************
 # Appearance                                              *
 # *********************************************************
-pacman -S --noconfirm arc-gtk-theme
-pacman -S --noconfirm bibata-cursor-theme
+pacman -S --noconfirm --disable-download-timeout arc-gtk-theme
+pacman -S --noconfirm --disable-download-timeout bibata-cursor-theme
 
 # *********************************************************
 # Fonts                                                   *
 # *********************************************************
-pacman -S --noconfirm ttf-cascadia-code
-pacman -S --noconfirm nerd-fonts-cascadia-code
-pacman -S --noconfirm noto-fonts-emoji
-pacman -S --noconfirm adobe-source-han-sans-cn-fonts
-pacman -S --noconfirm wqy-microhei
+pacman -S --noconfirm --disable-download-timeout ttf-cascadia-code
+pacman -S --noconfirm --disable-download-timeout nerd-fonts-cascadia-code
+pacman -S --noconfirm --disable-download-timeout noto-fonts-emoji
+pacman -S --noconfirm --disable-download-timeout adobe-source-han-sans-cn-fonts
+pacman -S --noconfirm --disable-download-timeout wqy-microhei
 
 # *********************************************************
 # Text editor                                             *
 # *********************************************************
-pacman -S --noconfirm xed
-pacman -S --noconfirm vim
-yay -S --noconfirm sublime-text-4
+pacman -S --noconfirm --disable-download-timeout xed
+pacman -S --noconfirm --disable-download-timeout vim
+yay -S --noconfirm --disable-download-timeout sublime-text-4
 
-pacman -S --noconfirm nutstore
-yay -S --noconfirm clash-for-windows-bin
-yay -S --noconfirm baidunetdisk-electron
+pacman -S --noconfirm --disable-download-timeout nutstore
+yay -S --noconfirm --disable-download-timeout clash-for-windows-bin
+yay -S --noconfirm --disable-download-timeout baidunetdisk-electron
+yay -S --noconfirm --disable-download-timeout typora-free
 
 # *********************************************************
 # Development                                             *
 # *********************************************************
-pacman -S --noconfirm meld
+pacman -S --noconfirm --disable-download-timeout meld
 
 # *********************************************************
 # Communication                                           *
 # *********************************************************
-pacman -S --noconfirm telegram-desktop
+pacman -S --noconfirm --disable-download-timeout telegram-desktop
 
 # *********************************************************
 # Image viewer                                            *
 # *********************************************************
-pacman -S --noconfirm feh
-pacman -S --noconfirm nomacs
-pacman -S --noconfirm xviewer
+pacman -S --noconfirm --disable-download-timeout feh
+pacman -S --noconfirm --disable-download-timeout nomacs
+pacman -S --noconfirm --disable-download-timeout xviewer
 
 # *********************************************************
 # Multimedia                                              *
 # *********************************************************
-pacman -S --noconfirm mpv
-pacman -S --noconfirm vlc
+pacman -S --noconfirm --disable-download-timeout mpv
+pacman -S --noconfirm --disable-download-timeout vlc
 
 # *********************************************************
 # Note-taking                                             *
 # *********************************************************
-pacman -S --noconfirm obsidian
-pacman -S --noconfirm notion-app-enhanced
+pacman -S --noconfirm --disable-download-timeout obsidian
+pacman -S --noconfirm --disable-download-timeout notion-app-enhanced
 
 # *********************************************************
 # Rofi                                                    *
 # *********************************************************
-pacman -S --noconfirm rofi rofi-calc rofi-emoji
+pacman -S --noconfirm --disable-download-timeout rofi rofi-calc rofi-emoji

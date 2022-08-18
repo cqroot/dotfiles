@@ -1,42 +1,42 @@
 #!/usr/bin/env bash
 
-pacman -S --noconfirm yay
-pacman -S --noconfirm base-devel
-pacman -S --noconfirm strace
-pacman -S --noconfirm net-tools
+pacman -S --noconfirm --disable-download-timeout yay
+pacman -S --noconfirm --disable-download-timeout base-devel
+pacman -S --noconfirm --disable-download-timeout strace
+pacman -S --noconfirm --disable-download-timeout net-tools
 
-pacman -S --noconfirm nodejs
-pacman -S --noconfirm npm
-pacman -S --noconfirm go
+pacman -S --noconfirm --disable-download-timeout nodejs
+pacman -S --noconfirm --disable-download-timeout npm
+pacman -S --noconfirm --disable-download-timeout go
 
-pacman -S --noconfirm clash
-pacman -S --noconfirm neofetch
-pacman -S --noconfirm ripgrep
-pacman -S --noconfirm ranger
-pacman -S --noconfirm fzf
-pacman -S --noconfirm htop
-pacman -S --noconfirm glow
+pacman -S --noconfirm --disable-download-timeout clash
+pacman -S --noconfirm --disable-download-timeout neofetch
+pacman -S --noconfirm --disable-download-timeout ripgrep
+pacman -S --noconfirm --disable-download-timeout ranger
+pacman -S --noconfirm --disable-download-timeout fzf
+pacman -S --noconfirm --disable-download-timeout htop
+pacman -S --noconfirm --disable-download-timeout glow
 
 # zsh
-pacman -S --noconfirm oh-my-zsh-git
+pacman -S --noconfirm --disable-download-timeout oh-my-zsh-git
 
 # neovim
-pacman -S --noconfirm neovim
-pacman -S --noconfirm nvim-packer-git
-pacman -S --noconfirm python-pynvim
-pacman -S --noconfirm ctags
+pacman -S --noconfirm --disable-download-timeout neovim
+pacman -S --noconfirm --disable-download-timeout nvim-packer-git
+pacman -S --noconfirm --disable-download-timeout python-pynvim
+pacman -S --noconfirm --disable-download-timeout ctags
 
 # Bash
-pacman -S --noconfirm shfmt
-pacman -S --noconfirm shellcheck
+pacman -S --noconfirm --disable-download-timeout shfmt
+pacman -S --noconfirm --disable-download-timeout shellcheck
 # C/CPP
-pacman -S --noconfirm uncrustify
-pacman -S --noconfirm ccls
+pacman -S --noconfirm --disable-download-timeout uncrustify
+pacman -S --noconfirm --disable-download-timeout ccls
 # CMake
-yay -S --noconfirm python-cmakelang
+yay -S --noconfirm --disable-download-timeout python-cmakelang
 # Lua
-pacman -S --noconfirm stylua
+pacman -S --noconfirm --disable-download-timeout stylua
 # Python
-pacman -S --noconfirm python-black
+pacman -S --noconfirm --disable-download-timeout python-black
 # Others
-pacman -S --noconfirm prettier
+pacman -S --noconfirm --disable-download-timeout prettier
