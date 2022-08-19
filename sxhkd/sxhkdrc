@@ -1,6 +1,9 @@
 super + Return
 	alacritty
 
+super + shift + Return
+	alacritty --class alacritty-float
+
 super + p
 	sh ~/.bin/rofi/power.sh
 
@@ -8,7 +11,7 @@ super + s
 	rofi -show drun -show-icons -no-history
 
 XF86Audio{LowerVolume,RaiseVolume,Mute}
-	pulseaudio-ctl {down,up,mute}; sh ~/.bin/volume-notify.sh
+	pulseaudio-ctl {down,up,mute}; sh ~/.bin/dunst-volume-notify.sh
 
-super + r
+super + shift + r
 	pkill -USR1 -x sxhkd

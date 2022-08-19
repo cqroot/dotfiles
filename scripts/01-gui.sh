@@ -22,6 +22,7 @@ pacman -S --noconfirm --disable-download-timeout alacritty tmux
 
 # File manager
 pacman -S --noconfirm --disable-download-timeout nemo
+pacman -S --noconfirm --disable-download-timeout baobab
 
 # Internet
 pacman -S --noconfirm --disable-download-timeout firefox
