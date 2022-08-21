@@ -6,6 +6,7 @@ pacman -S --noconfirm --disable-download-timeout xorg-server
 # System                                                  *
 # *********************************************************
 pacman -S --noconfirm --disable-download-timeout sxhkd
+pacman -S --noconfirm --disable-download-timeout xclip
 pacman -S --noconfirm --disable-download-timeout pavucontrol
 pacman -S --noconfirm --disable-download-timeout xautolock
 pacman -S --noconfirm --disable-download-timeout xsecurelock
@@ -14,6 +15,8 @@ pacman -S --noconfirm --disable-download-timeout tk
 pacman -S --noconfirm --disable-download-timeout dunst
 pacman -S --noconfirm --disable-download-timeout network-manager-applet
 # yay -S --noconfirm --disable-download-timeout picom-jonaburg-git
+pacman -S --noconfirm --disable-download-timeout flameshot
+pacman -S --noconfirm --disable-download-timeout maim
 
 # *********************************************************
 # Terminals                                               *
