@@ -4,7 +4,6 @@ alias la='ls -lha --group-directories-first'
 alias l.="ls -A | grep -E '^\.'"
 
 alias nvi=nvim
-alias yay='proxy=socks5://127.0.0.1:7890 yay'
 
 alias ra=ranger
 
@@ -22,3 +21,6 @@ alias aaaproxyoff='unset all_proxy'
 alias aaaproxycheck='curl -s cip.cc; echo $all_proxy'
 
 alias obinskit='sudo obinskit --no-sandbox'
+
+alias yay='env https_proxy=socks5://127.0.0.1:7890 yay'
+alias gh='env https_proxy=socks5://127.0.0.1:7890 gh'
