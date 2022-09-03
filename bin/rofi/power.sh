@@ -5,21 +5,20 @@ logout=" Logout"
 poweroff=" Poweroff"
 reboot=" Reboot"
 
-echo_list() {
-    echo "$lock
-$logout
-$poweroff
-$reboot"
-}
+options="${lock}\n${logout}\n${poweroff}\n${reboot}"
+chosen=$(echo -e "${options}" | rofi -dmenu -i -p "⏻")
 
-res=$(echo_list | rofi -dmenu -i -p "⏻")
-
-if [ "$res" == "$lock" ]; then
-    sh ~/.bin/lock.sh
-elif [ "$res" == "$logout" ]; then
+case ${chosen} in
+"${lock}")
+    sh "${HOME}/.bin/system/lock.sh"
+    ;;
+"${logout}")
     loginctl terminate-user "$(whoami)"
-elif [ "$res" == "$reboot" ]; then
-    reboot
-elif [ "$res" == "$poweroff" ]; then
+    ;;
+"${poweroff}")
     poweroff
-fi
+    ;;
+"${reboot}")
+    reboot
+    ;;
+esac
