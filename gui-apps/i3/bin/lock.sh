@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-blurlock
-xset dpms force off
+if [ "$(grep -r "RUNNING" /proc/asound | wc -l)" -eq 0 ]; then
+    blurlock
+    xset dpms force off
+fi
