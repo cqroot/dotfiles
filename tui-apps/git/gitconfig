@@ -11,6 +11,6 @@
 
 [pager]
 	branch = false
-    	diff = false
-    	show = false
-    	tag = false
+	diff = false
+	show = false
+	tag = false
