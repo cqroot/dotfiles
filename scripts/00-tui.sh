@@ -1,42 +1,44 @@
 #!/usr/bin/env bash
 
-pacman -S --noconfirm --disable-download-timeout yay
-pacman -S --noconfirm --disable-download-timeout base-devel
-pacman -S --noconfirm --disable-download-timeout strace
-pacman -S --noconfirm --disable-download-timeout net-tools
+PACMAN_ARGS=(--noconfirm --noprogressbar --needed --disable-download-timeout)
 
-pacman -S --noconfirm --disable-download-timeout nodejs
-pacman -S --noconfirm --disable-download-timeout npm
-pacman -S --noconfirm --disable-download-timeout go
+pacman -S "${PACMAN_ARGS[@]}" yay
+pacman -S "${PACMAN_ARGS[@]}" base-devel
+pacman -S "${PACMAN_ARGS[@]}" strace
+pacman -S "${PACMAN_ARGS[@]}" net-tools
 
-pacman -S --noconfirm --disable-download-timeout clash
-pacman -S --noconfirm --disable-download-timeout neofetch
-pacman -S --noconfirm --disable-download-timeout ripgrep
-pacman -S --noconfirm --disable-download-timeout ranger
-pacman -S --noconfirm --disable-download-timeout fzf
-pacman -S --noconfirm --disable-download-timeout htop
-pacman -S --noconfirm --disable-download-timeout glow
+pacman -S "${PACMAN_ARGS[@]}" nodejs
+pacman -S "${PACMAN_ARGS[@]}" npm
+pacman -S "${PACMAN_ARGS[@]}" go
+
+pacman -S "${PACMAN_ARGS[@]}" clash
+pacman -S "${PACMAN_ARGS[@]}" neofetch
+pacman -S "${PACMAN_ARGS[@]}" ripgrep
+pacman -S "${PACMAN_ARGS[@]}" ranger
+pacman -S "${PACMAN_ARGS[@]}" fzf
+pacman -S "${PACMAN_ARGS[@]}" htop
+pacman -S "${PACMAN_ARGS[@]}" glow
 
 # zsh
-pacman -S --noconfirm --disable-download-timeout oh-my-zsh-git
+pacman -S "${PACMAN_ARGS[@]}" oh-my-zsh-git
 
 # neovim
-pacman -S --noconfirm --disable-download-timeout neovim
-pacman -S --noconfirm --disable-download-timeout nvim-packer-git
-pacman -S --noconfirm --disable-download-timeout python-pynvim
-pacman -S --noconfirm --disable-download-timeout ctags
+pacman -S "${PACMAN_ARGS[@]}" neovim
+pacman -S "${PACMAN_ARGS[@]}" nvim-packer-git
+pacman -S "${PACMAN_ARGS[@]}" python-pynvim
+pacman -S "${PACMAN_ARGS[@]}" ctags
 
 # Bash
-pacman -S --noconfirm --disable-download-timeout shfmt
-pacman -S --noconfirm --disable-download-timeout shellcheck
+pacman -S "${PACMAN_ARGS[@]}" shfmt
+pacman -S "${PACMAN_ARGS[@]}" shellcheck
 # C/CPP
-pacman -S --noconfirm --disable-download-timeout uncrustify
-pacman -S --noconfirm --disable-download-timeout ccls
+pacman -S "${PACMAN_ARGS[@]}" uncrustify
+pacman -S "${PACMAN_ARGS[@]}" ccls
 # CMake
-yay -S --noconfirm --disable-download-timeout python-cmakelang
+yay -S "${PACMAN_ARGS[@]}" python-cmakelang
 # Lua
-pacman -S --noconfirm --disable-download-timeout stylua
+pacman -S "${PACMAN_ARGS[@]}" stylua
 # Python
-pacman -S --noconfirm --disable-download-timeout python-black
+pacman -S "${PACMAN_ARGS[@]}" python-black
 # Others
-pacman -S --noconfirm --disable-download-timeout prettier
+pacman -S "${PACMAN_ARGS[@]}" prettier
