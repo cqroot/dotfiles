@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+export EDITOR='nvim'
+# export VISUAL='nano'
+# export HISTCONTROL=ignoreboth:erasedups
+# export PAGER='most'
+
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
 source "${SCRIPT_DIR}/aliases.sh"

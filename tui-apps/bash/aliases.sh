@@ -5,7 +5,7 @@ alias l.="ls -A | grep -E '^\.'"
 
 alias nvi=nvim
 
-alias ra=ranger
+alias ra='. ranger'
 
 # tmux
 alias tmux='tmux -u -2'
@@ -20,7 +20,10 @@ alias aaaproxyon='export all_proxy=http://127.0.0.1:7890'
 alias aaaproxyoff='unset all_proxy'
 alias aaaproxycheck='curl -s cip.cc; echo $all_proxy'
 
-alias obinskit='sudo obinskit --no-sandbox'
-
 alias yay='env https_proxy=socks5://127.0.0.1:7890 yay'
 alias gh='env https_proxy=socks5://127.0.0.1:7890 gh'
+
+alias obinskit='sudo obinskit --no-sandbox'
+alias pacman='sudo pacman'
+alias systemctl='sudo systemctl'
+alias netstat='sudo netstat'
