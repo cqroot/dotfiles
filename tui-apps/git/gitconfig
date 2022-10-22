@@ -14,3 +14,5 @@
 	diff = false
 	show = false
 	tag = false
+[core]
+	excludesFile = ~/.gitignore
