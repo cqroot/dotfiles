@@ -1,9 +1,11 @@
+#!/bin/bash
+
+SCRIPT_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+
 alias ls='ls --color=auto'
 alias ll='ls -lh --group-directories-first'
 alias la='ls -lha --group-directories-first'
 alias l.="ls -A | grep -E '^\.'"
-
-alias nvi=nvim
 
 alias ra='. ranger'
 
@@ -11,7 +13,12 @@ alias ra='. ranger'
 alias tmux='tmux -u -2'
 alias tn='tmux new -s $(basename $PWD)'
 alias ta='tmux attach -t'
-alias tl=$'tmux ls | awk \'{$1=substr($1, 1, length($1)-1); $1=sprintf("\033[1;32m%-20s\033[00m", $1); print $0}\''
+if [ -f "${SCRIPT_PATH}/scripts/fzf-tmux-sessions.sh" ]; then
+    source "${SCRIPT_PATH}/scripts/fzf-tmux-sessions.sh"
+    alias tl=tmux_list_session
+else
+    echo "no file ${SCRIPT_PATH}/scripts/fzf-tmux-sessions"
+fi
 
 # aaa-aliases
 alias aaabashsource='source ~/.bashrc'
@@ -27,3 +34,10 @@ alias obinskit='sudo obinskit --no-sandbox'
 alias pacman='sudo pacman'
 alias systemctl='sudo systemctl'
 alias netstat='sudo netstat'
+
+if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
+    source /etc/profile.d/lfcd.sh
+    alias l='lfcd'
+fi
+
+alias nvi=nvim

@@ -5,11 +5,11 @@ export EDITOR='nvim'
 # export HISTCONTROL=ignoreboth:erasedups
 # export PAGER='most'
 
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+SCRIPT_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
-source "${SCRIPT_DIR}/aliases.sh"
-source "${SCRIPT_DIR}/aliases_typo.sh"
-source "${SCRIPT_DIR}/scripts/git-prompt.sh"
+source "${SCRIPT_PATH}/aliases.sh"
+source "${SCRIPT_PATH}/aliases_typo.sh"
+source "${SCRIPT_PATH}/scripts/git-prompt.sh"
 
 # fzf
 source "/usr/share/fzf/key-bindings.bash"
