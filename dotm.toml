@@ -1,0 +1,21 @@
+[alacritty]
+
+[bash]
+
+[dunst]
+
+[go]
+
+[mpv]
+
+[picom]
+
+[tmux]
+
+[git]
+path = "git/gitconfig"
+type = "home"
+
+[sqlite3]
+path = "sqlite3/sqliterc"
+type = "home"
