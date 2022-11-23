@@ -12,6 +12,9 @@
 
 [tmux]
 
+[bin]
+type = "home"
+
 [git]
 path = "git/gitconfig"
 type = "home"
