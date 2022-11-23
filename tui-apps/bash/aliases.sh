@@ -11,13 +11,13 @@ alias ra='. ranger'
 
 # tmux
 alias tmux='tmux -u -2'
-alias tn='tmux new -s $(basename $PWD)'
+alias tn='tmux new -s $(basename "$PWD")'
 alias ta='tmux attach -t'
 if [ -f "${SCRIPT_PATH}/scripts/fzf-tmux-sessions.sh" ]; then
-    source "${SCRIPT_PATH}/scripts/fzf-tmux-sessions.sh"
-    alias tl=tmux_list_session
+	source "${SCRIPT_PATH}/scripts/fzf-tmux-sessions.sh"
+	alias tl=tmux_list_session
 else
-    echo "no file ${SCRIPT_PATH}/scripts/fzf-tmux-sessions"
+	echo "no file ${SCRIPT_PATH}/scripts/fzf-tmux-sessions"
 fi
 
 # aaa-aliases
@@ -36,8 +36,8 @@ alias systemctl='sudo systemctl'
 alias netstat='sudo netstat'
 
 if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
-    source /etc/profile.d/lfcd.sh
-    alias l='lfcd'
+	source /etc/profile.d/lfcd.sh
+	alias l='lfcd'
 fi
 
 alias nvi=nvim
