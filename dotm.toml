@@ -1,24 +1,33 @@
 [alacritty]
+exec = "alacritty"
 
 [bash]
+exec = "bash"
 
 [dunst]
+exec = "dunst"
 
 [go]
+exec = "go"
 
 [mpv]
+exec = "mpv"
 
 [picom]
+exec = "picom"
 
 [tmux]
+exec = "tmux"
 
 [bin]
-type = "home"
+target_type = "home"
 
 [git]
-path = "git/gitconfig"
-type = "home"
+relative_path = "git/gitconfig"
+target_type = "home"
+exec = "git"
 
 [sqlite3]
-path = "sqlite3/sqliterc"
-type = "home"
+relative_path = "sqlite3/sqliterc"
+target_type = "home"
+exec = "sqlite3"
