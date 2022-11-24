@@ -1,6 +1,6 @@
 <div align="center">
   <p>
-    <img src="https://placehold.co/500x150/3d4070/fff?font=montserrat&text=Chu's Dotfiles" alt="dotfiles" />
+    <img src="https://placehold.co/500x150/3d4070/fff?font=montserrat&text=Chu's%20Dotfiles" alt="dotfiles" />
   </p>
 </div>
 
