@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 
-export EDITOR='nvim'
-# export VISUAL='nano'
-# export HISTCONTROL=ignoreboth:erasedups
-# export PAGER='most'
-
 SCRIPT_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
+source "${SCRIPT_PATH}/envs.sh"
 source "${SCRIPT_PATH}/aliases.sh"
 source "${SCRIPT_PATH}/aliases_typo.sh"
 source "${SCRIPT_PATH}/scripts/git-prompt.sh"
@@ -15,8 +11,6 @@ source "${SCRIPT_PATH}/scripts/git-prompt.sh"
 source "/usr/share/fzf/key-bindings.bash"
 source "/usr/share/fzf/completion.bash"
 
-# Go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+# PS1='\[\033[01;32m\]➜ \[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1) »\[\033[00m\] '
 
-PS1='\[\033[01;32m\]➜ \[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1) »\[\033[00m\] '
+eval "$(starship init bash)"
