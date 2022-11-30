@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-XSECURELOCK_BLANK_TIMEOUT=180 XSECURELOCK_BLANK_DPMS_STATE=off xsecurelock &
