@@ -19,6 +19,10 @@ exec = "mpv"
 [picom]
 exec = "picom"
 
+[starship]
+relative_path = "starship/starship.toml"
+exec = "starship"
+
 [tmux]
 exec = "tmux"
 
