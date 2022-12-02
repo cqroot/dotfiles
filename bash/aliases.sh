@@ -10,15 +10,7 @@ alias l.="ls -A | grep -E '^\.'"
 alias ra='. ranger'
 
 # tmux
-alias tmux='tmux -u -2'
-alias tn='tmux new -s $(basename "$PWD")'
-alias ta='tmux attach -t'
-if [ -f "${SCRIPT_PATH}/scripts/fzf-tmux-sessions.sh" ]; then
-	source "${SCRIPT_PATH}/scripts/fzf-tmux-sessions.sh"
-	alias tl=tmux_list_session
-else
-	echo "no file ${SCRIPT_PATH}/scripts/fzf-tmux-sessions"
-fi
+alias tmux='bash $HOME/.bin/tmux-ui.sh'
 
 # aaa-aliases
 alias aaabashsource='source ~/.bashrc'
@@ -41,3 +33,6 @@ if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
 fi
 
 alias nvi=nvim
+
+alias tn='ternote'
+alias tncd='cd $(ternote path)'

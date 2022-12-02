@@ -9,6 +9,9 @@ packages=(
 	"neovim" "nvim-packer-git" "python-pynvim" "ctags"
 	"ripgrep" "lf" "fzf" "htop" "glow" "tmux"
 	"shfmt" "shellcheck" "python-black" "prettier"
+
+	# lsp
+	"bash-language-server"
 )
 
 desktop_packages=(
