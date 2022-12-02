@@ -7,5 +7,5 @@
 ## Requirements
 
 1. Git
-2. [Gum](https://github.com/charmbracelet/gum) for [Tmux UI](https://github.com/cqroot/dotfiles/blob/main/bin/tmux-ui.sh)
+2. [Gum](https://github.com/charmbracelet/gum)
 3. [DotM](https://github.com/cqroot/dotm)
