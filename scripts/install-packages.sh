@@ -8,10 +8,13 @@ packages=(
 	"neofetch"
 	"neovim" "nvim-packer-git" "python-pynvim" "ctags"
 	"ripgrep" "lf" "fzf" "htop" "glow" "tmux"
-	"shfmt" "shellcheck" "python-black" "prettier"
 
-	# lsp
-	"bash-language-server"
+	# LSPs
+	"bash-language-server" "clang" "gopls" "pyright" "lua-language-server"
+	# Formatters
+	"python-black" "prettier" "prettierd" "shfmt" "stylua"
+	# Linters
+	"golangci-lint-bin" "shellcheck"
 )
 
 desktop_packages=(
@@ -59,6 +62,8 @@ yay_packages=(
 	"clash-for-windows-bin"
 	"baidunetdisk-electron"
 	"typora-free"
+
+	"python-cmakelang"
 )
 
 main() {
