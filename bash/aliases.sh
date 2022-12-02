@@ -9,9 +9,6 @@ alias l.="ls -A | grep -E '^\.'"
 
 alias ra='. ranger'
 
-# tmux
-alias tmux='bash $HOME/.bin/tmux-ui.sh'
-
 # aaa-aliases
 alias aaabashsource='source ~/.bashrc'
 # proxy
@@ -37,4 +34,7 @@ alias nvi=nvim
 alias tn='ternote'
 alias tncd='cd $(ternote path)'
 
-alias gt='bash $HOME/.bin/go-test-ui.sh'
+alias gt='bash $HOME/.bin/gum-scripts/go-test-ui.sh'
+
+# tmux
+alias tmux='bash $HOME/.bin/gum-scripts/tmux-ui.sh'
