@@ -5,7 +5,6 @@ SCRIPT_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 source "${SCRIPT_PATH}/envs.sh"
 source "${SCRIPT_PATH}/aliases.sh"
 source "${SCRIPT_PATH}/aliases_typo.sh"
-source "${SCRIPT_PATH}/scripts/git-prompt.sh"
 
 # fzf
 source "/usr/share/fzf/key-bindings.bash"
