@@ -36,3 +36,5 @@ alias nvi=nvim
 
 alias tn='ternote'
 alias tncd='cd $(ternote path)'
+
+alias gt='bash $HOME/.bin/go-test-ui.sh'
