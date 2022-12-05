@@ -1,0 +1,19 @@
+/* For styling the entire Joplin app (except the rendered Markdown, which is defined in `userstyle.css`) */
+
+div.resizableLayoutItem.rli-sideBar span.title,
+div.item-list.note-list span {
+  font-family: "Caskaydia Cove Nerd Font", "CaskaydiaCove NF", "Cascadia Code",
+    "FiraCode NF", "Microsoft YaHei" !important;
+}
+
+.editor-toolbar:first-child {
+  display: none !important;
+}
+
+div.resizableLayoutItem.rli-editor
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  border-bottom: 1px solid var(--joplin-divider-color) !important;
+}

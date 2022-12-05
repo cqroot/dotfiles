@@ -1,0 +1,7 @@
+#joplin-plugin-content {
+  border-right: 1px solid #dddddd;
+}
+
+#joplin-plugin-content * {
+  font-family: "CaskaydiaCove Nerd Font";
+}
