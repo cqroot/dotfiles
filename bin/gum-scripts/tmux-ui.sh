@@ -2,11 +2,13 @@
 
 new="Create tmux session"
 attach="Attach tmux session"
+new_with_name="Create tmux session with the specified name"
 
 get_option() {
 	gum choose --cursor "◉ " \
 		"$new" \
-		"$attach"
+		"$attach" \
+		"$new_with_name"
 }
 
 attach_tmux_session() {
@@ -32,5 +34,8 @@ case $(get_option) in
 	;;
 "$attach")
 	attach_tmux_session
+	;;
+"$new_with_name")
+	tmux new -s "$(gum input --placeholder "Session name")"
 	;;
 esac
