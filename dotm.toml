@@ -3,15 +3,32 @@ exec = "alacritty"
 
 [bash]
 exec = "bash"
+tags = ["term"]
+
+[bin]
+target_type = "home"
+tags = ["term"]
 
 [dunst]
 exec = "dunst"
 
+[git]
+relative_path = "git/gitconfig"
+target_type = "home"
+exec = "git"
+tags = ["term"]
+
 [go]
 exec = "go"
+tags = ["term"]
+
+[joplin-desktop]
+exec = "joplin-desktop"
+type = "symlink_each"
 
 [lf]
 exec = "lf"
+tags = ["term"]
 
 [mpv]
 exec = "mpv"
@@ -19,22 +36,17 @@ exec = "mpv"
 [picom]
 exec = "picom"
 
-[starship]
-relative_path = "starship/starship.toml"
-exec = "starship"
-
-[tmux]
-exec = "tmux"
-
-[bin]
-target_type = "home"
-
-[git]
-relative_path = "git/gitconfig"
-target_type = "home"
-exec = "git"
-
 [sqlite3]
 relative_path = "sqlite3/sqliterc"
 target_type = "home"
 exec = "sqlite3"
+tags = ["term"]
+
+[starship]
+relative_path = "starship/starship.toml"
+exec = "starship"
+tags = ["term"]
+
+[tmux]
+exec = "tmux"
+tags = ["term"]
