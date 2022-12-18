@@ -17,3 +17,17 @@ div.resizableLayoutItem.rli-editor
   > div:first-child {
   border-bottom: 1px solid var(--joplin-divider-color) !important;
 }
+
+/* Evernote Theme Start */
+.sidebar {
+  background: #1a1a1a !important;
+}
+
+.sidebar .list-item-container:hover {
+  background: #333333 !important;
+}
+
+.sidebar .list-item-container.selected {
+  background: #404040 !important;
+}
+/* Evernote Theme End */
