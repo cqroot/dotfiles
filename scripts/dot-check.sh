@@ -6,7 +6,7 @@ source "$script_path/dot-common.sh"
 main() {
 	result=$(generate_pairs)
 
-	echo -e "$result" | column -t
+	echo "$result" | column -t
 	echo
 
 	echo "Dot to be applied:"
@@ -19,11 +19,20 @@ main() {
 		src="${pair[0]}"
 		dst="${pair[1]}"
 
-		actual_src=$(readlink -f "$dst")
-		if [[ $actual_src != "$src" ]]; then
-			echo "x: $src"
-		fi
-	done < <(echo -e "$result")
+		case "$(uname -s)" in
+		MINGW*)
+			if ! diff "$src" "$dst"; then
+				echo "x: $src"
+			fi
+			;;
+		*)
+			actual_src=$(readlink -f "$dst")
+			if [[ $actual_src != "$src" ]]; then
+				echo "x: $src"
+			fi
+			;;
+		esac
+	done < <(echo "$result")
 
 	echo
 }

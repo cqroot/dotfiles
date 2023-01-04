@@ -6,7 +6,7 @@ source "$script_path/dot-common.sh"
 main() {
 	result=$(generate_pairs)
 
-	echo -e "$result" | column -t
+	echo "$result" | column -t
 	echo
 
 	if ! confirm "Apply"; then
@@ -22,8 +22,15 @@ main() {
 		src="${pair[0]}"
 		dst="${pair[1]}"
 
-		ln -s "$src" "$dst"
-	done < <(echo -e "$result")
+		case "$(uname -s)" in
+		MINGW*)
+			cp -rT "$src" "$dst"
+			;;
+		*)
+			ln -s "$src" "$dst"
+			;;
+		esac
+	done < <(echo "$result")
 }
 
 main

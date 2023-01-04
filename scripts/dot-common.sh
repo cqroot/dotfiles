@@ -1,11 +1,12 @@
 #!/bin/bash
 
-configs=(
+linux_configs=(
 	# DOT                   EXEC            TYPE
 	# Type can be the following values
 	#     xdg:  Apply dot   to $home/.config/dot
 	#     xdg_: Apply dot/* to $home/.config/dot/*
 	#     home: Apply dot   to $home/.dot
+	#     win:  Apply dot   to $APPDATA/dot
 	"alacritty              alacritty       xdg"
 	"bash                   bash            xdg"
 	"bin                    -               home"
@@ -20,6 +21,28 @@ configs=(
 	"starship/starship.toml starship        xdg"
 	"tmux                   tmux            xdg"
 )
+
+windows_configs=(
+	"alacritty              alacritty       win"
+	"git/gitconfig          git             home"
+	"go                     go              win"
+	"joplin-desktop         -               xdg_"
+)
+
+case "$(uname -s)" in
+Linux*)
+	configs=("${linux_configs[@]}")
+	;;
+Darwin*)
+	configs=()
+	;;
+MINGW*)
+	configs=("${windows_configs[@]}")
+	;;
+*)
+	configs=()
+	;;
+esac
 
 generate_pairs() {
 	script_path=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
@@ -53,6 +76,10 @@ generate_pairs() {
 
 		"home")
 			dst="$HOME/.$(basename "$target")"
+			echo "$src $dst"
+			;;
+		"win")
+			dst="$APPDATA/$(basename "$target")"
 			echo "$src $dst"
 			;;
 		esac

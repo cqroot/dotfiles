@@ -16,7 +16,7 @@ main() {
 		dst="${pair[1]}"
 
 		echo rm -rf "$dst"
-	done < <(echo -e "$result")
+	done < <(echo "$result")
 
 	echo
 	echo "Please execute the delete command yourself."
