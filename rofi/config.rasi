@@ -1,7 +1,7 @@
 configuration {
   terminal: "/usr/bin/alacritty";
   run-shell-command: "{terminal} -e {cmd}";
-  modi: "drun,run,calc,emoji,window";
+  modi: "drun,run,window";
   filebrowser {
       directories-first: true;
       sorting-method:    "name";
