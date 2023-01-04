@@ -51,8 +51,9 @@ desktop_packages=(
 	"mpv" "vlc"
 
 	# Note-taking
-	"obsidian"
+	# "obsidian"
 	# "notion-app-enhanced"
+	"joplin-desktop"
 
 	# Rofi
 	"rofi"
@@ -63,6 +64,7 @@ yay_packages=(
 	"clash-for-windows-bin"
 	"baidunetdisk-electron"
 	"typora-free"
+	"xunlei-bin"
 
 	"python-cmakelang"
 )
@@ -76,15 +78,6 @@ main() {
 			--disable-download-timeout \
 			"$package"
 	done
-
-	# for package in "${yay_packages[@]}"; do
-	# 	yay -S \
-	# 		--noconfirm \
-	# 		--noprogressbar \
-	# 		--needed \
-	# 		--disable-download-timeout \
-	# 		"$package"
-	# done
 }
 
 main "$@"
