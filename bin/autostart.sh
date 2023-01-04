@@ -2,6 +2,19 @@
 
 feh --bg-fill "$HOME/Pictures/wallpaper" &
 
+HDMI=""
+MON=""
+for i in $(xrandr | grep -w connected | awk '{print $1}'); do
+	if [[ $i == HDMI* ]]; then
+		HDMI=$i
+	else
+		MON=$i
+	fi
+done
+if [[ -n $HDMI ]]; then
+	xrandr --output "$HDMI" --auto --primary --output "$MON" --auto --left-of "$HDMI"
+fi
+
 pgrep -x fcitx >/dev/null || fcitx &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x cfw >/dev/null || cfw &
