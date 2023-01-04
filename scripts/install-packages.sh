@@ -15,6 +15,7 @@ packages=(
 	"python-black" "prettier" "prettierd" "shfmt" "stylua"
 	# Linters
 	"golangci-lint-bin" "shellcheck"
+	"starship" "gum"
 )
 
 desktop_packages=(
@@ -67,23 +68,23 @@ yay_packages=(
 )
 
 main() {
-	# for package in "${packages[@]}" "${desktop_packages[@]}"; do
-	#     pacman -S \
-	#         --noconfirm \
-	#         --noprogressbar \
-	#         --needed \
-	#         --disable-download-timeout \
-	#         "$package"
-	# done
-
-	for package in "${yay_packages[@]}"; do
-		yay -S \
+	for package in "${packages[@]}" "${desktop_packages[@]}"; do
+		pacman -S \
 			--noconfirm \
 			--noprogressbar \
 			--needed \
 			--disable-download-timeout \
 			"$package"
 	done
+
+	# for package in "${yay_packages[@]}"; do
+	# 	yay -S \
+	# 		--noconfirm \
+	# 		--noprogressbar \
+	# 		--needed \
+	# 		--disable-download-timeout \
+	# 		"$package"
+	# done
 }
 
 main "$@"
