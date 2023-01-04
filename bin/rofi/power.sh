@@ -6,7 +6,7 @@ poweroff=" Poweroff"
 reboot=" Reboot"
 
 options="${lock}\n${logout}\n${poweroff}\n${reboot}"
-chosen=$(echo -e "${options}" | rofi -dmenu -i -p "⏻" -theme "$HOME/.bin/rofi/nord.rasi")
+chosen=$(echo -e "${options}" | rofi -dmenu -i -p "⏻")
 
 case ${chosen} in
 "${lock}")
