@@ -1,0 +1,17 @@
+set $mod Mod4
+
+font pango:Caskaydia Cove Nerd Font 11
+
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders smart
+for_window [urgent=latest] focus
+
+include ${HOME}/.config/i3/colors.conf
+include ${HOME}/.config/i3/keys.conf
+include ${HOME}/.config/i3/workspace.conf
+include ${HOME}/.config/i3/applications.conf
+include ${HOME}/.config/i3/gaps.conf
+include ${HOME}/.config/i3/others.conf
+
+# vim:ft=i3config
