@@ -19,19 +19,21 @@ main() {
 		src="${pair[0]}"
 		dst="${pair[1]}"
 
-		case "$(uname -s)" in
-		MINGW*)
-			if ! diff "$src" "$dst"; then
-				echo "x: $src"
-			fi
-			;;
-		*)
-			actual_src=$(readlink -f "$dst")
-			if [[ $actual_src != "$src" ]]; then
-				echo "x: $src"
-			fi
-			;;
-		esac
+		# case "$(uname -s)" in
+		# MINGW*)
+		#     if ! diff "$src" "$dst"; then
+		#         echo "x: $src"
+		#     fi
+		#     ;;
+		# *)
+		#     actual_src=$(readlink -f "$dst")
+		#     if [[ $actual_src != "$src" ]]; then
+		#     fi
+		#     ;;
+		# esac
+		if ! check_dot "$src" "$dst"; then
+			echo "x: $src"
+		fi
 	done < <(echo "$result")
 
 	echo

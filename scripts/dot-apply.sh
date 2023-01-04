@@ -22,14 +22,18 @@ main() {
 		src="${pair[0]}"
 		dst="${pair[1]}"
 
-		case "$(uname -s)" in
-		MINGW*)
-			cp -rT "$src" "$dst"
-			;;
-		*)
-			ln -s "$src" "$dst"
-			;;
-		esac
+		if ! check_dot "$src" "$dst"; then
+			case "$(uname -s)" in
+			MINGW*)
+				echo cp -rT "$src" "$dst"
+				cp -rT "$src" "$dst"
+				;;
+			*)
+				echo ln -s "$src" "$dst"
+				ln -s "$src" "$dst"
+				;;
+			esac
+		fi
 	done < <(echo "$result")
 }
 

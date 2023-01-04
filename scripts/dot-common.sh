@@ -17,6 +17,7 @@ linux_configs=(
 	"lf                     lf              xdg"
 	"mpv                    mpv             xdg"
 	"picom                  picom           xdg"
+	"rofi                   rofi            xdg"
 	"sqlite3/sqliterc       sqlite3         home"
 	"starship/starship.toml starship        xdg"
 	"tmux                   tmux            xdg"
@@ -94,5 +95,23 @@ confirm() {
 	if [[ $cfm != "y" && $cfm != "Y" ]]; then
 		return 1
 	fi
+	return 0
+}
+
+check_dot() {
+	case "$(uname -s)" in
+	MINGW*)
+		if ! diff "$1" "$2"; then
+			return 1
+		fi
+		;;
+	*)
+		actual_src=$(readlink -f "$2")
+		if [[ $actual_src != "$1" ]]; then
+			return 1
+		fi
+		;;
+	esac
+
 	return 0
 }
