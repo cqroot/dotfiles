@@ -12,14 +12,15 @@ packages=(
 	# LSPs
 	"bash-language-server" "clang" "gopls" "pyright" "lua-language-server"
 	# Formatters
-	"python-black" "prettier" "prettierd" "shfmt" "stylua"
+	"python-black" "prettier" "shfmt" "stylua"
 	# Linters
-	"golangci-lint-bin" "shellcheck"
+	"shellcheck"
 	"starship" "gum"
 )
 
 desktop_packages=(
 	"xorg-server" "tk" "xclip" "pavucontrol" "xautolock" "xsecurelock"
+	# "pulseaudio"
 	"lxappearance" "dunst" "network-manager-applet" "picom"
 	"flameshot" "maim"
 	"alacritty"
@@ -28,7 +29,7 @@ desktop_packages=(
 	"firefox" "mailspring" "nutstore"
 
 	# Appearance
-	"arc-gtk-theme" "bibata-cursor-theme"
+	"arc-gtk-theme" "bibata-cursor-theme-bin"
 
 	# Fonts
 	"ttf-cascadia-code" "nerd-fonts-cascadia-code"
@@ -45,7 +46,7 @@ desktop_packages=(
 	"telegram-desktop"
 
 	# Image viewer
-	"feh" "nomacs" "xviewer"
+	"feh" "nomacs"
 
 	# Multimedia
 	"mpv" "vlc"
@@ -60,18 +61,31 @@ desktop_packages=(
 )
 
 yay_packages=(
-	"sublime-text-4"
+	# "sublime-text-4"
 	"clash-for-windows-bin"
 	"baidunetdisk-electron"
-	"typora-free"
+	# "typora-free"
 	"xunlei-bin"
+	# "pulseaudio-ctl"
+	"xviewer"
 
-	"python-cmakelang"
+	"golangci-lint-bin"
+	"prettierd"
+	# "python-cmakelang"
 )
 
 main() {
 	for package in "${packages[@]}" "${desktop_packages[@]}"; do
 		pacman -S \
+			--noconfirm \
+			--noprogressbar \
+			--needed \
+			--disable-download-timeout \
+			"$package"
+	done
+
+	for package in "${packages[@]}" "${desktop_packages[@]}"; do
+		yay -S \
 			--noconfirm \
 			--noprogressbar \
 			--needed \

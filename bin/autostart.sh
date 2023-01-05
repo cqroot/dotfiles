@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-feh --bg-fill "$HOME/Pictures/wallpaper" &
-
 HDMI=""
 MON=""
 for i in $(xrandr | grep -w connected | awk '{print $1}'); do
@@ -15,6 +13,7 @@ if [[ -n $HDMI ]]; then
 	xrandr --output "$HDMI" --auto --primary --output "$MON" --auto --left-of "$HDMI"
 fi
 
+feh --bg-fill "$HOME/Pictures/wallpaper" &
 pgrep -x fcitx >/dev/null || fcitx &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x cfw >/dev/null || cfw &
