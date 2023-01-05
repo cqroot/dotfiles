@@ -24,7 +24,7 @@ alias pacman='sudo pacman'
 alias systemctl='sudo systemctl'
 alias netstat='sudo netstat'
 
-if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
+if [ -f /etc/profile.d/lfcd.sh ]; then
 	source /etc/profile.d/lfcd.sh
 	alias l='lfcd'
 fi

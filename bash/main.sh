@@ -2,6 +2,11 @@
 
 SCRIPT_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
+# $HOME/.config -> /home/user/.config
+shopt -u direxpand
+# $HOME/.config -> \$HOME/.config
+shopt -u progcomp
+
 source "${SCRIPT_PATH}/envs.sh"
 source "${SCRIPT_PATH}/aliases.sh"
 source "${SCRIPT_PATH}/aliases_typo.sh"

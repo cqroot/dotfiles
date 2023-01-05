@@ -1,20 +1,19 @@
-[user]
-	name = cqroot
-	email = cqroot@outlook.com
-
+[core]
+	excludesFile = ~/.gitignore
+[http]
+	proxy = http://127.0.0.1:7890
 [init]
 	defaultBranch = main
-[pull]
-	ff = only
-[push]
-	default = simple
-
 [pager]
 	branch = false
 	diff = false
 	show = false
 	tag = false
-[core]
-	excludesFile = ~/.gitignore
-[http]
-	proxy = http://127.0.0.1:7890
+    log = true
+[pull]
+	ff = only
+[push]
+	default = simple
+[user]
+	name = cqroot
+	email = cqroot@outlook.com
