@@ -21,12 +21,15 @@ function notify() {
 }
 
 if [[ $1 == "up" ]]; then
-    pulseaudio-ctl up
+    # pulseaudio-ctl up
+    pactl -- set-sink-volume 0 +5%
     notify
 elif [[ $1 == "down" ]]; then
-    pulseaudio-ctl down
+    # pulseaudio-ctl down
+    pactl -- set-sink-volume 0 -5%
     notify
 elif [[ $1 == "mute" ]]; then
-    pulseaudio-ctl mute
+    # pulseaudio-ctl mute
+    pactl set-sink-mute @DEFAULT_SINK@ true
     notify
 fi
