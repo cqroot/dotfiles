@@ -3,7 +3,7 @@
 export EDITOR='nvim'
 # export VISUAL='nano'
 # export HISTCONTROL=ignoreboth:erasedups
-# export PAGER='most'
+export PAGER='bat'
 
 # Go
 export GOPATH=$HOME/go
