@@ -1,35 +1,39 @@
 #!/bin/bash
 
+firefox_base=$(ls -d "$HOME/.mozilla/firefox/"*.default-release/)
+firefox_base=${firefox_base::-1}
+
 linux_configs=(
-	# DOT                   EXEC            TYPE
+	# DOT                   EXEC            EACH?  TYPE
 	# Type can be the following values
 	#     xdg:  Apply dot   to $home/.config/dot
 	#     xdg_: Apply dot/* to $home/.config/dot/*
 	#     home: Apply dot   to $home/.dot
 	#     win:  Apply dot   to $APPDATA/dot
-	"alacritty              alacritty       xdg"
-	"bash                   bash            xdg"
-	"bin                    -               home"
-	"dunst                  dunst           xdg"
-	"git/gitconfig          git             home"
-	"go                     go              xdg"
-	"i3                     i3              xdg"
-	"joplin-desktop         joplin-desktop  xdg_"
-	"lf                     lf              xdg"
-	"mpv                    mpv             xdg"
-	"picom                  picom           xdg"
-	"polybar                polybar         xdg"
-	"rofi                   rofi            xdg"
-	"sqlite3/sqliterc       sqlite3         home"
-	"starship/starship.toml starship        xdg"
-	"tmux                   tmux            xdg"
+	"alacritty              alacritty       0      xdg"
+	"bash                   bash            0      xdg"
+	"bin                    -               0      home"
+	"dunst                  dunst           0      xdg"
+	"firefox                firefox         1      $firefox_base"
+	"git/gitconfig          git             0      home"
+	"go                     go              0      xdg"
+	"i3                     i3              0      xdg"
+	"joplin-desktop         joplin-desktop  1      xdg"
+	"lf                     lf              0      xdg"
+	"mpv                    mpv             0      xdg"
+	"picom                  picom           0      xdg"
+	"polybar                polybar         0      xdg"
+	"rofi                   rofi            0      xdg"
+	"sqlite3/sqliterc       sqlite3         0      home"
+	"starship/starship.toml starship        0      xdg"
+	"tmux                   tmux            0      xdg"
 )
 
 windows_configs=(
-	"alacritty              alacritty       win"
-	"git/gitconfig          git             home"
-	"go                     go              win"
-	"joplin-desktop         -               xdg_"
+	"alacritty              alacritty       0      win"
+	"git/gitconfig          git             0      home"
+	"go                     go              0      win"
+	"joplin-desktop         -               1      xdg"
 )
 
 case "$(uname -s)" in
@@ -56,36 +60,39 @@ generate_pairs() {
 
 		target="${config[0]}"
 		exec="${config[1]}"
-		type="${config[2]}"
+		each="${config[2]}"
+		type="${config[3]}"
 
 		if [[ $exec != "-" ]]; then
 			command -v "$exec" >/dev/null 2>&1 || continue
 		fi
 
 		src="$dotfiles_path/$target"
+		dst=""
 
 		case $type in
 		"xdg")
 			dst="$HOME/.config/$(basename "$target")"
-			echo "$src $dst"
-			;;
-
-		"xdg_")
-			dst="$HOME/.config/$(basename "$target")"
-			for file in "$src"/*; do
-				echo "$file $dst/$(basename "$file")"
-			done
 			;;
 
 		"home")
 			dst="$HOME/.$(basename "$target")"
-			echo "$src $dst"
 			;;
 		"win")
 			dst="$APPDATA/$(basename "$target")"
-			echo "$src $dst"
+			;;
+		*)
+			dst="$type"
 			;;
 		esac
+
+		if [[ each -eq 0 ]]; then
+			echo "$src $dst"
+		else
+			for file in "$src"/*; do
+				echo "$file $dst/$(basename "$file")"
+			done
+		fi
 	done
 }
 
