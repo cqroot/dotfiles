@@ -1,11 +1,11 @@
 .PHONY: apply
 apply:
-	@bash "$(CURDIR)/scripts/dot-apply.sh"
+	@bash "$(CURDIR)/scripts/dots.sh" apply
 
 .PHONY: revoke
 revoke:
-	@bash "$(CURDIR)/scripts/dot-revoke.sh"
+	@bash "$(CURDIR)/scripts/dots.sh" revoke
 
-.PHONY: check
-check:
-	@bash "$(CURDIR)/scripts/dot-check.sh"
+.PHONY: status
+status:
+	@bash "$(CURDIR)/scripts/dots.sh" status | column -t
