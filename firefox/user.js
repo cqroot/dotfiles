@@ -6,3 +6,5 @@ user_pref("extensions.htmlaboutaddons.discover.enabled", false);
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
+user_pref("full-screen-api.ignore-widgets", true);
