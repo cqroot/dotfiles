@@ -24,3 +24,5 @@ pgrep -x joplin-desktop >/dev/null || joplin-desktop &
 pgrep -x flameshot >/dev/null || flameshot &
 # pgrep -x albert >/dev/null || albert &
 pgrep -x firefox >/dev/null || firefox &
+
+setxkbmap -layout us -option ctrl:swapcaps
