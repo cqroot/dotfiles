@@ -7,7 +7,8 @@ packages=(
 	"clash"
 	"neofetch"
 	"neovim" "nvim-packer-git" "python-pynvim" "ctags"
-	"ripgrep" "lf" "fzf" "htop" "glow" "tmux"
+	"ripgrep" "lf" "fzf" "htop" "glow" "tmux" "jq"
+	"docker"
 
 	# LSPs
 	"bash-language-server" "clang" "gopls" "pyright" "lua-language-server"
@@ -68,6 +69,8 @@ yay_packages=(
 	"xunlei-bin"
 	# "pulseaudio-ctl"
 	"xviewer"
+	"microsoft-edge-stable-bin"
+	"listen1-electron"
 
 	"golangci-lint-bin"
 	"prettierd"
@@ -92,6 +95,8 @@ main() {
 			--disable-download-timeout \
 			"$package"
 	done
+
+	npm install -g @volar/vue-language-server
 }
 
 main "$@"

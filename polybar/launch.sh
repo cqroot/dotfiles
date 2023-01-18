@@ -7,7 +7,7 @@ pgrep polybar | xargs kill -9
 
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-if [ "$(xrandr | grep -c "connected")" -gt 1 ]; then
+if [ "$(xrandr | grep -cw "connected")" -gt 1 ]; then
 	for m in $(polybar --list-monitors | cut -d":" -f1); do
 		if [[ "$m" == "HDMI"* ]]; then
 			MAINMON=$m POLYBAR_DIR=${script_path} polybar "${args[@]}" main 2>&1 &

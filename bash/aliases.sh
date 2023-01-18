@@ -22,6 +22,7 @@ alias gh='env https_proxy=socks5://127.0.0.1:7890 gh'
 alias obinskit='sudo obinskit --no-sandbox'
 alias pacman='sudo pacman'
 alias systemctl='sudo systemctl'
+alias docker='sudo docker'
 alias netstat='sudo netstat'
 
 if [ -f /etc/profile.d/lfcd.sh ]; then
