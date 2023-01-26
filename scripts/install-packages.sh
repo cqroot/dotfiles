@@ -71,6 +71,7 @@ yay_packages=(
 	"xviewer"
 	"microsoft-edge-stable-bin"
 	"listen1-electron"
+	"wechat-uos"
 
 	"golangci-lint-bin"
 	"prettierd"
