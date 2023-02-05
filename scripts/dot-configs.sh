@@ -19,6 +19,7 @@ linux_configs=(
 	"dunst                  dunst           0     1        xdg"
 	"firefox                firefox         1     1        $firefox_base"
 	"git/gitconfig          git             0     1        home"
+	"gitui                  gitui           0     1        xdg"
 	"go                     go              0     1        xdg"
 	"i3                     i3              0     1        xdg"
 	"joplin-desktop         joplin-desktop  1     1        xdg"
