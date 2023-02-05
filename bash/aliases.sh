@@ -30,8 +30,6 @@ if [ -f /etc/profile.d/lfcd.sh ]; then
 	alias l='lfcd'
 fi
 
-alias nvi=nvim
-
 alias tn='ternote'
 alias tncd='cd $(ternote path)'
 
@@ -39,3 +37,13 @@ alias gt='bash $HOME/.bin/gum-scripts/go-test-ui.sh'
 
 # tmux
 alias tmux='bash $HOME/.bin/gum-scripts/tmux-ui.sh'
+
+# apps
+alias nvi=nvim
+alias gu='gitui'
+
+# go
+alias goremod=$'gomodule=$(head -n1 go.mod | awk \'{print $2}\');\
+    rm -rf go.mod go.sum; \
+    go mod init "$gomodule"; \
+    go mod tidy'
