@@ -10,7 +10,7 @@
 	diff = false
 	show = false
 	tag = false
-    log = true
+	log = true
 [pull]
 	ff = only
 [push]

@@ -8,4 +8,3 @@
 
 1. Git
 2. [Gum](https://github.com/charmbracelet/gum)
-3. [DotM](https://github.com/cqroot/dotm)
