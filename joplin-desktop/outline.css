@@ -3,5 +3,6 @@
 }
 
 #joplin-plugin-content * {
-  font-family: "CaskaydiaCove Nerd Font";
+  font-family: "Cascadia Code", "Caskaydia Cove Nerd Font", "CaskaydiaCove NF",
+    "FiraCode NF", "Microsoft YaHei";
 }

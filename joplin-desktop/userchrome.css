@@ -2,7 +2,7 @@
 
 div.resizableLayoutItem.rli-sideBar span.title,
 div.item-list.note-list span {
-  font-family: "Caskaydia Cove Nerd Font", "CaskaydiaCove NF", "Cascadia Code",
+  font-family: "Cascadia Code", "Caskaydia Cove Nerd Font", "CaskaydiaCove NF",
     "FiraCode NF", "Microsoft YaHei" !important;
 }
 
