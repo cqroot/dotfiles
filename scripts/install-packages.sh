@@ -8,12 +8,12 @@ packages=(
 	"neofetch"
 	"neovim" "nvim-packer-git" "python-pynvim" "ctags"
 	"ripgrep" "lf" "fzf" "htop" "glow" "tmux" "jq"
-	"docker"
+	"docker" "delve"
 
 	# LSPs
 	"bash-language-server" "clang" "gopls" "pyright" "lua-language-server"
 	# Formatters
-	"python-black" "prettier" "shfmt" "stylua"
+	"python-black" "prettier" "shfmt" "stylua" "taplo-cli"
 	# Linters
 	"shellcheck"
 	"starship" "gum"
@@ -28,12 +28,15 @@ desktop_packages=(
 	"nemo" "nemo-fileroller"
 	"baobab"
 	"firefox" "mailspring" "nutstore"
+	"peek"
 
 	# Appearance
 	"arc-gtk-theme" "bibata-cursor-theme-bin"
 
 	# Fonts
 	"ttf-cascadia-code" "nerd-fonts-cascadia-code"
+	"ttf-fira-code"
+	"ttf-jetbrains-mono"
 	"noto-fonts-emoji"
 	"adobe-source-han-sans-cn-fonts" "wqy-microhei"
 
@@ -62,20 +65,26 @@ desktop_packages=(
 )
 
 yay_packages=(
-	# "sublime-text-4"
 	"clash-for-windows-bin"
 	"baidunetdisk-electron"
-	# "typora-free"
 	"xunlei-bin"
-	# "pulseaudio-ctl"
 	"xviewer"
 	"microsoft-edge-stable-bin"
 	"listen1-electron"
 	"wechat-uos"
+	"qqmusic-bin"
+	# "pulseaudio-ctl"
+
+	# Editor ===================================================================
+	"sublime-text-4"
+	"visual-studio-code-bin"
+	# "lite-xl-bin"
+	# "typora-free"
 
 	"golangci-lint-bin"
 	"prettierd"
 	# "python-cmakelang"
+	"gofumpt"
 )
 
 main() {
