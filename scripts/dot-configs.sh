@@ -26,6 +26,7 @@ linux_configs=(
 	"lf                     lf              0     1        xdg"
 	"mpv                    mpv             0     1        xdg"
 	"picom                  picom           0     1        xdg"
+	"pip                    pip             0     1        xdg"
 	"polybar                polybar         0     1        xdg"
 	"rofi                   rofi            0     1        xdg"
 	"sqlite3/sqliterc       sqlite3         0     1        home"

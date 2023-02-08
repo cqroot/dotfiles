@@ -3,12 +3,12 @@
 packages=(
 	"yay"
 	"strace" "net-tools"
-	"base-devel" "nodejs" "npm" "go"
+	"base-devel" "nodejs" "npm" "go" "python-pip"
 	"clash"
 	"neofetch"
 	"neovim" "nvim-packer-git" "python-pynvim" "ctags"
 	"ripgrep" "lf" "fzf" "htop" "glow" "tmux" "jq"
-	"docker" "delve"
+	"docker" "delve" "p7zip"
 
 	# LSPs
 	"bash-language-server" "clang" "gopls" "pyright" "lua-language-server"
