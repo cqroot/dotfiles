@@ -2,8 +2,8 @@ set $mod Mod4
 
 font pango:Caskaydia Cove Nerd Font 11
 
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 3
+default_floating_border pixel 3
 hide_edge_borders smart
 for_window [urgent=latest] focus
 
