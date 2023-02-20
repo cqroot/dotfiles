@@ -7,9 +7,10 @@ shopt -u direxpand
 # $HOME/.config -> \$HOME/.config
 shopt -u progcomp
 
-source "${SCRIPT_PATH}/envs.sh"
-source "${SCRIPT_PATH}/aliases.sh"
-source "${SCRIPT_PATH}/aliases_typo.sh"
+source "${SCRIPT_PATH}/envs.bash"
+source "${SCRIPT_PATH}/aliases.bash"
+source "${SCRIPT_PATH}/aliases_typo.bash"
+source "${SCRIPT_PATH}/zoxide.bash"
 
 # fzf
 source "/usr/share/fzf/key-bindings.bash"
