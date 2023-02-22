@@ -1,24 +1,5 @@
 #!/usr/bin/env bash
 
-packages=(
-	"yay"
-	"strace" "net-tools"
-	"base-devel" "nodejs" "npm" "go" "python-pip"
-	"clash"
-	"neofetch"
-	"neovim" "nvim-packer-git" "python-pynvim" "ctags"
-	"ripgrep" "lf" "fzf" "htop" "glow" "tmux" "jq"
-	"docker" "delve" "p7zip"
-
-	# LSPs
-	"bash-language-server" "clang" "gopls" "pyright" "lua-language-server"
-	# Formatters
-	"python-black" "prettier" "shfmt" "stylua" "taplo-cli"
-	# Linters
-	"shellcheck"
-	"starship" "gum"
-)
-
 desktop_packages=(
 	"xorg-server" "tk" "xclip" "pavucontrol" "xautolock" "xsecurelock"
 	# "pulseaudio"
@@ -39,6 +20,7 @@ desktop_packages=(
 	"ttf-jetbrains-mono"
 	"noto-fonts-emoji"
 	"adobe-source-han-sans-cn-fonts" "wqy-microhei"
+	"ttf-caladea" "ttf-carlito" "ttf-dejavu" "ttf-liberation" "ttf-linux-libertine-g" "noto-fonts" "adobe-source-code-pro-fonts" "adobe-source-sans-pro-fonts" "adobe-source-serif-pro-fonts"
 
 	# Text editor
 	"xed"
@@ -74,6 +56,8 @@ yay_packages=(
 	"wechat-uos"
 	"qqmusic-bin"
 	# "pulseaudio-ctl"
+	"localsend-bin"
+	"x11-emoji-picker"
 
 	# Editor ===================================================================
 	"sublime-text-4"
@@ -88,7 +72,7 @@ yay_packages=(
 )
 
 main() {
-	for package in "${packages[@]}" "${desktop_packages[@]}"; do
+	for package in "${desktop_packages[@]}"; do
 		pacman -S \
 			--noconfirm \
 			--noprogressbar \
@@ -97,7 +81,7 @@ main() {
 			"$package"
 	done
 
-	for package in "${packages[@]}" "${desktop_packages[@]}"; do
+	for package in "${yay_packages[@]}"; do
 		yay -S \
 			--noconfirm \
 			--noprogressbar \
@@ -105,8 +89,6 @@ main() {
 			--disable-download-timeout \
 			"$package"
 	done
-
-	npm install -g @volar/vue-language-server
 }
 
 main "$@"

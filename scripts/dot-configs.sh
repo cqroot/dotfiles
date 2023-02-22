@@ -18,6 +18,7 @@ linux_configs=(
 	"bin                    -               0     1        home"
 	"dunst                  dunst           0     1        xdg"
 	"firefox                firefox         1     1        $firefox_base"
+	"fontconfig             -               0     1        xdg"
 	"git/gitconfig          git             0     1        home"
 	"gitui                  gitui           0     1        xdg"
 	"go                     go              0     1        xdg"
