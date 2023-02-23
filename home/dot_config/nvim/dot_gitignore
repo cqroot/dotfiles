@@ -1,0 +1,3 @@
+plugin/
+lazy-lock.json
+lua/custom_options.lua
