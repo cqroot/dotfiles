@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 packages=(
-	"yay"
 	"make" "nodejs" "npm" "python-pip" "neofetch"
 	"go" "delve"
 	"neovim" "python-pynvim" "ctags"
