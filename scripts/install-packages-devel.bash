@@ -29,7 +29,7 @@ yay_packages=(
 
 main() {
 	for package in "${packages[@]}"; do
-		pacman -S \
+		pacman -Sy \
 			--noconfirm \
 			--noprogressbar \
 			--needed \
@@ -38,7 +38,7 @@ main() {
 	done
 
 	for package in "${yay_packages[@]}"; do
-		yay -S \
+		yay -Sy \
 			--noconfirm \
 			--noprogressbar \
 			--needed \
