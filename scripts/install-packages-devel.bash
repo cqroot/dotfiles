@@ -19,6 +19,14 @@ packages=(
 	"shellcheck"
 )
 
+yay_packages=(
+	"volar-server-bin"
+	"golangci-lint-bin"
+	"prettierd"
+	# "python-cmakelang"
+	"gofumpt"
+)
+
 main() {
 	for package in "${packages[@]}"; do
 		pacman -S \
@@ -29,7 +37,16 @@ main() {
 			"$package"
 	done
 
-	npm install -g @volar/vue-language-server
+	for package in "${yay_packages[@]}"; do
+		yay -S \
+			--noconfirm \
+			--noprogressbar \
+			--needed \
+			--disable-download-timeout \
+			"$package"
+	done
+
+	# npm install -g @volar/vue-language-server
 }
 
 main "$@"
