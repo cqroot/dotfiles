@@ -40,7 +40,8 @@ alias tmux='bash $HOME/.bin/gum-scripts/tmux-ui.sh'
 
 # apps
 alias nvi=nvim
-alias gu='gitui'
+alias gu=gitui
+alias cm=chezmoi
 
 # go
 alias goremod=$'gomodule=$(head -n1 go.mod | awk \'{print $2}\');\
