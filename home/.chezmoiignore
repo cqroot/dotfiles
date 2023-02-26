@@ -3,7 +3,6 @@
 .config/fontconfig
 .config/git
 .config/gitui
-.config/go
 .config/lf
 .config/nvim
 .config/pip
