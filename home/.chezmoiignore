@@ -1,4 +1,4 @@
-{{ if ne .chezmoi.os "linux" }}
+{{ if ne .chezmoi.os "linux" -}}
 .config/bash
 .config/fontconfig
 .config/git
@@ -11,4 +11,7 @@
 .config/tmux
 .scripts
 .sqliterc
-{{ end }}
+{{ end -}}
+{{ if ne .chezmoi.os "windows" -}}
+AppData
+{{ end -}}
