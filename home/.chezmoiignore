@@ -12,6 +12,6 @@
 .scripts
 .sqliterc
 {{ end -}}
+
 {{ if ne .chezmoi.os "windows" -}}
-AppData
 {{ end -}}
