@@ -1,0 +1,14 @@
+{{ if ne .chezmoi.os "linux" }}
+.config/bash
+.config/fontconfig
+.config/git
+.config/gitui
+.config/go
+.config/lf
+.config/nvim
+.config/pip
+.config/starship.toml
+.config/tmux
+.scripts
+.sqliterc
+{{ end }}
