@@ -6,6 +6,7 @@
 .config/lf
 .config/nvim
 .config/pip
+.config/starship.toml
 .config/tmux
 .scripts
 .sqliterc
