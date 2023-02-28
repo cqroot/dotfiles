@@ -6,10 +6,10 @@ env:
 # shell:
 #   program: /usr/bin/zsh
 
-# window:
-#   padding:
-#    x: 10
-#    y: 0
+window:
+  padding:
+   x: 10
+   y: 0
 
 # Font configuration
 font:
@@ -17,7 +17,7 @@ font:
     family: CaskaydiaCove Nerd Font
 
   # Point size
-  size: 12
+  size: 14
 
 colors:
   primary:
