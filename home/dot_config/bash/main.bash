@@ -17,16 +17,22 @@ PS1='\[\033[01;32m\]➜ \[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1) »\[\033[0
 # eval "$(starship init bash)"
 
 # fzf
-case $(uname -s) in
-Linux*)
+if [ -f "/usr/share/fzf/key-bindings.bash" ]; then
 	source "/usr/share/fzf/key-bindings.bash"
-	source "/usr/share/fzf/completion.bash"
-	;;
-Darwin*) ;;
-CYGWIN*) ;;
-MINGW*)
+else
 	source "${SCRIPT_DIR}/fzf/key-bindings.bash"
+fi
+
+if [ -f "/usr/share/fzf/completion.bash" ]; then
+	source "/usr/share/fzf/completion.bash"
+else
 	source "${SCRIPT_DIR}/fzf/completion.bash"
-	;;
-*) ;;
-esac
+fi
+
+# case $(uname -s) in
+# Linux*) ;;
+# Darwin*) ;;
+# CYGWIN*) ;;
+# MINGW*) ;;
+# *) ;;
+# esac
