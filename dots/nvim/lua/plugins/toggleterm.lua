@@ -5,6 +5,7 @@ function M.load()
     vim.cmd([[
         if has('win32')
             let &shell = '"C:/Program Files/Git/bin/bash.exe"'
+            let &shellcmdflag = '-c'
 
             " let &shell = 'pwsh'
             " let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
