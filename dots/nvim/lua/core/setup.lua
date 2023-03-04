@@ -53,6 +53,7 @@ function M.load()
         eol = "↴",
     }
     vim.opt.completeopt = { "menu", "menuone", "noselect" }
+    vim.opt.fileformats = { "unix", "dos" }
 
     setup_line_number()
     setup_cursor()

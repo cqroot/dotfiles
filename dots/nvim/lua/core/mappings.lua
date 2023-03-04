@@ -65,6 +65,8 @@ function M.load()
     vim.keymap.set({ "n", "v" }, "<leader>b", require("telescope.builtin").buffers, opts)
     -- vim.keymap.set({ "n", "v" }, "<leader>h", require("telescope.builtin").help_tags, opts)
     vim.keymap.set({ "n", "v" }, "<leader>.", "<cmd>luafile $MYVIMRC<cr>", opts)
+
+    vim.keymap.set({ "n", "v", "i", "t" }, "<M-cr>", "<cmd>ToggleTerm direction=float<cr>", opts)
 end
 
 return M
