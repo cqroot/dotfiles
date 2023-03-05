@@ -1,7 +1,6 @@
 local wezterm = require("wezterm")
 
 local configs = {
-	terminfo = "xterm-256color",
 	mouse_bindings = {
 		{
 			event = { Up = { streak = 1, button = "Right" } },
