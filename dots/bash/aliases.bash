@@ -41,7 +41,7 @@ alias tmux='bash $HOME/.scripts/tmux-ui.sh'
 # apps
 alias nvi=nvim
 alias gu=gitui
-alias cm=chezmoi
+alias dotfiles="cd $(gmdots basedir)"
 
 # go
 alias goremod=$'gomodule=$(head -n1 go.mod | awk \'{print $2}\');\
