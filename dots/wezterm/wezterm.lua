@@ -23,6 +23,12 @@ append_configs("keys")
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	configs.default_prog = { "C:/Program Files/Git/bin/bash.exe" }
+	configs.launch_menu = {
+		{
+			label = "PowerShell",
+			args = { "pwsh" },
+		},
+	}
 end
 
 if wezterm.target_triple == "x86_64-apple-darwin" then
