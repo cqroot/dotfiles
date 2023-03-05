@@ -1,5 +1,14 @@
 local wezterm = require("wezterm")
 
+wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
+	local tabcount = ""
+	if #tabs > 1 then
+		tabcount = string.format("  <%d tabs>", #tabs)
+	end
+
+	return "Keith Chu" .. tabcount
+end)
+
 return {
 	-- color_scheme = "Nord",
 	color_scheme = "Dracula+",
