@@ -21,6 +21,7 @@ return {
 		{ mods = "LEADER|SHIFT", key = "J", action = act({ AdjustPaneSize = { "Down", 5 } }) },
 		{ mods = "LEADER|SHIFT", key = "K", action = act({ AdjustPaneSize = { "Up", 5 } }) },
 		{ mods = "LEADER|SHIFT", key = "L", action = act({ AdjustPaneSize = { "Right", 5 } }) },
+
 		-- Tab
 		{ mods = "LEADER", key = "1", action = act({ ActivateTab = 0 }) },
 		{ mods = "LEADER", key = "2", action = act({ ActivateTab = 1 }) },
@@ -31,7 +32,12 @@ return {
 		{ mods = "LEADER", key = "7", action = act({ ActivateTab = 6 }) },
 		{ mods = "LEADER", key = "8", action = act({ ActivateTab = 7 }) },
 		{ mods = "LEADER", key = "9", action = act({ ActivateTab = 8 }) },
-		-- { mods = "LEADER|SHIFT", key = "&", action = act({ CloseCurrentTab = { confirm = true } }) },
-		-- { mods = "LEADER", key = "x", action = act({ CloseCurrentPane = { confirm = true } }) },
+
+		{ mods = "LEADER", key = "c", action = act.SpawnTab("CurrentPaneDomain") },
+		{ mods = "LEADER", key = "w", action = act.ShowTabNavigator },
+		{ mods = "LEADER", key = "x", action = act({ CloseCurrentPane = { confirm = true } }) },
+
+		{ mods = "LEADER", key = "n", action = act.ActivateTabRelative(1) },
+		{ mods = "LEADER", key = "p", action = act.ActivateTabRelative(-1) },
 	},
 }
