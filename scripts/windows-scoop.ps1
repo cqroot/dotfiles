@@ -35,6 +35,7 @@ scoop install doublecmd
 scoop install geekuninstaller
 scoop install snipaste
 scoop install trafficmonitor
+scoop install mpv
 
 scoop install notepad3
 # reg import "C:\Users\cqroot\scoop\apps\notepad3\current\install-context.reg"
