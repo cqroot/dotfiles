@@ -29,13 +29,14 @@ scoop install potplayer
 scoop install joplin
 scoop install gimp
 scoop install sublime-text
-
 scoop install telegram
 scoop install doublecmd
 scoop install geekuninstaller
 scoop install snipaste
 scoop install trafficmonitor
 scoop install mpv
+# The $HOME\scoop\apps\mpv\current\portable_config needs to be removed
+scoop install icaros-np
 
 scoop install notepad3
 # reg import "C:\Users\cqroot\scoop\apps\notepad3\current\install-context.reg"
