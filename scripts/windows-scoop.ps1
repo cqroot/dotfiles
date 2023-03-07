@@ -5,6 +5,9 @@ irm get.scoop.sh | iex
 # set proxy
 [net.webrequest]::defaultwebproxy = new-object net.webproxy "http://127.0.0.1:7890"
 
+scoop bucket add nonportable
+scoop bucket add extras
+
 scoop install go
 scoop install python
 scoop install 7zip
@@ -23,7 +26,6 @@ scoop install lua-language-server
 scoop install stylua
 
 # extras ==================================================
-scoop bucket add extras
 scoop install obsidian
 scoop install potplayer
 scoop install joplin
@@ -44,6 +46,8 @@ scoop install notepad3
 scoop install vscode
 # reg import "C:\Users\cqroot\scoop\apps\vscode\current\install-context.reg"
 reg import "C:\Users\cqroot\scoop\apps\vscode\current\install-associations.reg"
+
+scoop install files-np
 
 # nerd-fonts ==================================================
 scoop bucket add nerd-fonts
