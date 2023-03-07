@@ -37,6 +37,7 @@ scoop install geekuninstaller
 scoop install snipaste
 scoop install trafficmonitor
 scoop install mpv
+scoop install quicklook
 # The $HOME\scoop\apps\mpv\current\portable_config needs to be removed
 scoop install icaros-np
 
