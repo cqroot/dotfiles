@@ -10,6 +10,7 @@ desktop_packages=(
 	"baobab"
 	"firefox" "mailspring" "nutstore"
 	"peek"
+	"i3" "polybar"
 
 	# Appearance
 	"arc-gtk-theme" "bibata-cursor-theme-bin"

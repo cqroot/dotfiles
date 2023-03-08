@@ -7,7 +7,7 @@ packages=(
 	"clash"
 	"neofetch"
 	"neovim" "nvim-packer-git" "python-pynvim" "ctags"
-	"ripgrep" "lf" "fzf" "htop" "glow" "tmux" "jq"
+	"ripgrep" "lf" "fzf" "htop" "glow" "tmux" "jq" "gitui"
 	"docker" "delve" "p7zip" "tealdeer" "vhs"
 	"starship" "gum" "cloc"
 
