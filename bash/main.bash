@@ -17,8 +17,6 @@ case $(uname -s) in
 Linux*)
 	eval "$(starship init bash)"
 
-	source "${SCRIPT_DIR}/zoxide.bash"
-
 	# fzf
 	source "/usr/share/fzf/key-bindings.bash"
 	source "/usr/share/fzf/completion.bash"

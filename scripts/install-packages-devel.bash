@@ -7,7 +7,7 @@ packages=(
 	"ripgrep" "lf" "fzf"
 	"glow" "tmux" "jq"
 	"tealdeer" "vhs"
-	"starship" "gum" "cloc" "zoxide" "gitui"
+	"starship" "gum" "cloc" "gitui"
 	# "strace" "net-tools" "base-devel"
 	# "htop" "docker" "p7zip"
 
