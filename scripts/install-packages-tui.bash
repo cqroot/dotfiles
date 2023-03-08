@@ -20,7 +20,7 @@ packages=(
 )
 
 main() {
-	for package in "${packages[@]}" do
+	for package in "${packages[@]}"; do
 		pacman -S \
 			--noconfirm \
 			--noprogressbar \
