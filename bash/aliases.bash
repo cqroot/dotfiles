@@ -36,7 +36,7 @@ alias tncd='cd $(ternote path)'
 alias gt='bash $HOME/.bin/gum-scripts/go-test-ui.sh'
 
 # tmux
-alias tmux='bash $HOME/.scripts/tmux-ui.sh'
+alias tmux='bash $HOME/.bin/scripts/tmux-ui.sh'
 
 # apps
 alias nvi=nvim
