@@ -1,2 +1,8 @@
 lazy-lock.json
 custom_options.lua
+
+joplin-desktop/*
+!joplin-desktop/keymap-desktop.json
+!joplin-desktop/outline.css
+!joplin-desktop/userchrome.css
+!joplin-desktop/userstyle.css
