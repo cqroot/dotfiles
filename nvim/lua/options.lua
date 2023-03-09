@@ -40,7 +40,7 @@ function M.load()
     vim.opt.cursorcolumn = true
 
     if vim.fn.executable("fcitx-remote") == 1 then
-        require("core.im_fcitx").load()
+        require("utils.im_fcitx").load()
     end
 end
 
