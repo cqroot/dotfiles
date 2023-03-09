@@ -1,7 +1,8 @@
 local M = {}
 
 function M.load()
-    pcall(vim.cmd, "colorscheme " .. require("core.options").workbench_ColorScheme())
+    -- "onedark" "zenbones" "ayu-mirage" "vscode"
+    pcall(vim.cmd, "colorscheme onedark")
 end
 
 return M
