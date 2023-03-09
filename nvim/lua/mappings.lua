@@ -32,7 +32,7 @@ function M.load()
     -- ************************************************************************
     -- * LSPs                                                                 *
     -- ************************************************************************
-    vim.keymap.set({ "n", "v" }, "<M-a>", function()
+    vim.keymap.set({ "n", "v" }, "<M-F>", function()
         vim.lsp.buf.format({
             bufnr = bufnr,
             filter = function(client)
