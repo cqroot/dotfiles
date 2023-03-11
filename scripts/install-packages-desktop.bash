@@ -39,7 +39,7 @@ desktop_packages=(
 	"mpv" "vlc"
 
 	# Note-taking
-	# "obsidian"
+	"obsidian"
 	# "notion-app-enhanced"
 	"joplin-desktop"
 
@@ -53,7 +53,6 @@ yay_packages=(
 	"xunlei-bin"
 	"xviewer"
 	"microsoft-edge-stable-bin"
-	"listen1-electron"
 	"wechat-uos"
 	"qqmusic-bin"
 	# "pulseaudio-ctl"
