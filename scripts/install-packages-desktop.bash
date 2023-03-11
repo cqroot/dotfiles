@@ -14,6 +14,7 @@ desktop_packages=(
 
 	# Appearance
 	"arc-gtk-theme" "bibata-cursor-theme-bin"
+	"papirus-icon-theme"
 
 	# Fonts
 	"ttf-cascadia-code" "nerd-fonts-cascadia-code"
