@@ -45,6 +45,8 @@ desktop_packages=(
 
 	# Rofi
 	"rofi"
+
+	"fcitx-im" "fctix-configtool"
 )
 
 yay_packages=(
@@ -58,6 +60,7 @@ yay_packages=(
 	# "pulseaudio-ctl"
 	"localsend-bin"
 	"x11-emoji-picker"
+	"fcitx-sogoupinyin"
 
 	# Editor ===================================================================
 	"sublime-text-4"
