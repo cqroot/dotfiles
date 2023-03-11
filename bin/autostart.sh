@@ -14,6 +14,7 @@ if [[ -n $HDMI ]]; then
 fi
 
 feh --bg-fill "$HOME/Pictures/wallpaper" &
+pgrep -x picom >/dev/null || picom &
 pgrep -x fcitx >/dev/null || fcitx &
 pgrep -x nm-applet >/dev/null || nm-applet &
 pgrep -x cfw >/dev/null || cfw &
