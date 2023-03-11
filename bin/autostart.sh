@@ -21,9 +21,7 @@ pgrep -x cfw >/dev/null || cfw &
 pgrep -x nutstore >/dev/null || nutstore &
 pgrep -x telegram-desktop >/dev/null || telegram-desktop -startintray &
 pgrep -x mailspring >/dev/null || mailspring --background &
-pgrep -x joplin-desktop >/dev/null || joplin-desktop &
+# pgrep -x joplin-desktop >/dev/null || joplin-desktop &
 pgrep -x flameshot >/dev/null || flameshot &
-# pgrep -x albert >/dev/null || albert &
-# pgrep -x firefox >/dev/null || firefox &
 
 # setxkbmap -layout us -option ctrl:swapcaps
