@@ -24,16 +24,18 @@ function M.load()
         },
         sections = {
             lualine_a = {
-                { "mode", separator = { left = "" }, right_padding = 2 },
+                { "mode", separator = { left = "", right = "" }, right_padding = 2 },
             },
             -- lualine_a = { "mode" },
-            lualine_b = { "branch", "diff", "diagnostics" },
+            lualine_b = {
+                { "branch", "diff", "diagnostics", separator = { right = "" } },
+            },
             lualine_c = { "filename" },
             lualine_x = { "encoding", "fileformat", "filetype" },
             lualine_y = { "progress" },
             -- lualine_z = { "location" },
             lualine_z = {
-                { "location", separator = { right = "" }, left_padding = 2 },
+                { "location", separator = { left = "", right = "" }, left_padding = 2 },
             },
         },
         inactive_sections = {
