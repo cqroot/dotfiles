@@ -3,7 +3,7 @@
 desktop_packages=(
 	"xorg-server" "tk" "xclip" "pavucontrol" "xautolock" "xsecurelock"
 	# "pulseaudio"
-	"lxappearance" "dunst" "network-manager-applet" "picom"
+	"lxappearance" "dunst" "network-manager-applet"
 	"flameshot" "maim"
 	"alacritty"
 	"nemo" "nemo-fileroller"
@@ -63,6 +63,7 @@ yay_packages=(
 	"localsend-bin"
 	"x11-emoji-picker"
 	"fcitx-sogoupinyin"
+	"picom-ftlabs-git"
 
 	# Editor ===================================================================
 	"sublime-text-4"
