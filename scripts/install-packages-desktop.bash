@@ -48,6 +48,7 @@ desktop_packages=(
 	"rofi"
 
 	"fcitx-im" "fctix-configtool"
+	"gnome-keyring"
 )
 
 yay_packages=(
