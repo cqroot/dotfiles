@@ -16,9 +16,6 @@ alias aaaproxyon='export all_proxy=http://127.0.0.1:7890'
 alias aaaproxyoff='unset all_proxy'
 alias aaaproxycheck='curl -s cip.cc; echo $all_proxy'
 
-alias yay='env https_proxy=socks5://127.0.0.1:7890 yay'
-alias gh='env https_proxy=socks5://127.0.0.1:7890 gh'
-
 alias obinskit='sudo obinskit --no-sandbox'
 alias pacman='sudo pacman'
 alias systemctl='sudo systemctl'
@@ -41,7 +38,6 @@ alias tmux='bash $HOME/.bin/scripts/tmux-ui.sh'
 # apps
 alias nvi=nvim
 alias gu=gitui
-alias dotfiles="cd $(doter basedir)"
 
 # go
 alias goremod=$'gomodule=$(head -n1 go.mod | awk \'{print $2}\');\
