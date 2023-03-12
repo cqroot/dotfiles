@@ -2,9 +2,22 @@
 
 import os
 
-os.system("pretty title '    %s     '" % "Proxy")
-print(os.getenv("all_proxy"))
 
-command = "curl -s cip.cc"
-os.system("pretty title '%s'" % command)
-os.system("curl -s cip.cc")
+def pretty_title(title: str):
+    length = len(title)
+    print("╭─%s─╮" % ("─" * length))
+    print("│ %s │" % title)
+    print("╰─%s─╯" % ("─" * length))
+
+
+def main():
+    pretty_title("    Proxy     ")
+    print(os.getenv("all_proxy"))
+
+    command = "curl -s cip.cc"
+    pretty_title(command)
+    os.system(command)
+
+
+if __name__ == "__main__":
+    main()
