@@ -44,10 +44,8 @@ tmux set-option -gq status-attr none
 # *********************************************************
 # Modules *************************************************
 # *********************************************************
-session_module="#[fg=$BG_SESSION,bg=$FG_SESSION]\
-#[fg=$FG_SESSION,bg=$BG_SESSION,bold]  #S "
-prefix_module="#[fg=$FG_PREFIX,bg=$BG_PREFIX]#{?client_prefix,~, }\
-#[fg=$BG_SESSION,bg=$FG_SESSION]"
+session_module="#[fg=$FG_SESSION,bg=$BG_SESSION,bold]  #S "
+prefix_module="#[fg=$FG_PREFIX,bg=$BG_PREFIX]#{?client_prefix,~, }"
 
 if [ "$SESSION_POS" = "left" ]; then
     tmux set-option -gq status-left "$session_module$prefix_module#[fg=$FG_MAIN,bg=$BG_MAIN] "
