@@ -171,4 +171,10 @@ return {
 		dst = linuxdata(dotconfigpath("tmux")),
 		exec = "tmux",
 	},
+
+	{
+		name = "x11",
+		dst = linuxdata(joinpath({ homedir, ".xprofile" })),
+		exec = "X",
+	},
 }
