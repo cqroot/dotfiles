@@ -21,13 +21,9 @@ if module_name == "":
 
 os.remove(go_mod_path)
 
-print("===============")
-print("go mod init")
-print("===============")
+os.system("pretty title 'go mod init'")
 os.system("go mod init %s" % module_name)
 
 print()
-print("===============")
-print("go mod tidy")
-print("===============")
+os.system("pretty title 'go mod tidy'")
 os.system("go mod tidy")

@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+import os
+
+os.system("pretty title '    %s     '" % "Proxy")
+print(os.getenv("all_proxy"))
+
+command = "curl -s cip.cc"
+os.system("pretty title '%s'" % command)
+os.system("curl -s cip.cc")
