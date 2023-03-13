@@ -1,21 +1,9 @@
-local joinpath = require("domic").joinpath
-local goos = require("domic").goos()
-local homedir = require("domic").homedir()
-
-local appdatadir = os.getenv("APPDATA")
-local localappdatadir = os.getenv("LOCALAPPDATA")
-
-local function dotconfigpath(dir)
-	return joinpath({ homedir, ".config", dir })
-end
-
-local function appdatapath(dir)
-	return joinpath({ appdatadir, dir })
-end
-
-local function localappdatapath(dir)
-	return joinpath({ localappdatadir, dir })
-end
+local domic = require("domic")
+local goos = domic.goos()
+local home_path = domic.home_path
+local dot_config_path = domic.dot_config_path
+local windows_app_data_path = domic.windows_app_data_path
+local windows_local_app_data_path = domic.windows_local_app_data_path
 
 local function linuxdata(data)
 	if goos == "linux" then
@@ -37,52 +25,52 @@ return {
 	{
 		name = "alacritty",
 		dst = xplatdata({
-			linux = dotconfigpath("alacritty"),
-			windows = appdatapath("alacritty"),
+			linux = dot_config_path("alacritty"),
+			windows = windows_app_data_path("alacritty"),
 		}),
 		exec = "alacritty",
 	},
 
 	{
 		name = "awesome",
-		dst = linuxdata(dotconfigpath("awesome")),
+		dst = linuxdata(dot_config_path("awesome")),
 		exec = "alacritty",
 	},
 
 	{
 		name = "bash",
 		src = "bash/bashrc",
-		dst = joinpath({ homedir, ".bashrc" }),
+		dst = home_path(".bashrc"),
 		exec = "bash",
 	},
 
 	{
 		name = "bin",
-		dst = joinpath({ homedir, ".bin" }),
+		dst = home_path(".bin"),
 	},
 
 	{
 		name = "dunst",
-		dst = linuxdata(dotconfigpath("dunst")),
+		dst = linuxdata(dot_config_path("dunst")),
 		exec = "dunst",
 	},
 
 	{
 		name = "fontconfig",
-		dst = linuxdata(dotconfigpath("fontconfig")),
+		dst = linuxdata(dot_config_path("fontconfig")),
 	},
 
 	{
 		name = "git",
-		dst = dotconfigpath("git"),
+		dst = dot_config_path("git"),
 		exec = "git",
 	},
 
 	{
 		name = "gitui",
 		dst = xplatdata({
-			linux = dotconfigpath("gitui"),
-			windows = appdatapath("gitui"),
+			linux = dot_config_path("gitui"),
+			windows = windows_app_data_path("gitui"),
 		}),
 		exec = "gitui",
 	},
@@ -90,23 +78,23 @@ return {
 	{
 		name = "go",
 		dst = xplatdata({
-			linux = dotconfigpath("go"),
-			windows = appdatapath("go"),
+			linux = dot_config_path("go"),
+			windows = windows_app_data_path("go"),
 		}),
 		exec = "go",
 	},
 
 	{
 		name = "joplin-desktop",
-		dst = dotconfigpath("joplin-desktop"),
+		dst = dot_config_path("joplin-desktop"),
 		exec = linuxdata("joplin-desktop"),
 	},
 
 	{
 		name = "lf",
 		dst = xplatdata({
-			linux = dotconfigpath("lf"),
-			windows = localappdatapath("lf"),
+			linux = dot_config_path("lf"),
+			windows = windows_local_app_data_path("lf"),
 		}),
 		exec = "lf",
 	},
@@ -114,8 +102,8 @@ return {
 	{
 		name = "mpv",
 		dst = xplatdata({
-			linux = dotconfigpath("mpv"),
-			windows = appdatapath("mpv"),
+			linux = dot_config_path("mpv"),
+			windows = windows_app_data_path("mpv"),
 		}),
 		exec = "mpv",
 	},
@@ -123,15 +111,15 @@ return {
 	{
 		name = "nvim",
 		dst = xplatdata({
-			linux = dotconfigpath("nvim"),
-			windows = localappdatapath("nvim"),
+			linux = dot_config_path("nvim"),
+			windows = windows_local_app_data_path("nvim"),
 		}),
 		exec = "nvim",
 	},
 
 	{
 		name = "picom",
-		dst = linuxdata(dotconfigpath("picom")),
+		dst = linuxdata(dot_config_path("picom")),
 		exec = "picom",
 	},
 
@@ -139,8 +127,8 @@ return {
 		name = "pip",
 		src = "pip/pip.conf",
 		dst = xplatdata({
-			linux = dotconfigpath("pip/pip.conf"),
-			windows = appdatapath("pip/pip.ini"),
+			linux = dot_config_path("pip/pip.conf"),
+			windows = windows_app_data_path("pip/pip.ini"),
 		}),
 		exec = "pip",
 	},
@@ -148,33 +136,33 @@ return {
 	{
 		name = "powershell",
 		dst = xplatdata({
-			windows = joinpath({ homedir, "Documents/PowerShell" }),
+			windows = home_path("Documents/PowerShell"),
 		}),
 		exec = "pwsh",
 	},
 
 	{
 		name = "rofi",
-		dst = linuxdata(dotconfigpath("rofi")),
+		dst = linuxdata(dot_config_path("rofi")),
 		exec = "rofi",
 	},
 
 	{
 		name = "sqlite",
 		src = "sqlite/sqliterc",
-		dst = linuxdata(joinpath({ homedir, ".sqliterc" })),
+		dst = linuxdata(home_path(".sqliterc")),
 		exec = "sqlite3",
 	},
 
 	{
 		name = "tmux",
-		dst = linuxdata(dotconfigpath("tmux")),
+		dst = linuxdata(dot_config_path("tmux")),
 		exec = "tmux",
 	},
 
 	{
 		name = "x11",
-		dst = linuxdata(joinpath({ homedir, ".xprofile" })),
+		dst = linuxdata(home_path(".xprofile")),
 		exec = "X",
 	},
 }
