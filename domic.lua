@@ -1,7 +1,7 @@
-local goos = require("domic").goos()
 local joinpath = require("domic").joinpath
+local goos = require("domic").goos()
+local homedir = require("domic").homedir()
 
-local homedir = os.getenv("HOME")
 local appdatadir = os.getenv("APPDATA")
 local localappdatadir = os.getenv("LOCALAPPDATA")
 
