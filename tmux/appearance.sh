@@ -31,7 +31,7 @@ tmux set-option -gq status-attr none
 # Modules                                                 *
 # *********************************************************
 session_module="#[fg=$MAIN_COLOR,bg=$FG_ALT]\
-#[fg=$FG_ALT,bg=$MAIN_COLOR,bold]  #S "
+#[fg=$FG_ALT,bg=$MAIN_COLOR,bold] #S "
 prefix_module="#[fg=$FG_ALT,bg=$MAIN_COLOR]#{?client_prefix,~, }\
 #[fg=$MAIN_COLOR,bg=$FG_ALT] "
 
