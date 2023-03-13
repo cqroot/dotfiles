@@ -3,33 +3,19 @@
 # *********************************************************
 # Options                                                 *
 # *********************************************************
-SESSION_POS=left
-# SESSION_POS=right
-
-tmux set-option -gq status-justify left
-# tmux set-option -gq status-justify centre
+# tmux set-option -gq status-justify left
+tmux set-option -gq status-justify centre
 
 # *********************************************************
 # Colors                                                  *
 # *********************************************************
 MAIN_COLOR=#BD93F9
-
 FG_MAIN=#EAEAEA
-BG_MAIN=#282A2E
-
-FG_PREFIX=$BG_MAIN
-BG_PREFIX=$MAIN_COLOR
-FG_SESSION=$BG_MAIN
-BG_SESSION=$MAIN_COLOR
-
-FG_WINDOW=$FG_MAIN
-BG_WINDOW=$BG_MAIN
-
-FG_WINDOW_ACTIVE=$MAIN_COLOR
-BG_WINDOW_ACTIVE=$BG_MAIN
+FG_ALT=#282A2E
+BG_MAIN=0
 
 # *********************************************************
-# Status options ******************************************
+# Status options                                          *
 # *********************************************************
 tmux set-option -gq status-interval 1
 tmux set-option -gq status on
@@ -42,20 +28,15 @@ tmux set-option -gq status-bg "$BG_MAIN"
 tmux set-option -gq status-attr none
 
 # *********************************************************
-# Modules *************************************************
+# Modules                                                 *
 # *********************************************************
-session_module="#[fg=$BG_SESSION,bg=$FG_SESSION]\
-#[fg=$FG_SESSION,bg=$BG_SESSION,bold]  #S "
-prefix_module="#[fg=$FG_PREFIX,bg=$BG_PREFIX]#{?client_prefix,~, }\
-#[fg=$BG_SESSION,bg=$FG_SESSION]"
+session_module="#[fg=$MAIN_COLOR,bg=$FG_ALT]\
+#[fg=$FG_ALT,bg=$MAIN_COLOR,bold]  #S "
+prefix_module="#[fg=$FG_ALT,bg=$MAIN_COLOR]#{?client_prefix,~, }\
+#[fg=$MAIN_COLOR,bg=$FG_ALT] "
 
-if [ "$SESSION_POS" = "left" ]; then
-    tmux set-option -gq status-left "$session_module$prefix_module#[fg=$FG_MAIN,bg=$BG_MAIN] "
-    tmux set-option -gq status-right ''
-else
-    tmux set-option -gq status-left ''
-    tmux set-option -gq status-right "$prefix_module $session_module"
-fi
+tmux set-option -gq status-left "$session_module$prefix_module#[fg=$FG_MAIN,bg=$BG_MAIN] "
+tmux set-option -gq status-right '               '
 
 # *********************************************************
 # Status left                                             *
@@ -76,10 +57,8 @@ tmux set-option -gq status-right-bg "$BG_MAIN"
 tmux set-option -gq window-status-format ' #I #W'
 tmux set-option -gq window-status-current-format ' #I #W'
 
-# tmux set-option -gq window-status-format "#[fg=$FG_WINDOW,bg=$BG_WINDOW,bold] ﱢ #I:#W#F "
-# tmux set-option -gq window-status-current-format "#[fg=$FG_WINDOW_ACTIVE,bg=$BG_WINDOW_ACTIVE,bold] ﱢ #I:#W#F  "
-tmux set-option -gq window-status-format "#[fg=$FG_WINDOW,bg=$BG_WINDOW,bold] #I:#W#F "
-tmux set-option -gq window-status-current-format "#[fg=$FG_WINDOW_ACTIVE,bg=$BG_WINDOW_ACTIVE,bold] #I:#W#F  "
+tmux set-option -gq window-status-format "#[fg=$FG_MAIN,bg=$BG_MAIN,bold] #I:#W#F "
+tmux set-option -gq window-status-current-format "#[fg=#424242]#[fg=$FG_MAIN,bg=#424242,bold] #I:#W#F #[fg=#424242,bg=0]"
 
 # *********************************************************
 # Others                                                  *
