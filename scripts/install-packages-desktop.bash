@@ -8,16 +8,16 @@ desktop_packages=(
 	"alacritty"
 	"nemo" "nemo-fileroller"
 	"baobab"
-	"firefox" "mailspring" "nutstore"
+	"firefox"
 	"peek"
 	"i3" "polybar"
 
 	# Appearance
-	"arc-gtk-theme" "bibata-cursor-theme-bin"
+	"arc-gtk-theme"
 	"papirus-icon-theme"
 
 	# Fonts
-	"ttf-cascadia-code" "nerd-fonts-cascadia-code"
+	"ttf-cascadia-code"
 	"ttf-fira-code"
 	"ttf-jetbrains-mono"
 	"noto-fonts-emoji"
@@ -42,14 +42,15 @@ desktop_packages=(
 	# Note-taking
 	"obsidian"
 	# "notion-app-enhanced"
-	"joplin-desktop"
 
 	# Rofi
 	"rofi"
 
-	"fcitx-im" "fctix-configtool"
+	"fcitx-im"
 	"gnome-keyring"
 )
+# "mailspring" "nutstore" "bibata-cursor-theme-bin" "nerd-fonts-cascadia-code"
+# "joplin-desktop" "fctix-configtool"
 
 yay_packages=(
 	"clash-for-windows-bin"
@@ -87,14 +88,14 @@ main() {
 			"$package"
 	done
 
-	for package in "${yay_packages[@]}"; do
-		yay -S \
-			--noconfirm \
-			--noprogressbar \
-			--needed \
-			--disable-download-timeout \
-			"$package"
-	done
+	# for package in "${yay_packages[@]}"; do
+	# 	yay -S \
+	# 		--noconfirm \
+	# 		--noprogressbar \
+	# 		--needed \
+	# 		--disable-download-timeout \
+	# 		"$package"
+	# done
 }
 
 main "$@"

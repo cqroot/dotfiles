@@ -148,10 +148,22 @@ return {
 	},
 
 	{
+		name = "shell",
+		dst = dot_config_path("shell"),
+	},
+
+	{
 		name = "sqlite",
 		src = "sqlite/sqliterc",
 		dst = linuxdata(home_path(".sqliterc")),
 		exec = "sqlite3",
+	},
+
+	{
+		name = "starship",
+		src = "starship/starship.toml",
+		dst = dot_config_path("starship.toml"),
+		exec = "starship",
 	},
 
 	{
@@ -164,5 +176,12 @@ return {
 		name = "x11",
 		dst = linuxdata(home_path(".xprofile")),
 		exec = "X",
+	},
+
+	{
+		name = "zsh",
+		src = "zsh/zshrc",
+		dst = home_path(".zshrc"),
+		exec = "zsh",
 	},
 }

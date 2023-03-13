@@ -1,0 +1,53 @@
+# ******************************************************************************
+# * Options                                                                    *
+# ******************************************************************************
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
+# bindkey -l
+# bindkey -M emacs
+bindkey -e
+
+# https://superuser.com/questions/1479606/zsh-jump-to-the-end-of-words
+zle -A emacs-forward-word forward-word
+
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|=*' 'l:|=* r:|=*'
+autoload -Uz compinit && compinit
+
+# automatically load bash completion functions
+autoload -U +X bashcompinit && bashcompinit
+
+# ******************************************************************************
+# * Prompt                                                                     *
+# ******************************************************************************
+# source "/usr/share/git/git-prompt.sh"
+# PROMPT=' %F{blue}  %f%1~ %F{40}»%f '
+# PROMPT=' %F{blue} %f%1~ %F{40}»%f '
+# PROMPT="%F{51} %1~ %F{40}%f "
+
+source "$HOME/.config/shell/env.sh"
+source "$HOME/.config/shell/aliases.sh"
+
+# ******************************************************************************
+# * Applications                                                               *
+# ******************************************************************************
+# fzf
+source "/usr/share/fzf/key-bindings.zsh"
+source "/usr/share/fzf/completion.zsh"
+
+# ******************************************************************************
+# * Plugins                                                                    *
+# ******************************************************************************
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(starship init zsh)"

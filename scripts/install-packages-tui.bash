@@ -11,6 +11,8 @@ packages=(
 	"docker" "delve" "p7zip" "tealdeer" "vhs"
 	"starship" "gum" "cloc"
 
+	"zsh" "zsh-autosuggestions"
+
 	# LSPs
 	"bash-language-server" "clang" "gopls" "pyright" "lua-language-server"
 	# Formatters
