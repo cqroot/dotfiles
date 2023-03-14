@@ -1,0 +1,3 @@
+[submodule "tmux/bubbles.tmux"]
+	path = tmux/bubbles.tmux
+	url = https://github.com/cqroot/bubbles.tmux.git
