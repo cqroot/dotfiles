@@ -37,6 +37,7 @@ fi
 
 source "/usr/share/git/git-prompt.sh"
 PS1='\[\033[01;32m\]➜ \[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1) »\[\033[00m\] '
+eval "$(starship init bash)"
 
 source "$HOME/.config/shell/env.sh"
 source "$HOME/.config/shell/aliases.sh"
