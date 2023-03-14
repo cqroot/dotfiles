@@ -177,11 +177,4 @@ return {
 		dst = linuxdata(home_path(".xprofile")),
 		exec = "X",
 	},
-
-	{
-		name = "zsh",
-		src = "zsh/zshrc",
-		dst = home_path(".zshrc"),
-		exec = "zsh",
-	},
 }
