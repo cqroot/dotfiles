@@ -2,7 +2,15 @@ format = """
 $directory\
 $git_branch\
 $git_status\
-$docker_context
+$docker_context\
+$buf\
+$dart\
+$elixir\
+$elm\
+$golang\
+$lua\
+$nodejs\
+$python
 [» ](#bd93f9)
 """
 
@@ -28,3 +36,43 @@ format = ' [](fg:#6272a4)[ $symbol $branch]($style)'
 [git_status]
 style = "bg:#6272a4"
 format = '[ $all_status$ahead_behind ]($style)[](fg:#6272a4)'
+
+[buf]
+symbol = " "
+style = "bg:#689ef0"
+format = " [](fg:#689ef0)[via $symbol]($style)[](fg:#689ef0)"
+
+[dart]
+symbol = " "
+style = "bg:#689ef0"
+format = " [](fg:#689ef0)[via $symbol]($style)[](fg:#689ef0)"
+
+[elixir]
+symbol = " "
+style = "bg:#689ef0"
+format = " [](fg:#689ef0)[via $symbol]($style)[](fg:#689ef0)"
+
+[elm]
+symbol = " "
+style = "bg:#689ef0"
+format = " [](fg:#689ef0)[via $symbol]($style)[](fg:#689ef0)"
+
+[golang]
+symbol = " "
+style = "bg:#689ef0"
+format = ' [](fg:#689ef0)[via $symbol]($style)[](fg:#689ef0)'
+
+[lua]
+symbol = " "
+style = "bg:#689ef0"
+format = " [](fg:#689ef0)[via $symbol]($style)[](fg:#689ef0)"
+
+[nodejs]
+symbol = " "
+style = "bg:#689ef0"
+format = " [](fg:#689ef0)[via $symbol]($style)[](fg:#689ef0)"
+
+[python]
+symbol = " "
+style = "bg:#689ef0"
+format = " [](fg:#689ef0)[via $symbol]($style)[](fg:#689ef0)"
