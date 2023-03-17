@@ -1,117 +1,30 @@
-[bun]
-format = "via [$symbol]($style)"
+format = """
+$directory\
+$git_branch\
+$git_status\
+$docker_context
+[» ](#bd93f9)
+"""
 
-[buf]
-format = "via [$symbol]($style)"
+# # Disable the blank line at the start of the prompt
+# add_newline = false
 
-[cmake]
-format = "via [$symbol]($style)"
+[directory]
+style = "bg:#2e9599"
+format = "[](fg:#2e9599)[ $path ]($style)[](fg:#2e9599)"
+truncation_length = 3
+# truncation_symbol = "…/"
 
-[cobol]
-format = "via [$symbol]($style)"
+[docker_context]
+symbol = " "
+style = "bg:#6272a4"
+format = '[ $symbol $context ]($style) $path'
 
-[crystal]
-format = "via [$symbol]($style)"
+[git_branch]
+symbol = ""
+style = "bg:#6272a4"
+format = ' [](fg:#6272a4)[ $symbol $branch]($style)'
 
-[daml]
-format = "via [$symbol]($style)"
-
-[dart]
-format = "via [$symbol]($style)"
-
-[deno]
-format = "via [$symbol]($style)"
-
-[dotnet]
-format = "[$symbol(🎯 $tfm )]($style)"
-
-[elixir]
-format = 'via [$symbol]($style)'
-
-[elm]
-format = 'via [$symbol]($style)'
-
-[erlang]
-format = 'via [$symbol]($style)'
-
-[fennel]
-format = 'via [$symbol]($style)'
-
-[golang]
-symbol = " "
-format = 'via [$symbol]($style)'
-
-[gradle]
-format = 'via [$symbol]($style)'
-
-[haxe]
-format = 'via [$symbol]($style)'
-
-[helm]
-format = 'via [$symbol]($style)'
-
-[julia]
-format = 'via [$symbol]($style)'
-
-[kotlin]
-format = 'via [$symbol]($style)'
-
-[lua]
-format = 'via [$symbol]($style)'
-
-[meson]
-format = 'via [$symbol]($style)'
-
-[nim]
-format = 'via [$symbol]($style)'
-
-[nodejs]
-format = 'via [$symbol]($style)'
-
-[ocaml]
-format = 'via [$symbol(\($switch_indicator$switch_name\) )]($style)'
-
-[opa]
-format = 'via [$symbol]($style)'
-
-[perl]
-format = 'via [$symbol]($style)'
-
-[php]
-format = 'via [$symbol]($style)'
-
-[pulumi]
-format = 'via [$symbol$stack]($style)'
-
-[purescript]
-format = 'via [$symbol]($style)'
-
-[python]
-format = 'via [$symbol]($style)'
-
-[raku]
-format = 'via [$symbol]($style)'
-
-[red]
-format = 'via [$symbol]($style)'
-
-[rlang]
-format = 'via [$symbol]($style)'
-
-[ruby]
-format = 'via [$symbol]($style)'
-
-[rust]
-format = 'via [$symbol]($style)'
-
-[swift]
-format = 'via [$symbol]($style)'
-
-[vagrant]
-format = 'via [$symbol]($style)'
-
-[vlang]
-format = 'via [$symbol]($style)'
-
-[zig]
-format = 'via [$symbol]($style)'
+[git_status]
+style = "bg:#6272a4"
+format = '[ $all_status$ahead_behind ]($style)[](fg:#6272a4)'

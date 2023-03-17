@@ -14,8 +14,12 @@ shopt -s dotglob        # includes filenames beginning with a '.' in the results
 shopt -s histappend     # do not overwrite history
 shopt -s expand_aliases # expand aliases
 
+# autocomplete with one tab instead of two
+bind "set show-all-if-ambiguous on"
 # ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
+# # pressing tab will automatically complete the first item
+# bind '"\C-i" menu-complete'
 
 # ******************************************************************************
 # * Envs                                                                       *
@@ -27,7 +31,7 @@ export HISTCONTROL=ignoreboth:erasedups
 
 # Go
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$GOPATH/bin:$PATH
 if [ -d "$HOME/.bin" ]; then
 	PATH="$HOME/.bin:$PATH"
 fi
@@ -39,7 +43,6 @@ source "/usr/share/git/git-prompt.sh"
 PS1='\[\033[01;32m\]➜ \[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1) »\[\033[00m\] '
 eval "$(starship init bash)"
 
-source "$HOME/.config/shell/env.sh"
 source "$HOME/.config/shell/aliases.sh"
 
 # ******************************************************************************
