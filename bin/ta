@@ -1,0 +1,22 @@
+#!/bin/bash
+
+sessions=$(tmux list-session -F '#{session_name}')
+exitcode=$?
+if [[ $exitcode -ne 0 ]]; then
+	echo "$sessions"
+	exit $exitcode
+fi
+
+# session=$(
+# 	echo "$sessions" | fzf \
+# 		--height ~10 \
+# 		--cycle \
+# 		--layout=reverse \
+# 		--border=rounded \
+# 		--pointer=❯
+# )
+session=$(
+	gum choose --cursor "◉ " $(echo "$sessions" | xargs)
+)
+
+tmux attach -t "$session"

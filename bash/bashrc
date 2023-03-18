@@ -18,6 +18,7 @@ shopt -s expand_aliases # expand aliases
 bind "set show-all-if-ambiguous on"
 # ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
+bind "set bell-style none"
 # # pressing tab will automatically complete the first item
 # bind '"\C-i" menu-complete'
 
@@ -47,10 +48,14 @@ eval "$(starship init bash)"
 # * Aliases                                                                    *
 # ******************************************************************************
 # list
-alias ls='ls --color=auto'
-alias ll='ls -lh --group-directories-first'
-alias la='ls -lha --group-directories-first'
-alias l.="ls -A | grep -E '^\.'"
+# alias ls='ls --color=auto'
+# alias ll='ls -lh --group-directories-first'
+# alias la='ls -lha --group-directories-first'
+# alias l.="ls -A | grep -E '^\.'"
+alias ls="exa"
+alias ll="exa --long --header --git --icons"
+alias ll="exa --long --header --git --icons --all"
+alias tree="ll --tree --level=4 -a -I=.git --git-ignore"
 
 if [ -f /etc/profile.d/lfcd.sh ]; then
 	source /etc/profile.d/lfcd.sh
@@ -68,7 +73,6 @@ alias gu=gitui
 
 alias tl='tmux ls'
 alias tn='tmux new -s $(basename $PWD)'
-alias ta='tmux attach -t'
 
 # ******************************************************************************
 # * Applications                                                               *
