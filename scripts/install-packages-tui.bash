@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 packages=(
-	"yay"
 	"strace" "net-tools"
 	"base-devel" "nodejs" "npm" "go" "python-pip"
 	"clash"
 	"neofetch"
 	"neovim" "nvim-packer-git" "python-pynvim" "ctags"
-	"ripgrep" "lf" "fzf" "htop" "glow" "tmux" "jq" "gitui"
+	"ripgrep" "lf" "fzf" "htop" "glow" "tmux" "jq"
+	"bat" "gitui" "diff-so-fancy"
 	"docker" "delve" "p7zip" "tealdeer" "vhs"
 	"starship" "gum" "cloc"
 
@@ -16,7 +16,7 @@ packages=(
 	# LSPs
 	"bash-language-server" "clang" "gopls" "pyright" "lua-language-server"
 	# Formatters
-	"python-black" "prettier" "shfmt" "stylua" "taplo-cli"
+	"python-black" "prettier" "shfmt" "stylua" "taplo-cli" "eslint_d"
 	# Linters
 	"shellcheck"
 )

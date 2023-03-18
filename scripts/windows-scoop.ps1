@@ -16,11 +16,13 @@ scoop install neovim
 scoop install ripgrep
 scoop install bat
 scoop install fzf
-scoop install golangci-lint
 scoop install gitui
 scoop install lf
 scoop install gcc
 scoop install make
+scoop install ffmpeg
+# go
+scoop install golangci-lint
 # lua
 scoop install lua-language-server
 scoop install stylua
@@ -36,8 +38,10 @@ scoop install doublecmd
 scoop install geekuninstaller
 scoop install snipaste
 scoop install trafficmonitor
-scoop install mpv
 scoop install quicklook
+scoop install screentogif
+
+scoop install mpv
 # The $HOME\scoop\apps\mpv\current\portable_config needs to be removed
 scoop install icaros-np
 
