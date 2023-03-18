@@ -148,11 +148,6 @@ return {
 	},
 
 	{
-		name = "shell",
-		dst = dot_config_path("shell"),
-	},
-
-	{
 		name = "sqlite",
 		src = "sqlite/sqliterc",
 		dst = linuxdata(home_path(".sqliterc")),
