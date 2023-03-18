@@ -10,6 +10,7 @@ function M.load()
                 icon = "▎", -- this should be omitted if indicator style is not 'icon'
                 style = "icon",
             },
+            separator_style = "thick",
         },
     })
 end
