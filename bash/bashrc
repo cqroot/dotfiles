@@ -78,5 +78,6 @@ alias tn='tmux new -s $(basename $PWD)'
 # * Applications                                                               *
 # ******************************************************************************
 # fzf
+export FZF_DEFAULT_OPTS='--cycle --border=rounded --pointer=• --prompt="❯ "'
 source "/usr/share/fzf/key-bindings.bash"
 source "/usr/share/fzf/completion.bash"
