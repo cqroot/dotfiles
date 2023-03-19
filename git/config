@@ -1,20 +1,26 @@
-[core]
-	excludesFile = ~/.gitignore
-	pager = bat
-[http]
-	proxy = http://127.0.0.1:7890
+[user]
+	name = Keith Chu
+	email = cqroot@outlook.com
+
 [init]
 	defaultBranch = main
-[pager]
-	branch = false
-	diff = false
-	show = false
-	tag = false
-	log = true
+
 [pull]
 	ff = only
+
 [push]
 	default = simple
-[user]
-	name = cqroot
-	email = cqroot@outlook.com
+
+[http]
+	proxy = http://127.0.0.1:7890
+
+[core]
+	excludesFile = ~/.gitignore
+	pager = diff-so-fancy | bat --plain
+
+[pager]
+	diff = true
+	show = true
+	log = true
+	branch = false
+	tag = false
