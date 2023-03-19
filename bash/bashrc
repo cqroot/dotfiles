@@ -5,12 +5,12 @@
 # * Options                                                                    *
 # ******************************************************************************
 # https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
-shopt -u direxpand      # $HOME/.config  - TAB  ->  /home/user/.config
-shopt -u progcomp       # $HOME/.config  - TAB  ->  \$HOME/.config
-shopt -u autocd         # DIR            - ENTER->  cd -- dir/
+shopt -u direxpand      # $HOME/.config  - TAB   ->  /home/user/.config
+shopt -u progcomp       # $HOME/.config  - TAB   ->  \$HOME/.config
+shopt -u autocd         # DIR            - ENTER ->  cd -- dir/
+shopt -u dotglob        # *                      ->  .*
 shopt -u cdspell        # autocorrects cd misspellings
 shopt -s cmdhist        # save multi-line commands in history as single line
-shopt -s dotglob        # includes filenames beginning with a '.' in the results of filename expansion
 shopt -s histappend     # do not overwrite history
 shopt -s expand_aliases # expand aliases
 
@@ -43,6 +43,7 @@ fi
 source "/usr/share/git/git-prompt.sh"
 PS1='\[\033[01;32m\]➜ \[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1) »\[\033[00m\] '
 eval "$(starship init bash)"
+eval "$(zoxide init --cmd cd bash)"
 
 # ******************************************************************************
 # * Aliases                                                                    *
@@ -54,7 +55,7 @@ eval "$(starship init bash)"
 # alias l.="ls -A | grep -E '^\.'"
 alias ls="exa"
 alias ll="exa --long --header --git --icons"
-alias ll="exa --long --header --git --icons --all"
+alias la="exa --long --header --git --icons --all"
 alias tree="ll --tree --level=4 -a -I=.git --git-ignore"
 
 if [ -f /etc/profile.d/lfcd.sh ]; then
@@ -64,15 +65,16 @@ fi
 
 alias srcbash='source ~/.bashrc'
 alias srczsh='source ~/.zshrc'
-alias srctmux='source ~/.config/tmux/tmux.conf'
+alias srctmux='tmux source-file ~/.config/tmux/tmux.conf'
 alias proxyon='export all_proxy=http://192.168.0.3:7890'
 alias proxyoff='unset all_proxy'
 
-alias nvi=nvim
-alias gu=gitui
-
+# tmux
 alias tl='tmux ls'
 alias tn='tmux new -s $(basename $PWD)'
+
+alias nvi=nvim
+alias gu=gitui
 
 # ******************************************************************************
 # * Applications                                                               *
