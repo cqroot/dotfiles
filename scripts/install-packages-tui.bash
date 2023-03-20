@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 packages=(
-	"strace" "net-tools"
+	"strace" "net-tools" "bash-completion"
 	"base-devel" "nodejs" "npm" "go" "python-pip"
 	"clash"
 	"neofetch"
@@ -9,7 +9,7 @@ packages=(
 	"ripgrep" "lf" "fzf" "htop" "glow" "tmux" "jq"
 	"bat" "gitui" "diff-so-fancy"
 	"docker" "delve" "p7zip" "tealdeer" "vhs"
-	"starship" "gum" "cloc"
+	"starship" "zoxide" "gum" "cloc"
 
 	"zsh" "zsh-autosuggestions"
 
