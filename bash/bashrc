@@ -4,6 +4,9 @@
 # ******************************************************************************
 # * Options                                                                    *
 # ******************************************************************************
+if [ -f "/usr/share/bash-completion/bash_completion" ]; then
+	source "/usr/share/bash-completion/bash_completion"
+fi
 # https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
 shopt -u direxpand      # $HOME/.config  - TAB   ->  /home/user/.config
 shopt -u progcomp       # $HOME/.config  - TAB   ->  \$HOME/.config
@@ -19,6 +22,7 @@ bind "set show-all-if-ambiguous on"
 # ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 bind "set bell-style none"
+# bind 'TAB:menu-complete'
 # # pressing tab will automatically complete the first item
 # bind '"\C-i" menu-complete'
 
@@ -40,46 +44,22 @@ fi
 # NPM
 # export NODE_OPTIONS=--openssl-legacy-provider
 
-source "/usr/share/git/git-prompt.sh"
-PS1='\[\033[01;32m\]➜ \[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1) »\[\033[00m\] '
+# source "/usr/share/git/git-prompt.sh"
+# PS1='\[\033[01;32m\]➜ \[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1) »\[\033[00m\] '
 eval "$(starship init bash)"
 eval "$(zoxide init --cmd cd bash)"
-
-# ******************************************************************************
-# * Aliases                                                                    *
-# ******************************************************************************
-# list
-# alias ls='ls --color=auto'
-# alias ll='ls -lh --group-directories-first'
-# alias la='ls -lha --group-directories-first'
-# alias l.="ls -A | grep -E '^\.'"
-alias ls="exa"
-alias ll="exa --long --header --git --icons"
-alias la="exa --long --header --git --icons --all"
-alias tree="ll --tree --level=4 -a -I=.git --git-ignore"
-
-if [ -f /etc/profile.d/lfcd.sh ]; then
-	source /etc/profile.d/lfcd.sh
-	alias l='lfcd'
-fi
-
-alias srcbash='source ~/.bashrc'
-alias srczsh='source ~/.zshrc'
-alias srctmux='tmux source-file ~/.config/tmux/tmux.conf'
-alias proxyon='export all_proxy=http://192.168.0.3:7890'
-alias proxyoff='unset all_proxy'
-
-# tmux
-alias tl='tmux ls'
-alias tn='tmux new -s $(basename $PWD)'
-
-alias nvi=nvim
-alias gu=gitui
 
 # ******************************************************************************
 # * Applications                                                               *
 # ******************************************************************************
 # fzf
 export FZF_DEFAULT_OPTS='--cycle --border=rounded --pointer=• --prompt="❯ "'
-source "/usr/share/fzf/key-bindings.bash"
-source "/usr/share/fzf/completion.bash"
+if [ -f "/usr/share/fzf/key-bindings.bash" ]; then
+	source "/usr/share/fzf/key-bindings.bash"
+fi
+if [ -f "/usr/share/fzf/completion.bash" ]; then
+	source "/usr/share/fzf/completion.bash"
+fi
+if [ -f ~/.bash_aliases ]; then
+	source ~/.bash_aliases
+fi

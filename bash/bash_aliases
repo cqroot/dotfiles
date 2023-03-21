@@ -1,0 +1,36 @@
+#!/bin/bash
+
+alias srcbash='source ~/.bashrc'
+alias srczsh='source ~/.zshrc'
+alias srctmux='tmux source-file ~/.config/tmux/tmux.conf'
+alias proxyon='export all_proxy=http://192.168.0.3:7890'
+alias proxyoff='unset all_proxy'
+
+# ******************************************************************************
+# * List                                                                       *
+# ******************************************************************************
+# list
+# alias ls='ls --color=auto'
+# alias ll='ls -lh --group-directories-first'
+# alias la='ls -lha --group-directories-first'
+# alias l.="ls -A | grep -E '^\.'"
+alias ls="exa --group-directories-first"
+alias ll="exa --group-directories-first --long --header --git --icons"
+alias la="exa --group-directories-first --long --header --git --icons --all"
+alias tree="ll --tree --level=4 -a -I=.git --git-ignore"
+
+# ******************************************************************************
+# * Tmux                                                                       *
+# ******************************************************************************
+alias tl='tmux ls'
+alias tn='tmux new -s $(basename $PWD)'
+
+# ******************************************************************************
+# * Others                                                                     *
+# ******************************************************************************
+if [ -f /etc/profile.d/lfcd.sh ]; then
+	source /etc/profile.d/lfcd.sh
+	alias l='lfcd'
+fi
+alias nvi=nvim
+alias gu=gitui

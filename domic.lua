@@ -45,6 +45,13 @@ return {
 	},
 
 	{
+		name = "bash_alias",
+		src = "bash/bash_aliases",
+		dst = home_path(".bash_aliases"),
+		exec = "bash",
+	},
+
+	{
 		name = "bin",
 		dst = home_path(".bin"),
 	},
