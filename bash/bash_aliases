@@ -34,3 +34,5 @@ if [ -f /etc/profile.d/lfcd.sh ]; then
 fi
 alias nvi=nvim
 alias gu=gitui
+alias notes=$'ls | awk -F __ \'{print $1"/"$2}\' | awk -F \'.md\' \'{print $1}\' | column --separator \'/\' --output-separator \'  ❯  \' -t'
+alias notecount=$'ls | awk -F __ \'{print $1}\' | sort | uniq -c | sort -nr'
