@@ -173,6 +173,7 @@ function M.load()
                 require("plugins.gitsigns").load()
             end,
         },
+        { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
 
         -- ************************************************************************
         -- *  Completion                                                          *
