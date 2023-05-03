@@ -10,7 +10,7 @@ packages=(
 	"bat" "gitui" "diff-so-fancy"
 	"docker" "delve" "p7zip" "tealdeer" "vhs"
 	"starship" "zoxide" "gum" "cloc"
-
+	"exa"
 	"zsh" "zsh-autosuggestions"
 
 	# LSPs
