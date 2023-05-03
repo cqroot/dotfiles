@@ -124,14 +124,14 @@ function M.load()
                 require("plugins.treesitter").load()
             end,
         },
-        {
-            "rcarriga/nvim-notify",
-            config = function()
-                require("notify").setup({
-                    background_colour = "#000000",
-                })
-            end,
-        },
+        -- {
+        --     "rcarriga/nvim-notify",
+        --     config = function()
+        --         require("notify").setup({
+        --             background_colour = "#000000",
+        --         })
+        --     end,
+        -- },
         -- {
         --     "folke/noice.nvim",
         --     config = function()
