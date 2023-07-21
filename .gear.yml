@@ -1,7 +1,9 @@
 commit:
-  disable-scope: true
   disable-body: true
   disable-footer: true
+  enable-scope: true
+  scopes:
+    - bash
   types:
     - text: ✨
       note: "feat: A new feature"
