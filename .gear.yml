@@ -4,6 +4,7 @@ commit:
   enable-scope: true
   scopes:
     - bash
+    - nvim
   types:
     - text: ✨
       note: "feat: A new feature"
