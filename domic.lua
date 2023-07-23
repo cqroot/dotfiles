@@ -116,15 +116,6 @@ return {
 	},
 
 	{
-		name = "nvim",
-		dst = xplatdata({
-			linux = dot_config_path("nvim"),
-			windows = windows_local_app_data_path("nvim"),
-		}),
-		exec = "nvim",
-	},
-
-	{
 		name = "picom",
 		dst = linuxdata(dot_config_path("picom")),
 		exec = "picom",
