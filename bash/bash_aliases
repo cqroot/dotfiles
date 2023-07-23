@@ -9,42 +9,57 @@ alias proxyoff='unset all_proxy'
 # ******************************************************************************
 # * List                                                                       *
 # ******************************************************************************
-# list
-# alias ls='ls --color=auto'
-# alias ll='ls -lh --group-directories-first'
-# alias la='ls -lha --group-directories-first'
-# alias l.="ls -A | grep -E '^\.'"
-alias ls="exa --group-directories-first"
-alias ll="exa --group-directories-first --long --header --git --icons"
-alias la="exa --group-directories-first --long --header --git --icons --all"
-alias tree="ll --tree --level=4 -a -I=.git --git-ignore"
+if command -v exa >/dev/null; then
+	alias ls="exa --group-directories-first"
+	alias ll="exa --group-directories-first --long --header --git --icons"
+	alias la="ll --all"
+	alias l.="exa --all | grep -E '^\.'"
+	alias tree="ll --tree --level=4 -a -I=.git --git-ignore"
+else
+	alias ls='ls --color=auto'
+	alias ll='ls -lh --group-directories-first'
+	alias la='ls -lha --group-directories-first'
+	alias l.="ls -A | grep -E '^\.'"
+fi
 
 # ******************************************************************************
 # * Tmux                                                                       *
 # ******************************************************************************
-alias tl='tmux ls'
-alias tn='tmux new -s $(basename $PWD)'
+if command -v tmux >/dev/null; then
+	alias tl='tmux ls'
+	alias tn='tmux new -s $(basename $PWD)'
+fi
 
 # ******************************************************************************
 # * Git                                                                        *
 # ******************************************************************************
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gb='git branch -vv'
-alias gr='git remote -v'
-# alias gl="git -c 'pager.log=true' -c 'core.pager=less' log --decorate --graph --oneline"
-alias gll="git log --pretty=format:'%C(yellow)%h %Cgreen%ad %Creset%s' --date=short"
-alias gl='gll -n 20'
-alias gd='git diff'
-alias gdc='git diff --cached'
+if command -v git >/dev/null; then
+	alias gs='git status'
+	alias ga='git add'
+	alias gc='git commit'
+	alias gb='git branch -vv'
+	alias gr='git remote -v'
+	# alias gl="git -c 'pager.log=true' -c 'core.pager=less' log --decorate --graph --oneline"
+	alias gll="git log --pretty=format:'%C(yellow)%h %Cgreen%ad %Creset%s' --date=short"
+	alias gl='gll -n 20'
+	alias gd='git diff'
+	alias gdc='git diff --cached'
+fi
 
 # ******************************************************************************
 # * Others                                                                     *
 # ******************************************************************************
-if [ -f /etc/profile.d/lfcd.sh ]; then
-	source /etc/profile.d/lfcd.sh
-	alias l='lfcd'
+if command -v lf >/dev/null; then
+	if [ -f /etc/profile.d/lfcd.sh ]; then
+		source /etc/profile.d/lfcd.sh
+		alias l='lfcd'
+	fi
 fi
-alias nvi=nvim
-alias gu=gitui
+
+if command -v nvim >/dev/null; then
+	alias nvi=nvim
+fi
+
+if command -v gitui >/dev/null; then
+	alias gu=gitui
+fi
