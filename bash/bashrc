@@ -29,9 +29,20 @@ bind "set bell-style none"
 # ******************************************************************************
 # * Envs                                                                       *
 # ******************************************************************************
-export EDITOR='nvim'
-export VISUAL='nvim'
-export PAGER='bat'
+if command -v nvim >/dev/null; then
+	export EDITOR='nvim'
+	export VISUAL='nvim'
+else
+	export EDITOR='vim'
+	export VISUAL='vim'
+fi
+
+if command -v bat >/dev/null; then
+	export PAGER='bat'
+else
+	export PAGER='less'
+fi
+
 export HISTCONTROL=ignoreboth:erasedups
 
 # Go
@@ -44,10 +55,16 @@ fi
 # NPM
 # export NODE_OPTIONS=--openssl-legacy-provider
 
-# source "/usr/share/git/git-prompt.sh"
-# PS1='\[\033[01;32m\]➜ \[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1) »\[\033[00m\] '
-eval "$(starship init bash)"
-eval "$(zoxide init --cmd cd bash)"
+if command -v starship >/dev/null; then
+	eval "$(starship init bash)"
+else
+	source "/usr/share/git/git-prompt.sh"
+	PS1='\[\033[01;32m\]➜ \[\033[01;37m\] \W\[\033[01;32m\]$(__git_ps1) »\[\033[00m\] '
+fi
+
+if command -v zoxide >/dev/null; then
+	eval "$(zoxide init --cmd cd bash)"
+fi
 
 # ******************************************************************************
 # * Applications                                                               *
