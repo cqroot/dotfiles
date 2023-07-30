@@ -5,7 +5,16 @@ return {
 	disable_default_key_bindings = true,
 	leader = { mods = "ALT", key = "e" },
 
+	mouse_bindings = {
+		{
+			event = { Up = { streak = 1, button = "Right" } },
+			mods = "NONE",
+			action = act.PasteFrom("Clipboard"),
+		},
+	},
+
 	keys = {
+		{ mods = "SHIFT", key = "Insert", action = act.PasteFrom("Clipboard") },
 		-- Pane
 		{ mods = "LEADER", key = "=", action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
 		{ mods = "LEADER", key = "\\", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },

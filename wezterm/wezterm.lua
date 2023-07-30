@@ -1,14 +1,6 @@
 local wezterm = require("wezterm")
 
-local configs = {
-	mouse_bindings = {
-		{
-			event = { Up = { streak = 1, button = "Right" } },
-			mods = "NONE",
-			action = wezterm.action.Paste,
-		},
-	},
-}
+local configs = {}
 
 local append_configs = function(module)
 	local subconfigs = require(module)
