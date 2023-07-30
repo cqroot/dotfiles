@@ -4,6 +4,7 @@ commit:
   enable-scope: true
   scopes:
     - bash
+    - wezterm
   types:
     - text: ✨
       note: "feat: A new feature"

@@ -2,14 +2,10 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 return {
-	-- disable_default_key_bindings = true,
+	disable_default_key_bindings = true,
 	leader = { mods = "ALT", key = "e" },
 
 	keys = {
-		-- Turn off the default CMD-m Hide action, allowing CMD-m to
-		-- be potentially recognized and handled by the tab
-		{ mods = "ALT", key = "Enter", action = act.DisableDefaultAssignment },
-
 		-- Pane
 		{ mods = "LEADER", key = "=", action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
 		{ mods = "LEADER", key = "\\", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
@@ -36,7 +32,6 @@ return {
 		{ mods = "LEADER", key = "c", action = act.SpawnTab("CurrentPaneDomain") },
 		{ mods = "LEADER", key = "w", action = act.ShowTabNavigator },
 		{ mods = "LEADER", key = "x", action = act({ CloseCurrentPane = { confirm = true } }) },
-
 		{ mods = "LEADER", key = "n", action = act.ActivateTabRelative(1) },
 		{ mods = "LEADER", key = "p", action = act.ActivateTabRelative(-1) },
 	},
