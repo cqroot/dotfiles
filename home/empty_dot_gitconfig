@@ -1,0 +1,25 @@
+[user]
+	name = Keith Chu
+	email = cqroot@outlook.com
+
+[init]
+	defaultBranch = main
+
+[pull]
+	ff = only
+
+[push]
+	default = simple
+
+[http]
+	proxy = http://127.0.0.1:7890
+
+[core]
+	excludesFile = ~/.gitignore
+
+[pager]
+	diff = true
+	show = true
+	log = true
+	branch = false
+	tag = false
