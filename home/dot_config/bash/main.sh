@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-KEITHBASH_DIR="${HOME}/.config/keithbash"
+KEITHBASH_DIR="${HOME}/.config/bash"
 source "${KEITHBASH_DIR}/functions.sh"
 
 # ******************************************************************************

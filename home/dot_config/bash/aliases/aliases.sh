@@ -51,3 +51,7 @@ fi
 if command -v lazygit >/dev/null; then
 	alias lg=lazygit
 fi
+
+if command -v chezmoi >/dev/null; then
+	alias cm=chezmoi
+fi
