@@ -1,0 +1,11 @@
+gui:
+  language: 'en'
+  mouseEvents: false
+  nerdFontsVersion: "3"
+  showBottomLine: false
+  showCommandLog: false
+  border: "single"
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
