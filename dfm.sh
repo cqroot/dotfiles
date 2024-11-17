@@ -4,6 +4,7 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
 declare -A DOTFILES_LINUX=(
     ["bash"]="${HOME}/.config/bash"
+    ["go/env"]="${HOME}/.config/go/env"
     ["lazygit"]="${HOME}/.config/lazygit"
     ["mpv"]="${HOME}/.config/mpv"
     ["nvim"]="${HOME}/.config/nvim"
@@ -11,6 +12,7 @@ declare -A DOTFILES_LINUX=(
 
 declare -A DOTFILES_WINDOWS=(
     ["bash"]="${HOME}/.config/bash"
+    ["go/env"]="${APPDATA}/go/env"
     ["lazygit"]="${APPDATA}/lazygit"
     ["mpv"]="${APPDATA}/mpv"
     ["nvim"]="${LOCALAPPDATA}/nvim"
@@ -19,12 +21,17 @@ declare -A DOTFILES_WINDOWS=(
 
 declare -A DOTFILES
 
-function diff_dir() {
+function diff_target() {
+    local name=$1
+    if [[ "$1" == *"/"* ]]; then
+        name=$(echo "$1" | awk -F/ '{print $1}')
+    fi
+
     difft --check-only --skip-unchanged "${SCRIPT_DIR}/$1" "$2"
     if [[ $? -ne 0 ]]; then
-        echo "DIFF  $1:  ${SCRIPT_DIR}/$1 -> $2"
+        echo "DIFF  ${name}:  ${SCRIPT_DIR}/$1 -> $2"
     fi
-    echo "OK  $1:  ${SCRIPT_DIR}/$1 -> $2"
+    echo "OK  ${name}:  ${SCRIPT_DIR}/$1 -> $2"
 }
 
 function apply_dir() {
@@ -37,13 +44,13 @@ function do_status() {
     linux*)
         echo "* Current OS: Linux"
         for name in "${!DOTFILES_LINUX[@]}"; do
-            diff_dir "${name}" "${DOTFILES_LINUX[${name}]}"
+            diff_target "${name}" "${DOTFILES_LINUX[${name}]}"
         done
         ;;
     msys | cygwin | win*)
         echo "* Current OS: Windows"
         for name in "${!DOTFILES_WINDOWS[@]}"; do
-            diff_dir "${name}" "${DOTFILES_WINDOWS[${name}]}"
+            diff_target "${name}" "${DOTFILES_WINDOWS[${name}]}"
         done
         ;;
     *)
