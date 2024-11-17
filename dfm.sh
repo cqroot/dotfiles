@@ -4,6 +4,7 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
 declare -A DOTFILES_LINUX=(
     ["bash"]="${HOME}/.config/bash"
+    ["git/config"]="${HOME}/.gitconfig"
     ["go/env"]="${HOME}/.config/go/env"
     ["lazygit"]="${HOME}/.config/lazygit"
     ["mpv"]="${HOME}/.config/mpv"
@@ -13,6 +14,7 @@ declare -A DOTFILES_LINUX=(
 
 declare -A DOTFILES_WINDOWS=(
     ["bash"]="${HOME}/.config/bash"
+    ["git/config"]="${HOME}/.gitconfig"
     ["go/env"]="${APPDATA}/go/env"
     ["lazygit"]="${APPDATA}/lazygit"
     ["mpv"]="${APPDATA}/mpv"
@@ -29,11 +31,14 @@ function diff_target() {
         name=$(echo "$1" | awk -F/ '{print $1}')
     fi
 
-    difft --check-only --skip-unchanged "${SCRIPT_DIR}/$1" "$2"
+    difft --skip-unchanged --exit-code "${SCRIPT_DIR}/$1" "$2"
     if [[ $? -ne 0 ]]; then
-        echo "DIFF  ${name}:  ${SCRIPT_DIR}/$1 -> $2"
+        echo -ne "\e[31mDIFF\e[0m"
+        printf " %8s:  %-35s   %s\n" "${name}" "${SCRIPT_DIR}/$1" "$2"
+        return
     fi
-    echo "OK  ${name}:  ${SCRIPT_DIR}/$1 -> $2"
+    echo -ne "\e[32mOK  \e[0m"
+    printf " %8s:  %-35s   %s\n" "${name}" "${SCRIPT_DIR}/$1" "$2"
 }
 
 function apply_dir() {
@@ -52,7 +57,7 @@ function do_status() {
     msys | cygwin | win*)
         echo "* Current OS: Windows"
         for name in "${!DOTFILES_WINDOWS[@]}"; do
-            diff_target "${name}" "${DOTFILES_WINDOWS[${name}]}"
+            diff_target "${name}" "$(cygpath "${DOTFILES_WINDOWS[${name}]}")"
         done
         ;;
     *)
