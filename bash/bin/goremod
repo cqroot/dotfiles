@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+
+
+def pretty_title(title):
+    length = len(title)
+    print("╭─%s─╮" % ("─" * length))
+    print("│ %s │" % title)
+    print("╰─%s─╯" % ("─" * length))
+
+
+def main():
+    go_mod_path = "./go.mod"
+
+    if not os.path.isfile(go_mod_path):
+        sys.exit("go.mod not found.")
+
+    module_name = ""
+
+    with open(go_mod_path, "r") as go_mod_file:
+        for line in go_mod_file:
+            line = line.rstrip()
+            if line.startswith("module ") and line.count(" ") == 1:
+                module_name = line.split(" ")[1]
+
+    if module_name == "":
+        sys.exit("No module name found from go.mod.")
+
+    os.remove(go_mod_path)
+
+    pretty_title("go mod init")
+    os.system("go mod init %s" % module_name)
+    print()
+    pretty_title("go mod tidy")
+    os.system("go mod tidy")
+
+
+if __name__ == "__main__":
+    main()
