@@ -10,48 +10,53 @@ alias proxyoff='unset all_proxy'
 # * List                                                                       *
 # ******************************************************************************
 if command -v exa >/dev/null; then
-	alias ls="exa --group-directories-first"
-	alias ll="exa --group-directories-first --long --header --git --icons"
-	alias la="ll --all"
-	alias l.="exa --all | grep -E '^\.'"
-	alias tree="ll --tree --level=4 -a -I=.git --git-ignore"
+    alias ls="exa --group-directories-first"
+    alias ll="exa --group-directories-first --long --header --git --icons"
+    alias la="ll --all"
+    alias l.="exa --all | grep -E '^\.'"
+    alias tree="ll --tree --level=4 -a -I=.git --git-ignore"
 else
-	alias ls='ls --color=auto'
-	alias ll='ls -lh --group-directories-first'
-	alias la='ls -lha --group-directories-first'
-	alias l.="ls -A | grep -E '^\.'"
+    alias ls='ls --color=auto'
+    alias ll='ls -lh --group-directories-first'
+    alias la='ls -lha --group-directories-first'
+    alias l.="ls -A | grep -E '^\.'"
 fi
 
 # ******************************************************************************
 # * Tmux                                                                       *
 # ******************************************************************************
 if command -v tmux >/dev/null; then
-	alias tl='tmux ls'
-	alias tn='tmux new -s $(basename $PWD)'
+    alias tl='tmux ls'
+    alias tn='tmux new -s $(basename $PWD)'
 fi
 
 # ******************************************************************************
 # * Others                                                                     *
 # ******************************************************************************
 if command -v lf >/dev/null; then
-	if [ -f /etc/profile.d/lfcd.sh ]; then
-		source /etc/profile.d/lfcd.sh
-		alias l='lfcd'
-	fi
+    # if [ -f /etc/profile.d/lfcd.sh ]; then
+    # 	source /etc/profile.d/lfcd.sh
+    # 	alias l='lfcd'
+    # fi
+    lfcd() {
+        # `command` is needed in case `lfcd` is aliased to `lf`
+        cd "$(command lf -print-last-dir "$@")"
+    }
+    alias l='lfcd'
 fi
 
 if command -v nvim >/dev/null; then
-	alias nvi=nvim
+    alias nvi=nvim
 fi
 
 if command -v gitui >/dev/null; then
-	alias gu=gitui
+    alias gu=gitui
 fi
 
 if command -v lazygit >/dev/null; then
-	alias lg=lazygit
+    alias lg=lazygit
 fi
 
 if command -v chezmoi >/dev/null; then
-	alias cm=chezmoi
+    alias cm=chezmoi
 fi

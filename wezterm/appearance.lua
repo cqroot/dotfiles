@@ -13,6 +13,8 @@ return {
 	-- color_scheme = "wez",
 	-- color_scheme = "zenbones_dark",
 	-- color_scheme = "zenwritten_dark",
+	color_scheme = "Dracula",
+	-- color_scheme = "One Dark (Gogh)",
 
 	font = wezterm.font("CaskaydiaCove Nerd Font"),
 	font_size = 14.0,

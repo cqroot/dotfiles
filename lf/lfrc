@@ -1,0 +1,17 @@
+set drawbox
+# set ratios 1:2:3
+# set info size
+set icons
+
+map . set hidden!
+
+set previewer ~/.config/lf/previewer.sh
+
+map <f-2> rename
+
+map d
+map dd cut
+map dD delete
+
+map af push %touch<space>''<left>  # create a new file
+map ad push %mkdir<space>''<left>  # create a new folder
