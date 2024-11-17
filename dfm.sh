@@ -8,6 +8,7 @@ declare -A DOTFILES_LINUX=(
     ["lazygit"]="${HOME}/.config/lazygit"
     ["mpv"]="${HOME}/.config/mpv"
     ["nvim"]="${HOME}/.config/nvim"
+    ["wezterm"]="${HOME}/.config/wezterm"
 )
 
 declare -A DOTFILES_WINDOWS=(
@@ -17,6 +18,7 @@ declare -A DOTFILES_WINDOWS=(
     ["mpv"]="${APPDATA}/mpv"
     ["nvim"]="${LOCALAPPDATA}/nvim"
     ["pwsh"]="${HOME}/Documents/WindowsPowerShell"
+    ["wezterm"]="${HOME}/.config/wezterm"
 )
 
 declare -A DOTFILES
