@@ -1,0 +1,37 @@
+[user]
+    name = Keith Chu
+    email = cqroot@outlook.com
+
+[init]
+    defaultBranch = main
+
+[pull]
+    ff = only
+
+[push]
+    default = simple
+
+[http]
+    proxy = http://127.0.0.1:7890
+
+[core]
+    excludesFile = ~/.gitignore
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[pager]
+    diff = true
+    show = true
+    log = true
+    branch = false
+    tag = false
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+    side-by-side = true
+
+[merge]
+    conflictstyle = zdiff3
