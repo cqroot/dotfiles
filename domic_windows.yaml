@@ -1,0 +1,18 @@
+go:
+  files:
+    "env": "~/AppData/Roaming/go/env"
+
+lazygit:
+  files:
+    "config.yml": "~/AppData/Local/lazygit/config.yml"
+
+mpv:
+  files:
+    "input.conf": "~/AppData/Roaming/mpv/input.conf"
+    "mpv.conf": "~/AppData/Roaming/mpv/mpv.conf"
+    "script-opts/osc.conf": "~/AppData/Roaming/mpv/script-opts/osc.conf"
+    "script-opts/stats.conf": "~/AppData/Roaming/mpv/script-opts/stats.conf"
+
+powershell:
+  files:
+    "Microsoft.PowerShell_profile.ps1": "~/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"

@@ -1,0 +1,14 @@
+go:
+  files:
+    "env": "~/.config/go/env"
+
+lazygit:
+  files:
+    "config.yml": "~/.config/lazygit/config.yml"
+
+mpv:
+  files:
+    "input.conf": "~/.config/mpv/input.conf"
+    "mpv.conf": "~/.config/mpv/mpv.conf"
+    "script-opts/osc.conf": "~/.config/mpv/script-opts/osc.conf"
+    "script-opts/stats.conf": "~/.config/mpv/script-opts/stats.conf"
