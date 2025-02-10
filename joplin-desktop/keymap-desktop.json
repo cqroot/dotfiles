@@ -1,0 +1,22 @@
+[
+  {
+    "command": "toggleSideBar",
+    "accelerator": "Ctrl+1"
+  },
+  {
+    "command": "toggleNoteList",
+    "accelerator": "Ctrl+2"
+  },
+  {
+    "command": "toggleVisiblePanes",
+    "accelerator": "Ctrl+W"
+  },
+  {
+    "command": "gotoAnything",
+    "accelerator": "Ctrl+G"
+  },
+  {
+    "command": "toggleOutline",
+    "accelerator": "Ctrl+3"
+  }
+]

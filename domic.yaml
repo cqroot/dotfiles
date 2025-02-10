@@ -2,6 +2,13 @@ go:
   files:
     "env": "~/.config/go/env"
 
+joplin-desktop:
+  files:
+    "keymap-desktop.json": "~/.config/joplin-desktop/keymap-desktop.json"
+    "outline.css": "~/.config/joplin-desktop/outline.css"
+    "userchrome.css": "~/.config/joplin-desktop/userchrome.css"
+    "userstyle.css": "~/.config/joplin-desktop/userstyle.css"
+
 lazygit:
   files:
     "config.yml": "~/.config/lazygit/config.yml"

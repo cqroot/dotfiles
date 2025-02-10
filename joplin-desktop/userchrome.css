@@ -1,0 +1,37 @@
+/* For styling the entire Joplin app (except the rendered Markdown, which is defined in `userstyle.css`) */
+* {
+  font-family: "Cascadia Code", "Caskaydia Cove Nerd Font", "CaskaydiaCove NF",
+    "FiraCode NF", "Microsoft YaHei" !important;
+}
+
+div.resizableLayoutItem.rli-sideBar span.title,
+div.item-list.note-list span {
+  font-family: "Cascadia Code", "Caskaydia Cove Nerd Font", "CaskaydiaCove NF",
+    "FiraCode NF", "Microsoft YaHei" !important;
+}
+
+.editor-toolbar:first-child {
+  display: none !important;
+}
+
+div.resizableLayoutItem.rli-editor
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  border-bottom: 1px solid var(--joplin-divider-color) !important;
+}
+
+/* Evernote Theme Start */
+.sidebar {
+  background: #1a1a1a !important;
+}
+
+.sidebar .list-item-container:hover {
+  background: #333333 !important;
+}
+
+.sidebar .list-item-container.selected {
+  background: #404040 !important;
+}
+/* Evernote Theme End */

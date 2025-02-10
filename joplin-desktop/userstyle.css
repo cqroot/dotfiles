@@ -1,0 +1,80 @@
+/* For styling the rendered Markdown */
+
+:root {
+  --font-monospace: "CaskaydiaCove NF", "Cascadia Code", "FiraCode NF",
+    "Microsoft YaHei" !important;
+  --font-family: "CaskaydiaCove NF", "Cascadia Code", "FiraCode NF",
+    "Microsoft YaHei" !important;
+}
+body {
+  font-family: var(--font-family);
+}
+
+p {
+  line-height: 1.6rem;
+}
+
+a {
+  color: #42b983;
+  font-weight: 600;
+  padding: 0 2px;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+  cursor: text;
+  color: #1a1a1a;
+  border-bottom: 1px solid #dddddd;
+}
+
+h1 {
+  color: #d04255;
+}
+h2 {
+  color: #d5763f;
+}
+h3 {
+  color: #e9b567;
+}
+h4 {
+  color: #34495e;
+}
+
+.inline-code {
+  margin: 2px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: 0.92rem;
+  color: #e96900;
+  background-color: #f8f8f8;
+}
+
+code {
+  font-family: var(--font-monospace);
+}
+
+blockquote {
+  border-left: 4px solid #42b983;
+  padding: 10px 15px;
+  color: #777;
+  background-color: rgba(66, 185, 131, 0.1);
+}
+
+pre {
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+}
+
+.hljs {
+  padding: 10px;
+}

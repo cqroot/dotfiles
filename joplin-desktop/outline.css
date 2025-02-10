@@ -1,0 +1,8 @@
+#joplin-plugin-content {
+  border-right: 1px solid #dddddd;
+}
+
+#joplin-plugin-content * {
+  font-family: "Cascadia Code", "Caskaydia Cove Nerd Font", "CaskaydiaCove NF",
+    "FiraCode NF", "Microsoft YaHei";
+}
