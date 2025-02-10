@@ -12,3 +12,8 @@ mpv:
     "mpv.conf": "~/.config/mpv/mpv.conf"
     "script-opts/osc.conf": "~/.config/mpv/script-opts/osc.conf"
     "script-opts/stats.conf": "~/.config/mpv/script-opts/stats.conf"
+
+pip:
+  files:
+    "pip.conf": "~/.config/pip/pip.conf"
+

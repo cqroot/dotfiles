@@ -13,6 +13,11 @@ mpv:
     "script-opts/osc.conf": "~/AppData/Roaming/mpv/script-opts/osc.conf"
     "script-opts/stats.conf": "~/AppData/Roaming/mpv/script-opts/stats.conf"
 
+pip:
+  files:
+    "pip.conf": "~/AppData/Roaming/pip/pip.ini"
+
 powershell:
   files:
     "Microsoft.PowerShell_profile.ps1": "~/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
+
