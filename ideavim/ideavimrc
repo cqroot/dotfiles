@@ -1,0 +1,62 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+"" -- Suggested options --
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+set highlightedyank
+set commentary
+set NERDTree
+
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+" Do incremental searching.
+set incsearch
+set ignorecase
+set hlsearch
+
+" disable the timeout option
+set notimeout
+
+" increase the timeoutlen (default: 1000), don't add space around the equal sign
+set timeoutlen=5000
+
+let mapleader = ";"
+imap <C-f>       <Right>
+imap <C-b>       <Left>
+imap <C-n>       <Down>
+imap <C-p>       <Up>
+imap <C-e>       <End>
+imap <C-a>       <Home>
+imap <C-d>       <Del>
+map  <A-S-f>     <Action>(ReformatCode)
+imap <A-S-f>     <Action>(ReformatCode)
+nmap K           <Action>(NextTab)
+nmap J           <Action>(PreviousTab)
+nmap H           <Action>(QuickJavaDoc)
+nmap <leader>rn  <Action>(RenameElement)
+nmap <leader>ar  <Action>(Run)
+nmap <leader>sf  <Action>(ActivateProjectToolWindow)
+
+sethandler <S-CR> a:vim
+sethandler <C-A> a:vim
+sethandler <C-B> a:vim
+sethandler <C-C> a:vim
+sethandler <C-D> a:vim
+sethandler <C-F> n-v:ide i:vim
+sethandler <C-I> a:vim
+sethandler <C-J> a:vim
+sethandler <C-N> a:vim
+sethandler <C-O> a:vim
+sethandler <C-P> a:vim
+sethandler <C-R> a:vim
+sethandler <C-S> a:vim
+sethandler <C-T> a:vim
+sethandler <C-U> a:vim
+sethandler <C-V> a:vim
+sethandler <C-W> a:vim
+sethandler <C-]> a:vim

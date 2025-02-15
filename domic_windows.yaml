@@ -1,8 +1,14 @@
 go:
+  exec: go
   files:
     "env": "~/AppData/Roaming/go/env"
 
+ideavim:
+  files:
+    "ideavimrc": "~/.ideavimrc"
+
 joplin-desktop:
+  exec: joplin
   files:
     "keymap-desktop.json": "~/.config/joplin-desktop/keymap-desktop.json"
     "outline.css": "~/.config/joplin-desktop/outline.css"
@@ -10,10 +16,12 @@ joplin-desktop:
     "userstyle.css": "~/.config/joplin-desktop/userstyle.css"
 
 lazygit:
+  exec: lazygit
   files:
     "config.yml": "~/AppData/Local/lazygit/config.yml"
 
 mpv:
+  exec: mpv
   files:
     "input.conf": "~/AppData/Roaming/mpv/input.conf"
     "mpv.conf": "~/AppData/Roaming/mpv/mpv.conf"
@@ -21,10 +29,12 @@ mpv:
     "script-opts/stats.conf": "~/AppData/Roaming/mpv/script-opts/stats.conf"
 
 pip:
+  exec: pip
   files:
     "pip.conf": "~/AppData/Roaming/pip/pip.ini"
 
 powershell:
+  exec: powershell
   files:
     "Microsoft.PowerShell_profile.ps1": "~/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
 

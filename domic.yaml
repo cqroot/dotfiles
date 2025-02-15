@@ -1,8 +1,14 @@
 go:
+  exec: go
   files:
     "env": "~/.config/go/env"
 
+ideavim:
+  files:
+    "ideavimrc": "~/.ideavimrc"
+
 joplin-desktop:
+  exec: joplin-desktop
   files:
     "keymap-desktop.json": "~/.config/joplin-desktop/keymap-desktop.json"
     "outline.css": "~/.config/joplin-desktop/outline.css"
@@ -10,10 +16,12 @@ joplin-desktop:
     "userstyle.css": "~/.config/joplin-desktop/userstyle.css"
 
 lazygit:
+  exec: lazygit
   files:
     "config.yml": "~/.config/lazygit/config.yml"
 
 mpv:
+  exec: mpv
   files:
     "input.conf": "~/.config/mpv/input.conf"
     "mpv.conf": "~/.config/mpv/mpv.conf"
@@ -21,6 +29,7 @@ mpv:
     "script-opts/stats.conf": "~/.config/mpv/script-opts/stats.conf"
 
 pip:
+  exec: pip
   files:
     "pip.conf": "~/.config/pip/pip.conf"
 
