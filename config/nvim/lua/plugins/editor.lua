@@ -31,6 +31,7 @@ return {
         opts = {
             formatters_by_ft = {
                 lua = { "stylua" },
+                markdown = { "prettier" },
             },
         },
     },
@@ -54,7 +55,7 @@ return {
                     prefix_string = " ✨ ",
                     max_length = 80,
                 },
-                python = {
+                markdown = {
                     disabled = true,
                 },
             },
