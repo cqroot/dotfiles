@@ -67,8 +67,53 @@ return {
         "bngarren/checkmate.nvim",
         ft = "markdown", -- Lazy loads for Markdown files matching patterns in 'files'
         opts = {
-            -- your configuration here
-            -- or leave empty to use defaults
+            keys = {
+                ["<leader>mt"] = {
+                    rhs = "<cmd>Checkmate toggle<CR>",
+                    desc = "Toggle todo item",
+                    modes = { "n", "v" },
+                },
+                ["<leader>mc"] = {
+                    rhs = "<cmd>Checkmate check<CR>",
+                    desc = "Set todo item as checked (done)",
+                    modes = { "n", "v" },
+                },
+                ["<leader>mu"] = {
+                    rhs = "<cmd>Checkmate uncheck<CR>",
+                    desc = "Set todo item as unchecked (not done)",
+                    modes = { "n", "v" },
+                },
+                ["<leader>mn"] = {
+                    rhs = "<cmd>Checkmate create<CR>",
+                    desc = "Create todo item",
+                    modes = { "n", "v" },
+                },
+                ["<leader>mR"] = {
+                    rhs = "<cmd>Checkmate remove_all_metadata<CR>",
+                    desc = "Remove all metadata from a todo item",
+                    modes = { "n", "v" },
+                },
+                ["<leader>ma"] = {
+                    rhs = "<cmd>Checkmate archive<CR>",
+                    desc = "Archive checked/completed todo items (move to bottom section)",
+                    modes = { "n" },
+                },
+                ["<leader>mv"] = {
+                    rhs = "<cmd>Checkmate metadata select_value<CR>",
+                    desc = "Update the value of a metadata tag under the cursor",
+                    modes = { "n" },
+                },
+                ["<leader>m]"] = {
+                    rhs = "<cmd>Checkmate metadata jump_next<CR>",
+                    desc = "Move cursor to next metadata tag",
+                    modes = { "n" },
+                },
+                ["<leader>m["] = {
+                    rhs = "<cmd>Checkmate metadata jump_previous<CR>",
+                    desc = "Move cursor to previous metadata tag",
+                    modes = { "n" },
+                },
+            },
         },
     },
 }
