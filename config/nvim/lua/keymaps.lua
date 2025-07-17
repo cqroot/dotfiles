@@ -31,12 +31,14 @@ function M.setup()
         })
     end, opts)
     vim.keymap.set({ "n", "v", "i" }, "<C-t>", require("telescope.builtin").tags, opts)
-    vim.keymap.set({ "n", "v", "i" }, "<leader>tg", require("telescope.builtin").live_grep, opts)
-    vim.keymap.set({ "n", "v", "i" }, "<leader>ts", require("telescope.builtin").grep_string, opts)
-    vim.keymap.set({ "n", "v", "i" }, "<leader>tb", require("telescope.builtin").buffers, opts)
-    vim.keymap.set({ "n", "v", "i" }, "<leader>tr", require("telescope.builtin").registers, opts)
 
-    vim.keymap.set({ "n", "v", "i" }, "<leader>gd", "<CMD>Gitsigns diffthis<CR>", opts)
+    require("which-key").add({
+        { mode = { "n", "v", "i" }, "<leader>tg", require("telescope.builtin").live_grep, desc = "Telescope live_grep" },
+        { mode = { "n", "v", "i" }, "<leader>ts", require("telescope.builtin").grep_string, desc = "Telescope grep_string" },
+        { mode = { "n", "v", "i" }, "<leader>tb", require("telescope.builtin").buffers, desc = "Telescope buffers" },
+        { mode = { "n", "v", "i" }, "<leader>tr", require("telescope.builtin").registers, desc = "Telescope registers" },
+        { mode = { "n", "v", "i" }, "<leader>gd", "<CMD>Gitsigns diffthis<CR>", desc = "Gitsigns diffthis" },
+    })
 end
 
 return M

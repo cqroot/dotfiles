@@ -50,9 +50,9 @@ return {
         ---@type render.md.UserConfig
         opts = {
             heading = {
-                icons = { '󰎤 ', '󰎧 ', '󰎪 ', '󰎭 ', '󰎱 ', '󰎳 ' },
-                position = 'inline',
-                width = 'block',
+                icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+                position = "inline",
+                width = "block",
                 left_pad = 0,
                 right_pad = 0,
                 sign = false,
@@ -60,7 +60,15 @@ return {
             code = {
                 sign = false,
             },
-            pipe_table = { preset = 'round' },
+            pipe_table = { preset = "round" },
+        },
+    },
+    {
+        "bngarren/checkmate.nvim",
+        ft = "markdown", -- Lazy loads for Markdown files matching patterns in 'files'
+        opts = {
+            -- your configuration here
+            -- or leave empty to use defaults
         },
     },
 }
