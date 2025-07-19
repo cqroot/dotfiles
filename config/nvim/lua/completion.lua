@@ -31,7 +31,7 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(),
+        -- ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ["<C-j>"] = cmp.mapping(function(fallback)
@@ -191,4 +191,18 @@ require("lspconfig").pyright.setup({ capabilities = capabilities })
 require("lspconfig").volar.setup({
     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
     capabilities = capabilities,
+})
+
+vim.diagnostic.config({
+    virtual_text = {
+        source = "always", -- 显示错误来源（可选）
+        prefix = '■', -- 自定义错误前缀符号
+        -- 仅显示错误（忽略警告等）
+        -- severity = {
+        --     min = vim.diagnostic.severity.ERROR
+        -- }
+    },
+    signs = true,             -- 左侧符号列显示
+    underline = true,         -- 错误下方显示波浪线
+    update_in_insert = false, -- 插入模式不更新诊断
 })

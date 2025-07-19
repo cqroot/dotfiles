@@ -31,34 +31,9 @@ return {
         opts = {
             formatters_by_ft = {
                 bash = { "shfmt" },
+                go = { "gofumpt" },
                 lua = { "stylua" },
                 markdown = { "prettier" },
-            },
-        },
-    },
-    {
-        "code-biscuits/nvim-biscuits",
-        dependencies = "nvim-treesitter/nvim-treesitter", -- if you prefer nvim-web-devicons
-        opts = {
-            default_config = {
-                max_length = 32,
-                min_distance = 5,
-                -- prefix_string = " 📎 ",
-                -- prefix_string = " 󰆘 ",
-                -- prefix_string = " 󰘍 ",
-                prefix_string = " » ",
-            },
-            language_config = {
-                html = {
-                    prefix_string = " 🌐 ",
-                },
-                javascript = {
-                    prefix_string = " ✨ ",
-                    max_length = 80,
-                },
-                markdown = {
-                    disabled = true,
-                },
             },
         },
     },
