@@ -1,0 +1,36 @@
+[dotfiles.alacritty]
+exec = "alacritty"
+target = "~/.config/alacritty"
+
+[dotfiles.bash]
+exec = "bash"
+source = "bash/bashrc"
+target = "~/.bashrc"
+
+[dotfiles.git]
+exec = "git"
+target = "~/.config/git"
+
+[dotfiles.go]
+exec = "go"
+target = "~/.config/go"
+
+[dotfiles.lazygit]
+exec = "lazygit"
+target = "~/.config/lazygit"
+
+[dotfiles.mpv]
+exec = "mpv"
+target = "~/.config/mpv"
+
+[dotfiles.nvim]
+exec = "nvim"
+target = "~/.config/nvim"
+
+[dotfiles.tmux]
+exec = "tmux"
+target = "~/.config/tmux"
+
+[dotfiles.yazi]
+exec = "yazi"
+target = "~/.config/yazi"
