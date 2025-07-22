@@ -1,0 +1,95 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# **************************************************
+# *                      Env                       *
+# **************************************************
+export EDITOR='nvim'
+export VISUAL='nvim'
+export PAGER='less'
+command -v "bat" >/dev/null && export PAGER='bat'
+command -v "go" >/dev/null && export GOPATH=$HOME/go
+
+function prepend_path_if_exists() { [[ -d "$1" ]] && PATH="$1:${PATH}"; }
+prepend_path_if_exists "${HOME}/.bin"
+prepend_path_if_exists "${HOME}/.local/bin"
+prepend_path_if_exists "${HOME}/.cargo/bin"
+prepend_path_if_exists "${GOPATH}/bin"
+
+# **************************************************
+# *                    Options                     *
+# **************************************************
+# https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
+shopt -u direxpand      # $HOME/.config  - TAB   ->  /home/user/.config
+shopt -u progcomp       # $HOME/.config  - TAB   ->  \$HOME/.config
+shopt -u autocd         # DIR            - ENTER ->  cd -- dir/
+shopt -u dotglob        # *                      ->  * + .*
+shopt -u cdspell        # autocorrects cd misspellings
+shopt -s cmdhist        # save multi-line commands in history as single line
+shopt -s histappend     # do not overwrite history
+shopt -s expand_aliases # expand aliases
+
+bind "set show-all-if-ambiguous on"  # autocomplete with one tab instead of two
+bind "set completion-ignore-case on" # ignore upper and lowercase when TAB completion
+bind "set bell-style none"           # disable the bell sound
+
+export HISTCONTROL=ignoredups:erasedups
+export HISTTIMEFORMAT="[%F %T]  "
+
+# **************************************************
+# *                    Aliases                     *
+# **************************************************
+alias srcbash='source ~/.bashrc'
+alias srczsh='source ~/.zshrc'
+alias ls='ls --color=auto'
+alias ll='ls -lh --group-directories-first'
+alias la='ls -lha --group-directories-first'
+alias l.="ls -A | grep -E '^\.'"
+alias grep='grep --color=auto'
+alias gs='git status'
+alias gll="git log --pretty=format:'%C(yellow)%h %Cgreen%ad %Creset%s' --date=short"
+alias gl='gll -n 20'
+alias gd='git diff'
+alias gdc='git diff --cached'
+
+function alias_if_exists() { command -v -- "${2%% *}" >/dev/null 2>&1 && alias "$1"="$2"; }
+alias_if_exists srctmux 'tmux source-file ~/.config/tmux/tmux.conf'
+alias_if_exists tl 'tmux ls'
+alias_if_exists tn 'tmux new -s $(basename $PWD)'
+alias_if_exists lf 'yazi'
+alias_if_exists nvi nvim
+alias_if_exists gu gitui
+alias_if_exists lg lazygit
+alias_if_exists dm domic
+
+# **************************************************
+# *                     Prompt                     *
+# **************************************************
+source /usr/share/git/completion/git-prompt.sh
+PS1='\n'                                  # start
+PS1+='\[\033[01;92m\]\u '                 # username
+PS1+='\[\033[00;37m\]in '                 # separator
+PS1+='\[\033[01;93m\]\W '                 # directory
+PS1+='\[\033[01;96m\]$(__git_ps1 " %s")' # git branch
+PS1+='\n'                                 # newline
+PS1+='\[\033[01;95m\] '                  # $
+PS1+='\[\033[00m\]'                       # reset color
+
+# **************************************************
+# *                  Applications                  *
+# **************************************************
+command -v "fzf" >/dev/null && export FZF_DEFAULT_OPTS='--cycle --border=rounded --pointer=• --prompt="❯ "'
+source /usr/share/fzf/completion.bash
+source /usr/share/fzf/key-bindings.bash
+
+case "$(uname -s)" in
+CYGWIN* | MINGW* | MSYS*)
+    export OS_IS_WINDOWS=0
+    ;;
+esac
+
+if [[ "${OS_IS_WINDOWS}" -eq 0 ]]; then
+    alias rg="rg --path-separator '//'"
+fi
+
+command -v "delta" >/dev/null && export DELTA_PAGER="less ${LESS}"
