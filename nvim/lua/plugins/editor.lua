@@ -1,5 +1,18 @@
 return {
     {
+        'echasnovski/mini.hipatterns',
+        version = false,
+        opts = function()
+            local hipatterns = require('mini.hipatterns')
+            return {
+                highlighters = {
+                    -- Highlight hex color strings (`#rrggbb`) using that color
+                    hex_color = hipatterns.gen_highlighter.hex_color(),
+                },
+            }
+        end
+    },
+    {
         "lewis6991/gitsigns.nvim",
         opts = {
             current_line_blame = true,
