@@ -1,0 +1,24 @@
+font-family = CaskaydiaCove Nerd Font
+font-size = 17
+
+theme = catppuccin-mocha
+
+copy-on-select = clipboard
+
+keybind = alt+0=unbind
+keybind = alt+1=unbind
+keybind = alt+2=unbind
+keybind = alt+3=unbind
+keybind = alt+4=unbind
+keybind = alt+5=unbind
+keybind = alt+6=unbind
+keybind = alt+7=unbind
+keybind = alt+8=unbind
+keybind = alt+9=unbind
+keybind = ctrl+slash=text:\x1f
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:down
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+l=goto_split:right
+
+# vi: ft=config
