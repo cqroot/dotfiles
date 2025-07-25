@@ -93,3 +93,11 @@ if [[ "${OS_IS_WINDOWS}" -eq 0 ]]; then
 fi
 
 command -v "delta" >/dev/null && export DELTA_PAGER="less ${LESS}"
+
+function l() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    yazi "$@" --cwd-file="$tmp"
+    IFS= read -r -d '' cwd <"$tmp"
+    [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+    rm -f -- "$tmp"
+}
