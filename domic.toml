@@ -1,6 +1,7 @@
 [dotfiles.alacritty]
 exec = "alacritty"
 target = "~/.config/alacritty"
+target_windows = "${APPDATA}/alacritty"
 
 [dotfiles.bash]
 exec = "bash"
@@ -13,7 +14,9 @@ target = "~/.config/git"
 
 [dotfiles.go]
 exec = "go"
-target = "~/.config/go"
+source = "go/env"
+target = "~/.config/go/env"
+target_windows = "${APPDATA}/go/env"
 
 [dotfiles.ghostty]
 exec = "ghostty"
@@ -21,15 +24,19 @@ target = "~/.config/ghostty"
 
 [dotfiles.lazygit]
 exec = "lazygit"
-target = "~/.config/lazygit"
+source = "lazygit/config.yml"
+target = "~/.config/lazygit/config.yml"
+target_windows = "${LOCALAPPDATA}/lazygit/config.yml"
 
 [dotfiles.mpv]
 exec = "mpv"
 target = "~/.config/mpv"
+target_windows = "${APPDATA}/mpv"
 
 [dotfiles.nvim]
 exec = "nvim"
 target = "~/.config/nvim"
+target_windows = "${LOCALAPPDATA}/nvim"
 
 [dotfiles.tmux]
 exec = "tmux"
@@ -38,3 +45,4 @@ target = "~/.config/tmux"
 [dotfiles.yazi]
 exec = "yazi"
 target = "~/.config/yazi"
+target_windows = "${APPDATA}/yazi/config"
