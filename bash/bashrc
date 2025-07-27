@@ -56,6 +56,7 @@ function alias_if_exists() { command -v -- "${2%% *}" >/dev/null 2>&1 && alias "
 alias_if_exists srctmux 'tmux source-file ~/.config/tmux/tmux.conf'
 alias_if_exists tl 'tmux ls'
 alias_if_exists tn 'tmux new -s $(basename $PWD)'
+alias_if_exists ta 'tmux attach -t'
 alias_if_exists lf 'yazi'
 alias_if_exists nvi nvim
 alias_if_exists gu gitui

@@ -15,6 +15,10 @@ target = "~/.config/git"
 exec = "go"
 target = "~/.config/go"
 
+[dotfiles.ghostty]
+exec = "ghostty"
+target = "~/.config/ghostty"
+
 [dotfiles.lazygit]
 exec = "lazygit"
 target = "~/.config/lazygit"
