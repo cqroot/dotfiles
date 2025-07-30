@@ -38,6 +38,10 @@ exec = "nvim"
 target = "~/.config/nvim"
 target_windows = "${LOCALAPPDATA}/nvim"
 
+[dotfiles.sqlite3]
+exec = "sqlite3"
+target = "~/.config/sqlite3"
+
 [dotfiles.tmux]
 exec = "tmux"
 target = "~/.config/tmux"
