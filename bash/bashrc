@@ -87,6 +87,9 @@ case "$(uname -s)" in
 CYGWIN* | MINGW* | MSYS*)
     export OS_IS_WINDOWS=0
     ;;
+*)
+    export OS_IS_WINDOWS=1
+    ;;
 esac
 
 if [[ "${OS_IS_WINDOWS}" -eq 0 ]]; then
