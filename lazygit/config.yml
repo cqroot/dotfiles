@@ -10,7 +10,7 @@ gui:
   # Nerd fonts version to use.
   # One of: '2' | '3' | empty string (default)
   # If empty, do not show icons.
-  nerdFontsVersion: "3"
+  nerdFontsVersion: '3'
 
   # If true, show the bottom line that contains keybinding info and useful buttons. If false, this line will be hidden except to display a loader for an in-progress action.
   showBottomLine: false
@@ -20,7 +20,11 @@ gui:
 
   # Window border style.
   # One of 'rounded' (default) | 'single' | 'double' | 'hidden'
-  border: "single"
+  border: 'single'
+
+  # # Fraction of the total screen width to use for the left side section. You may want to pick a small number (e.g. 0.2) if you're using a narrow screen, so that you can see more of the main section.
+  # # Number from 0 to 1.0.
+  # sidePanelWidth: 0.2
 
 # Config relating to git
 git:
@@ -34,3 +38,20 @@ git:
     # delta --dark --paging=never
     # ydiff -p cat -s --wrap --width={{columnWidth}}
     pager: delta --dark --paging=never
+
+customCommands:
+  - key: '<c-e>'
+    context: 'files'
+    command: 'git diff {{.SelectedFile.Name}}'
+    description: 'Compare this file'
+    output: terminal
+  - key: '<c-e>'
+    context: 'commits'
+    command: 'git show {{.SelectedLocalCommit.Sha}}'
+    description: 'Show selected commit'
+    output: terminal
+  - key: '<c-e>'
+    command: 'git diff {{.SelectedLocalCommit.Sha}}^! -- {{.SelectedCommitFile.Name}}'
+    context: 'commitFiles'
+    description: 'Compare this file'
+    output: terminal
