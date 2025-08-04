@@ -7,6 +7,7 @@
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
+command -v nvim >/dev/null && export MANPAGER='nvim +Man!'
 command -v "bat" >/dev/null && export PAGER='bat'
 command -v "go" >/dev/null && export GOPATH=$HOME/go
 
