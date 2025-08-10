@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Ensure running in project root directory
+if [[ ! -f "./go.mod" ]]; then
+    echo "Error: go.mod file not found in current directory" >&2
+    exit 1
+fi
+
+# Extract module name from existing go.mod
+MODULE_NAME=$(grep '^module' ./go.mod | awk '{print $2}')
+if [[ -z "${MODULE_NAME}" ]]; then
+    echo "Error: Failed to extract module name from go.mod" >&2
+    exit 1
+fi
+
+rm -f "./go.mod"
+[[ -f "./go.sum" ]] && rm -f "./go.sum"
+
+# Reinitialize module with original name
+echo "Reinitializing module: $MODULE_NAME"
+go mod init "${MODULE_NAME}"
+echo
+
+# Restore dependencies
+echo "Tidying dependencies..."
+go mod tidy
+echo
+
+echo "Operation completed!"
+ls -l --color ./go.mod ./go.sum
