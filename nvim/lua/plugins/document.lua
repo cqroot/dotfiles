@@ -17,4 +17,7 @@ return {
             pipe_table = { preset = "round" },
         },
     },
+    {
+        'brianhuster/live-preview.nvim',
+    }
 }
