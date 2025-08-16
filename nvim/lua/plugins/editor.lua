@@ -44,7 +44,7 @@ return {
         opts = {
             formatters_by_ft = {
                 bash = { "shfmt" },
-                go = { "gofumpt" },
+                go = { "goimports", "golines", "gofumpt" },
                 lua = { "stylua" },
                 markdown = { "prettier" },
             },
