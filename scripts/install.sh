@@ -34,6 +34,7 @@ readonly PL_PACKAGES=(
     golangci-lint
     golines:aur
     gopls
+    goreleaser-bin:aur
 
     # For Lua
     lua-language-server
