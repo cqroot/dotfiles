@@ -50,10 +50,21 @@ readonly PL_PACKAGES=(
 
 function install_packages() {
     local pacman_pkgs=()
-    local yay_pkgs=()
+    local aur_pkgs=()
+
+    local aur_cmd=""
+    if command -v yay >/dev/null 2>&1; then
+        aur_cmd=yay
+    elif command -v paru >/dev/null 2>&1; then
+        aur_cmd=paru
+    else
+        echo "ERROR: No available aur command (yay or paru)."
+        return 1
+    fi
+
     for pkg in "$@"; do
         if [[ "${pkg}" == *:aur ]]; then
-            yay_pkgs+=("${pkg%%:aur}")
+            aur_pkgs+=("${pkg%%:aur}")
         else
             pacman_pkgs+=("${pkg}")
         fi
@@ -61,7 +72,7 @@ function install_packages() {
 
     set -x
     sudo pacman -S --noconfirm --needed "${pacman_pkgs[@]}"
-    yay -S --noconfirm --needed "${yay_pkgs[@]}"
+    "${aur_cmd}" -S --noconfirm --needed "${aur_pkgs[@]}"
     set +x
 }
 
