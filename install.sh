@@ -5,8 +5,13 @@ readonly LOG_FILE="./install.log"
 readonly RET_ERR=1
 readonly RET_NA=2
 
+readonly COLOR_RESET='\033[0m'
+readonly COLOR_RED='\033[0;31m'
+readonly COLOR_GREEN='\033[0;32m'
+readonly COLOR_CYAN='\033[0;36m'
+
 function log_error() {
-    echo "ERROR: $*"
+    printf "${COLOR_RED}ERROR:${COLOR_RESET} %s\n" "$*"
 }
 
 function init_env() {
@@ -77,7 +82,8 @@ function apply_conf() {
 }
 
 function handle_line() {
-    local line=${1// /}
+    local max_len=$1
+    local line=${2// /}
     if [[ "${line}" == \#* ]]; then
         return 0
     fi
@@ -87,7 +93,7 @@ function handle_line() {
     pkg=$(awk -F'[+*:]' '{print $1}' <<<"${line}")
     src=$(awk -F'[:>]' '{print $2}' <<<"${line}")
     dst=$(awk -F'>' '{print $2}' <<<"${line}")
-    printf "%-22s " "${pkg}"
+    printf "${COLOR_CYAN}%-${max_len}s${COLOR_RESET} " "${pkg}"
 
     if [[ "${line}" == *'+'* ]]; then
         install_pkg "${pkg}"
@@ -109,21 +115,22 @@ function handle_line() {
         apply_conf "${src}" "${dst}"
         ret=$?
         if [[ "${ret}" -eq 0 ]]; then
-            echo "Applied!"
+            printf "${COLOR_GREEN}%s${COLOR_RESET}\n" "Applied!"
         elif [[ "${ret}" -eq "${RET_NA}" ]]; then
-            echo "OK"
+            printf "${COLOR_GREEN}%s${COLOR_RESET}\n" "OK"
             return 0
         elif [[ "${ret}" -ne 0 ]]; then
             return "${ret}"
         fi
     else
-        echo "OK"
+        printf "${COLOR_GREEN}%s${COLOR_RESET}\n" "OK"
     fi
 }
 
 function read_config() {
+    local max_len=$(awk '{print length($1)}' "./apps.conf" | sort -rn | head -1)
     while read -r line; do
-        handle_line "${line}" || return $?
+        handle_line "${max_len}" "${line}" || return $?
     done <"./apps.conf"
 }
 
