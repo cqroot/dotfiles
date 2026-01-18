@@ -89,14 +89,14 @@ function handle_line() {
     dst=$(awk -F'>' '{print $2}' <<<"${line}")
     printf "%-22s " "${pkg}"
 
-    if [[ "${line}" == *"+"* ]]; then
+    if [[ "${line}" == *'+'* ]]; then
         install_pkg "${pkg}"
         ret=$?
         if [[ "${ret}" -ne 0 ]]; then
             log_error "Failed to install package \"${pkg}\"."
             return 1
         fi
-    elif [[ "${line}" == *"\*"* ]]; then
+    elif [[ "${line}" == *'*'* ]]; then
         install_aur_pkg "${pkg}"
         ret=$?
         if [[ "${ret}" -ne 0 ]]; then
