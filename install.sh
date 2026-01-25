@@ -26,11 +26,11 @@ function init_env() {
 }
 
 function install_pkg() {
-    (sudo pacman -S --noconfirm --needed "$1") >>"${LOG_FILE}" 2>&1
+    (sudo pacman -Sy --noconfirm --needed "$1") >>"${LOG_FILE}" 2>&1
 }
 
 function install_aur_pkg() {
-    "${AUR_COMMAND}" -S --noconfirm --needed "$1" >>"${LOG_FILE}" 2>&1
+    "${AUR_COMMAND}" -Sy --noconfirm --needed "$1" >>"${LOG_FILE}" 2>&1
 }
 
 function apply_conf() {
@@ -84,6 +84,11 @@ function apply_conf() {
 function handle_line() {
     local max_len=$1
     local line=${2// /}
+
+    if [[ -z "${line}" ]]; then
+        return 0
+    fi
+
     if [[ "${line}" == \#* ]]; then
         return 0
     fi
@@ -100,7 +105,7 @@ function handle_line() {
         ret=$?
         if [[ "${ret}" -ne 0 ]]; then
             log_error "Failed to install package \"${pkg}\"."
-            return 1
+	    return 1
         fi
     elif [[ "${line}" == *'*'* ]]; then
         install_aur_pkg "${pkg}"
@@ -130,8 +135,9 @@ function handle_line() {
 function read_config() {
     local max_len=$(awk '{print length($1)}' "./apps.conf" | sort -rn | head -1)
     while read -r line; do
-        handle_line "${max_len}" "${line}" || return $?
+        handle_line "${max_len}" "${line}"
     done <"./apps.conf"
+    return 0
 }
 
 function main() {
