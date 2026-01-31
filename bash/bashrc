@@ -52,6 +52,9 @@ alias gll="git log --pretty=format:'%C(yellow)%h %Cgreen%ad %Creset%s' --date=sh
 alias gl='gll -n 20'
 alias gd='git diff'
 alias gdc='git diff --cached'
+if command -v paru >/dev/null 2>&1; then
+    alias paru='env all_proxy=http://127.0.0.1:7890 paru'
+fi
 
 function alias_if_exists() { command -v -- "${2%% *}" >/dev/null 2>&1 && alias "$1"="$2"; }
 alias_if_exists srctmux 'tmux source-file ~/.config/tmux/tmux.conf'
