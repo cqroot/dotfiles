@@ -1,16 +1,16 @@
 return {
     {
-        'echasnovski/mini.hipatterns',
+        "echasnovski/mini.hipatterns",
         version = false,
         opts = function()
-            local hipatterns = require('mini.hipatterns')
+            local hipatterns = require("mini.hipatterns")
             return {
                 highlighters = {
                     -- Highlight hex color strings (`#rrggbb`) using that color
                     hex_color = hipatterns.gen_highlighter.hex_color(),
                 },
             }
-        end
+        end,
     },
     {
         "lewis6991/gitsigns.nvim",
@@ -44,9 +44,10 @@ return {
         opts = {
             formatters_by_ft = {
                 bash = { "shfmt" },
-                go = { "goimports", "golines", "gofumpt" },
+                go = { "goimports", "gofumpt" },
                 lua = { "stylua" },
                 markdown = { "prettier" },
+                javascript = { "prettier" },
             },
         },
     },
@@ -69,4 +70,5 @@ return {
             },
         },
     },
+    { "lambdalisue/vim-suda" },
 }
