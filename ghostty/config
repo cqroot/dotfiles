@@ -22,5 +22,6 @@ keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+j=goto_split:down
 keybind = ctrl+shift+k=goto_split:up
 keybind = ctrl+shift+l=goto_split:right
+keybind = shift+insert=paste_from_clipboard
 
 # vi: ft=config
