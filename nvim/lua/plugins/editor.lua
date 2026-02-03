@@ -71,4 +71,5 @@ return {
         },
     },
     { "lambdalisue/vim-suda" },
+    { "h-hg/fcitx.nvim" },
 }
