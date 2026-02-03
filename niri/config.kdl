@@ -1,7 +1,7 @@
 input {
     keyboard {
         xkb {
-            options "caps:ctrl_modifier,ctrl:swapcaps"
+            // options "caps:ctrl_modifier,ctrl:swapcaps"
         }
 
         numlock
@@ -55,10 +55,11 @@ layout {
 
 spawn-sh-at-startup "dms run"
 spawn-at-startup "kwalletd6"
-spawn-sh-at-startup "sleep 3s && XDG_MENU_PREFIX=arch- kbuildsycoca6"
+// sudo ln -s /etc/xdg/menus/arch-applications.menu /etc/xdg/menus/applications.menu
+// spawn-sh-at-startup "sleep 3s && XDG_MENU_PREFIX=arch- kbuildsycoca6"
 spawn-at-startup "swayidle" "-w" \
     "timeout" "300" "dms ipc call lock lock" \
-    "timeout" "600" "systemctl suspend" \
+    "timeout" "900" "systemctl suspend" \
     "before-sleep" "dms ipc call lock lock"
 
 hotkey-overlay {
