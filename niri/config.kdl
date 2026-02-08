@@ -58,9 +58,10 @@ spawn-at-startup "kwalletd6"
 // sudo ln -s /etc/xdg/menus/arch-applications.menu /etc/xdg/menus/applications.menu
 // spawn-sh-at-startup "sleep 3s && XDG_MENU_PREFIX=arch- kbuildsycoca6"
 spawn-at-startup "swayidle" "-w" \
-    "timeout" "300" "dms ipc call lock lock" \
-    "timeout" "900" "systemctl suspend" \
+    "timeout" "600" "dms ipc call lock lock" \
+    "timeout" "1200" "systemctl suspend" \
     "before-sleep" "dms ipc call lock lock"
+spawn-at-startup "copyq"
 
 hotkey-overlay {
     skip-at-startup
@@ -79,13 +80,19 @@ window-rule {
     open-maximized true
 }
 
+window-rule {
+    match app-id=r#"^com\.github\.hluk\.copyq$"#
+    open-floating true
+}
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "ghostty"; }
     Mod+S hotkey-overlay-title="Run an Application" { spawn-sh "dms ipc call spotlight toggle"; }
-    Super+Ctrl+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    // Super+Ctrl+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Mod+P hotkey-overlay-title="Open Power Menu" { spawn-sh "dms ipc call powermenu toggle"; }
+    Ctrl+Alt+V hotkey-overlay-title="Open CopyQ" { spawn-sh "copyq toggle"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
