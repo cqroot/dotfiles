@@ -48,6 +48,7 @@ return {
                 lua = { "stylua" },
                 markdown = { "prettier" },
                 javascript = { "prettier" },
+                css = { "prettier" },
             },
         },
     },
