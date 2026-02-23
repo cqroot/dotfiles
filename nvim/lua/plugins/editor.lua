@@ -44,11 +44,12 @@ return {
         opts = {
             formatters_by_ft = {
                 bash = { "shfmt" },
+                css = { "prettier" },
                 go = { "goimports", "gofumpt" },
                 lua = { "stylua" },
                 markdown = { "prettier" },
                 javascript = { "prettier" },
-                css = { "prettier" },
+                toml = { "tombi" },
             },
         },
     },
