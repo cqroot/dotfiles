@@ -61,8 +61,8 @@ spawn-at-startup "kwalletd6"
 // sudo ln -s /etc/xdg/menus/arch-applications.menu /etc/xdg/menus/applications.menu
 // spawn-sh-at-startup "sleep 3s && XDG_MENU_PREFIX=arch- kbuildsycoca6"
 spawn-at-startup "swayidle" "-w" \
-    "timeout" "600" "dms ipc call lock lock" \
-    "timeout" "1200" "systemctl suspend" \
+    "timeout" "900" "dms ipc call lock lock" \
+    "timeout" "1800" "systemctl suspend" \
     "before-sleep" "dms ipc call lock lock"
 spawn-at-startup "copyq"
 
@@ -107,8 +107,8 @@ binds {
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+2%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "2%-"; }
 
     Mod+O repeat=false { toggle-overview; }
 
