@@ -23,7 +23,7 @@ input {
 }
 
 layout {
-    gaps 16
+    gaps 5
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -122,6 +122,9 @@ binds {
     Mod+J     { focus-window-down; }
     Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
+
+    Mod+A     { focus-column-left; }
+    Mod+D     { focus-column-right; }
 
     Mod+Shift+Left  { move-column-left; }
     Mod+Shift+Down  { move-window-down; }
