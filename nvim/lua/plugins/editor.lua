@@ -49,6 +49,8 @@ return {
                 lua = { "stylua" },
                 markdown = { "prettier" },
                 javascript = { "prettier" },
+                python = { "black" },
+                scss = { "prettier" },
                 toml = { "tombi" },
             },
         },
