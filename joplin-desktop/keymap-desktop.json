@@ -1,0 +1,38 @@
+[
+  {
+    "command": "toggleSideBar",
+    "accelerator": "Ctrl+1"
+  },
+  {
+    "command": "toggleNoteList",
+    "accelerator": "Ctrl+2"
+  },
+  {
+    "command": "toggleOutline",
+    "accelerator": "Ctrl+3"
+  },
+  {
+    "command": "toggleVisiblePanes",
+    "accelerator": "Ctrl+E"
+  },
+  {
+    "command": "toggleExternalEditing",
+    "accelerator": "Ctrl+D"
+  },
+  {
+    "command": "gotoAnything",
+    "accelerator": "Ctrl+G"
+  },
+  {
+    "command": "editor.deleteLine",
+    "accelerator": null
+  },
+  {
+    "command": "jop-freehand-drawing-jsdraw-plugin-insertDrawing",
+    "accelerator": null
+  },
+  {
+    "command": "CreateBackup",
+    "accelerator": null
+  }
+]
