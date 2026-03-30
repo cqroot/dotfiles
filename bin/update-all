@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+readonly COLOR_RESET='\033[0m'
+readonly COLOR_FG_HI_BLUE='\033[94m'
+
+function update_pacman_packages() {
+    sudo pacman -Syyu --noconfirm
+}
+
+function update_paru_packages() {
+    if ! command -v paru &>/dev/null; then
+        return 0
+    fi
+    paru -Syyu --noconfirm
+}
+
+function update_flatpak_packages() {
+    if ! command -v flatpak &>/dev/null; then
+        return 0
+    fi
+    flatpak --user update -y
+}
+
+function update_neovim_packages() {
+    nvim --headless "+Lazy! sync" +qa
+}
+
+function main() {
+    declare -A tasks=(
+        ["pacman"]=update_pacman_packages
+        ["paru"]=update_paru_packages
+        ["flatpak"]=update_flatpak_packages
+        ["neovim"]=update_neovim_packages
+    )
+    declare -A results
+
+    local ret start end
+    for name in "${!tasks[@]}"; do
+        start=$(date +%s)
+
+        "${tasks[${name}]}"
+        ret=$?
+        if [[ "${ret}" -ne 0 ]]; then
+            return "${ret}"
+        fi
+
+        end=$(date +%s)
+        results[${name}]=$((end - start))
+    done
+
+    echo
+    for name in "${!results[@]}"; do
+        printf "${COLOR_FG_HI_BLUE}%10s${COLOR_RESET}  %ds\n" "${name}" "${results[${name}]}"
+    done
+}
+
+main
