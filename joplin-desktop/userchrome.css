@@ -1,9 +1,44 @@
 /* For styling the entire Joplin app (except the rendered Markdown, which is defined in `userstyle.css`) */
 
 /* Make the note list more compact */
-div.note-list-item-wrapper,
-div.note-list-item {
-  height: 28px !important;
+/* div.note-list-item-wrapper, */
+/* div.note-list-item { */
+/*   height: 28px !important; */
+/* } */
+
+/* Hide collapse all button in sidebar */
+button.sidebar-header-button.-collapseall {
+  display: none !important;
+}
+
+/* Hide new folder button in sidebar */
+button.sidebar-header-button.-newfolder {
+  display: none !important;
+}
+
+/* Hide TAGS in sidebar */
+div.sidebar-list-items-wrapper > :nth-last-child(-n + 2) {
+  display: none !important;
+}
+
+/* Flat sync button */
+button.sidebar-sync-button {
+  border: none !important;
+  background-color: var(--joplin-background-color3) !important;
+  border-radius: 5px !important;
+}
+
+button.sidebar-sync-button:hover {
+  background-color: var(--joplin-background-color-hover3) !important;
+}
+
+/* Hide new note todo buttons in note list */
+div.new-note-todo-buttons {
+  display: none !important;
+}
+
+div#note-list {
+  height: 100% !important;
 }
 
 /* Hide Editor Toolbar */
