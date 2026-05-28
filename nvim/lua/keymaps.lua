@@ -28,7 +28,6 @@ function M.setup()
     vim.keymap.set({ "n", "v" }, "<M-1>", "<CMD>Neotree toggle focus<CR>", opts)                  -- Alt-1 切换文件面板显示
     vim.keymap.set({ "n", "v" }, "<M-2>", "<CMD>AerialToggle<CR>", opts)                          -- Alt-2 切换大纲面板显示
     vim.keymap.set({ "n", "v" }, "<M-F>", ActionFormat, opts)
-    vim.keymap.set({ "n" }, "<C-y>", "", opts)
 
     vim.keymap.set({ "n", "v", "i" }, "<C-p>", function()
         require("telescope.builtin").find_files({
@@ -59,7 +58,6 @@ function M.setup()
         { mode = "n",               "<leader>wa", vim.lsp.buf.add_workspace_folder,         desc = "LSP add_workspace_folder" },
         { mode = "n",               "<leader>wr", vim.lsp.buf.remove_workspace_folder,      desc = "LSP remove_workspace_folder" },
         { mode = "n",               "<leader>D",  vim.lsp.buf.type_definition,              desc = "LSP type_definition" },
-        { mode = "n",               "<leader>lr", vim.lsp.buf.rename,                       desc = "LSP rename" },
         { mode = { "n", "v" },      "<leader>ca", vim.lsp.buf.code_action,                  desc = "LSP code_action" },
         { mode = "n",               "gr",         vim.lsp.buf.references,                   desc = "LSP references" },
         { mode = "n",               "<leader>le", ActionLspOpenDiagnostic,                  desc = "LSP show diagnostics" },
