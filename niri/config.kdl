@@ -61,10 +61,11 @@ spawn-at-startup "kwalletd6"
 // sudo ln -s /etc/xdg/menus/arch-applications.menu /etc/xdg/menus/applications.menu
 // spawn-sh-at-startup "sleep 3s && XDG_MENU_PREFIX=arch- kbuildsycoca6"
 spawn-at-startup "swayidle" "-w" \
-    "timeout" "900" "dms ipc call lock lock" \
-    "timeout" "1800" "systemctl suspend" \
+    "timeout" "1800" "dms ipc call lock lock" \
+    "timeout" "3600" "systemctl suspend" \
     "before-sleep" "dms ipc call lock lock"
 spawn-at-startup "copyq"
+spawn-at-startup "flatpak" "run" "net.cozic.joplin_desktop"
 
 hotkey-overlay {
     skip-at-startup
@@ -93,9 +94,9 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "ghostty"; }
     Mod+S hotkey-overlay-title="Run an Application" { spawn-sh "dms ipc call spotlight toggle"; }
-    // Super+Ctrl+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Mod+P hotkey-overlay-title="Open Power Menu" { spawn-sh "dms ipc call powermenu toggle"; }
     Ctrl+Alt+V hotkey-overlay-title="Open CopyQ" { spawn-sh "copyq toggle"; }
+    Ctrl+Alt+A hotkey-overlay-title="Screenshot" { spawn-sh "grim -g \"$(slurp)\" - | satty -f -"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
@@ -123,8 +124,14 @@ binds {
     Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
 
-    Mod+A     { focus-column-left; }
-    Mod+D     { focus-column-right; }
+    Mod+A             { focus-column-left; }
+    Mod+D             { focus-column-right; }
+    Mod+Shift+A       { move-column-left; }
+    Mod+Shift+D       { move-column-right; }
+    Mod+Ctrl+A        { focus-monitor-left; }
+    Mod+Ctrl+D        { focus-monitor-right; }
+    Mod+Shift+Ctrl+A  { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+D  { move-column-to-monitor-right; }
 
     Mod+Shift+Left  { move-column-left; }
     Mod+Shift+Down  { move-window-down; }
