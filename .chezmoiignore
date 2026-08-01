@@ -1,0 +1,9 @@
+{{- if ne .chezmoi.os "windows" }}
+AppData/
+AppData/**
+{{- end }}
+
+{{- if eq .chezmoi.os "windows" }}
+.config/pip/
+.config/pip/**
+{{- end }}
