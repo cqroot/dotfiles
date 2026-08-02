@@ -1,3 +1,5 @@
+dconf/
+
 {{- if ne .chezmoi.os "windows" }}
 AppData/
 AppData/**
