@@ -21,13 +21,13 @@ end
 
 abbr srcfish 'source ~/.config/fish/config.fish'
 abbr ls 'ls --color=auto'
-abbr ll 'ls -lh --group-directories-first'
-abbr la 'ls -lha --group-directories-first'
-abbr l. "ls -A | grep -E '^\.'"
+abbr ll 'ls --color=auto -lh --group-directories-first'
+abbr la 'ls --color=auto -lha --group-directories-first'
+abbr l. "ls --color=auto -A | grep -E '^\.'"
 abbr grep 'grep --color=auto'
 abbr gs 'git status'
 abbr gll "git log --pretty=format:'%C(yellow)%h %Cgreen%ad %Creset%s' --date=short"
-abbr gl 'gll -n 20'
+abbr gl "git log --pretty=format:'%C(yellow)%h %Cgreen%ad %Creset%s' --date=short -n 20"
 abbr gd 'git diff'
 abbr gdc 'git diff --cached'
 abbr paru 'env all_proxy=http://127.0.0.1:7890 paru'
