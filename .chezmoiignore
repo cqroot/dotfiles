@@ -1,4 +1,5 @@
 dconf/
+scripts/install_for_*
 
 {{- if ne .chezmoi.os "windows" }}
 AppData/
