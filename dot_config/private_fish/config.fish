@@ -41,6 +41,7 @@ abbr oc opencode
 abbr cm chezmoi
 abbr cms 'chezmoi status'
 abbr cma 'chezmoi add'
+abbr cmaa 'chezmoi apply'
 abbr cme 'chezmoi edit'
 abbr cmm 'chezmoi managed'
 function cmcd
