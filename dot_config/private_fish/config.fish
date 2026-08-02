@@ -38,8 +38,12 @@ abbr ta 'tmux attach -t'
 abbr nvi nvim
 abbr lg lazygit
 abbr oc opencode
-abbr cz chezmoi
-function czcd
+abbr cm chezmoi
+abbr cms 'chezmoi status'
+abbr cma 'chezmoi add'
+abbr cme 'chezmoi edit'
+abbr cmm 'chezmoi managed'
+function cmcd
     cd (chezmoi source-path $argv)
 end
 
