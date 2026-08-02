@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+readonly SCRIPT_DIR
+
+PROJECT_DIR=$(dirname "${SCRIPT_DIR}")
+readonly PROJECT_DIR
+
+DCONF_DIR="${PROJECT_DIR}/dconf"
+readonly DCONF_DIR
+
+function dump_gnome_settings() {
+    if [[ ! -d "${DCONF_DIR}" ]]; then
+        mkdir -p "${DCONF_DIR}"
+    fi
+    dconf dump /org/gnome/desktop/interface/ >"${DCONF_DIR}/interface.dconf"
+    dconf dump /org/gnome/desktop/session/ >"${DCONF_DIR}/session.dconf"
+    dconf dump /org/gnome/desktop/screensaver/ >"${DCONF_DIR}/screensaver.dconf"
+    dconf dump /org/gnome/desktop/wm/preferences/ >"${DCONF_DIR}/wm-preferences.dconf"
+    dconf dump /org/gnome/desktop/wm/keybindings/ >"${DCONF_DIR}/keybindings.dconf"
+    dconf dump /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ >"${DCONF_DIR}/custom-keybindings.dconf"
+}
+
+function load_gnome_settings() {
+    dconf load /org/gnome/desktop/interface/ <"${DCONF_DIR}/interface.dconf"
+    dconf load /org/gnome/desktop/session/ <"${DCONF_DIR}/session.dconf"
+    dconf load /org/gnome/desktop/screensaver/ <"${DCONF_DIR}/screensaver.dconf"
+    dconf load /org/gnome/desktop/wm/preferences/ <"${DCONF_DIR}/wm-preferences.dconf"
+    dconf load /org/gnome/desktop/wm/keybindings/ <"${DCONF_DIR}/keybindings.dconf"
+    dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ <"${DCONF_DIR}/custom-keybindings.dconf"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"
+}
+
+function main() {
+    case "$1" in
+    dump)
+        dump_gnome_settings
+        ;;
+    load)
+        load_gnome_settings
+        ;;
+    esac
+}
+
+main "$@"
