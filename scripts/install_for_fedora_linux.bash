@@ -46,9 +46,10 @@ sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flat
 sudo flatpak remote-modify flathub --url=https://mirrors.ustc.edu.cn/flathub
 # sudo flatpak remote-modify flathub --url=https://mirrors.sjtug.sjtu.edu.cn/flathub
 
-flatpak install -y flathub com.brave.Browser
+# flatpak install -y flathub com.brave.Browser
 flatpak install -y flathub com.github.hluk.copyq
 flatpak install -y flathub com.mattjakeman.ExtensionManager
+flatpak install -y flathub com.google.Chrome
 flatpak install -y flathub com.visualstudio.code
 flatpak install -y flathub io.mpv.Mpv
 flatpak install -y flathub md.obsidian.Obsidian
