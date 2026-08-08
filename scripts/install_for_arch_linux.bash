@@ -23,6 +23,8 @@ sudo pacman -Sy --noconfirm --needed \
     sqlite3 \
     starship \
     thunderbird \
+    ttf-cascadia-code-nerd \
+    ttf-firacode-nerd \
     vim \
     zoxide
 
