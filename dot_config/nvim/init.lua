@@ -50,20 +50,21 @@ vim.pack.add({
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
     { src = 'https://github.com/akinsho/bufferline.nvim' },
     { src = 'https://github.com/stevearc/aerial.nvim' },
+    { src = 'https://github.com/stevearc/conform.nvim' },
     { src = 'https://github.com/nvim-telescope/telescope.nvim' },
     { src = 'https://github.com/nvim-lua/plenary.nvim' },
 })
 require('lualine').setup({
     options = { section_separators = '', component_separators = '' }
 })
-require("bufferline").setup({
+require('bufferline').setup({
     options = {
         show_close_icon = false,
         show_buffer_close_icons = false,
-        separator_style = "thick",
+        separator_style = 'thick',
     }
 })
-require("aerial").setup()
+require('aerial').setup()
 
 -- ============================================================
 -- LSPs
@@ -73,9 +74,15 @@ vim.lsp.config('lua_ls', {
     settings = {
         Lua = {
             workspace = {
-                library = vim.api.nvim_get_runtime_file("", true) }
+                library = vim.api.nvim_get_runtime_file('', true) }
         }
     }
+})
+
+require('conform').setup({
+    formatters_by_ft = {
+        markdown = { 'prettier' },
+    },
 })
 
 -- ============================================================
@@ -109,22 +116,22 @@ require('telescope').setup({
 -- ============================================================
 require('Comment').setup({
     toggler = {
-        line = "<C-_>",
-        block = "gbc",
+        line = '<C-_>',
+        block = 'gbc',
     },
     opleader = {
-        line = "<C-_>",
-        block = "gb",
+        line = '<C-_>',
+        block = 'gb',
     },
 })
 
 -- ============================================================
 -- File Explorer
 -- ============================================================
-require("oil").setup({
+require('oil').setup({
     keymaps = {
-        ["<Backspace>"] = "actions.parent",
-        ["-"] = "actions.parent",
+        ['<Backspace>'] = 'actions.parent',
+        ['-'] = 'actions.parent',
     },
 })
 
@@ -156,14 +163,19 @@ require('gitsigns').setup({
 -- ============================================================
 vim.keymap.set('n', '<C-s>', ':write<CR>')
 
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-I>', vim.lsp.buf.format)
+vim.keymap.set({ "n", "i", "v" }, '<C-S-I>', function()
+    require("conform").format({
+        lsp_fallback = true,
+        async = false,
+    })
+end)
 vim.keymap.set({ 'n', 'i', 'v' }, '<leader>lf', vim.lsp.buf.format)
 vim.keymap.set({ 'n', 'i', 'v' }, '<leader>ld', vim.diagnostic.open_float)
 vim.keymap.set({ 'n', 'i', 'v' }, '<leader>sf', '<CMD>Oil<CR>')
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-j>', '<CMD>bp<CR>')
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-k>', '<CMD>bn<CR>')
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-w>', '<CMD>bp|bd #<CR>')
-vim.keymap.set({ 'n', 'i', 'v' }, '<M-2>', "<CMD>AerialToggle!<CR>")
+vim.keymap.set({ 'n', 'i', 'v' }, '<M-2>', '<CMD>AerialToggle!<CR>')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
