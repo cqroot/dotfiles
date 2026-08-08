@@ -38,8 +38,7 @@ vim.g.mapleader = ';'
 -- Packages
 -- ============================================================
 vim.pack.add({
-    { src = 'https://github.com/nvim-mini/mini.pick',         version = 'stable' },
-    { src = 'https://github.com/nvim-mini/mini.icons',        version = 'stable' },
+    { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = 'https://github.com/saghen/blink.lib' },
     { src = 'https://github.com/saghen/blink.cmp' },
@@ -49,10 +48,10 @@ vim.pack.add({
     { src = 'https://github.com/vague-theme/vague.nvim' },
     { src = 'https://github.com/lewis6991/gitsigns.nvim' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
-    { src = 'https://github.com/akinsho/bufferline.nvim' }
+    { src = 'https://github.com/akinsho/bufferline.nvim' },
+    { src = 'https://github.com/nvim-telescope/telescope.nvim' },
+    { src = 'https://github.com/nvim-lua/plenary.nvim' },
 })
-require('mini.icons').setup()
-require('mini.icons').mock_nvim_web_devicons()
 require('lualine').setup({
     options = { section_separators = '', component_separators = '' }
 })
@@ -88,9 +87,20 @@ cmp.setup({
 })
 
 -- ============================================================
--- Pick
+-- Telescope
 -- ============================================================
-require('mini.pick').setup()
+require('telescope').setup({
+    defaults = {
+        mappings = {
+            i = {
+                ['<ESC>'] = require('telescope.actions').close,
+            },
+            n = {
+                ['<ESC>'] = require('telescope.actions').close,
+            },
+        },
+    },
+})
 
 -- ============================================================
 -- Comment
@@ -143,9 +153,7 @@ require('gitsigns').setup({
 -- Keymaps
 -- ============================================================
 vim.keymap.set('n', '<C-s>', ':write<CR>')
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-p>', require('mini.pick').builtin.files)
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-F>', require('mini.pick').builtin.grep_live)
-vim.keymap.set({ 'n', 'i', 'v' }, '<leader><Tab>', require('mini.pick').builtin.buffers)
+
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-I>', vim.lsp.buf.format)
 vim.keymap.set({ 'n', 'i', 'v' }, '<leader>lf', vim.lsp.buf.format)
 vim.keymap.set({ 'n', 'i', 'v' }, '<leader>ld', vim.diagnostic.open_float)
@@ -153,5 +161,15 @@ vim.keymap.set({ 'n', 'i', 'v' }, '<leader>sf', '<CMD>Oil<CR>')
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-j>', '<CMD>bp<CR>')
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-k>', '<CMD>bn<CR>')
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-w>', '<CMD>bp|bd #<CR>')
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>ft', builtin.tags, { desc = 'Telescope help tags' })
+
+vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<C-S-f>', builtin.live_grep, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<C-t>', builtin.tags, { desc = 'Telescope find files' })
 
 vim.cmd.colorscheme('vague')

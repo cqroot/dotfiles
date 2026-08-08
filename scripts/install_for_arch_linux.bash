@@ -16,6 +16,7 @@ sudo pacman -Sy --noconfirm --needed \
     go \
     lazygit \
     mpv \
+    neovim \
     obsidian \
     python-pip \
     ripgrep \
