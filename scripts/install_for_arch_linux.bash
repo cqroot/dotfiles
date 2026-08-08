@@ -26,7 +26,6 @@ sudo pacman -Sy --noconfirm --needed \
     vim \
     zoxide
 
-sudo flatpak remote-modify --disable fedora
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remote-modify flathub --url=https://mirrors.ustc.edu.cn/flathub
 # sudo flatpak remote-modify flathub --url=https://mirrors.sjtug.sjtu.edu.cn/flathub
