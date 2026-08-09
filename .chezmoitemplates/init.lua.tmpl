@@ -94,8 +94,8 @@ require('conform').setup({
 -- 4. Completion
 -- ============================================================
 local cmp = require('blink.cmp')
-cmp.build():pwait()
 cmp.setup({
+    fuzzy = { implementation = "lua" },
     keymap = {
         preset = 'super-tab'
     },
