@@ -1,0 +1,4 @@
+[/]
+mru-sources=[('ibus', 'libpinyin'), ('xkb', 'us')]
+sources=[('xkb', 'us'), ('ibus', 'libpinyin')]
+xkb-options=['terminate:ctrl_alt_bksp']
