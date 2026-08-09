@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
 
+if ! grep -q 'archlinuxcn' /etc/pacman.conf; then
+    echo '
+[archlinuxcn]
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch' | sudo tee -a /etc/pacman.conf
+    sudo pacman -Syy --noconfirm
+    sudo pacman -S --noconfirm --needed archlinuxcn-keyring
+fi
+
 sudo pacman -Syyu --noconfirm && \
 sudo pacman -Sy --noconfirm --needed \
     bat \
     chezmoi \
+    clash-verge-rev \
     copyq \
     extension-manager \
     fish \
@@ -12,13 +21,18 @@ sudo pacman -Sy --noconfirm --needed \
     fzf \
     ghostty \
     git \
+    git-delta \
     gnome-tweaks \
     go \
     ibus-libpinyin \
     lazygit \
     mpv \
     neovim \
+    nfs-utils \
+    noto-fonts-cjk \
     obsidian \
+    opencode \
+    papirus-icon-theme \
     python-pip \
     ripgrep \
     sqlite3 \
