@@ -63,6 +63,7 @@ require('lualine').setup({
 })
 require('bufferline').setup({
     options = {
+        offsets = { { filetype = "neo-tree", text = " ", padding = 0 } },
         show_close_icon = false,
         show_buffer_close_icons = false,
         separator_style = 'thick',
@@ -235,3 +236,5 @@ vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-f>', builtin.live_grep, { desc = 'Telesc
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-t>', builtin.tags, { desc = 'Telescope find files' })
 
 vim.cmd.colorscheme('vague')
+
+-- vim: set filetype=lua :
