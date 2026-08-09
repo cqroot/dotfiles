@@ -14,6 +14,7 @@ sudo pacman -Sy --noconfirm --needed \
     git \
     gnome-tweaks \
     go \
+    ibus-libpinyin \
     lazygit \
     mpv \
     neovim \

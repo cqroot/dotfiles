@@ -38,21 +38,25 @@ vim.g.mapleader = ';'
 -- 2. Packages
 -- ============================================================
 vim.pack.add({
-    { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
-    { src = 'https://github.com/neovim/nvim-lspconfig' },
-    { src = 'https://github.com/saghen/blink.lib' },
-    { src = 'https://github.com/saghen/blink.cmp' },
-    { src = 'https://github.com/rafamadriz/friendly-snippets' },
-    { src = 'https://github.com/stevearc/oil.nvim' },
-    { src = 'https://github.com/numToStr/Comment.nvim' },
-    { src = 'https://github.com/vague-theme/vague.nvim' },
-    { src = 'https://github.com/lewis6991/gitsigns.nvim' },
-    { src = 'https://github.com/nvim-lualine/lualine.nvim' },
-    { src = 'https://github.com/akinsho/bufferline.nvim' },
-    { src = 'https://github.com/stevearc/aerial.nvim' },
-    { src = 'https://github.com/stevearc/conform.nvim' },
-    { src = 'https://github.com/nvim-telescope/telescope.nvim' },
-    { src = 'https://github.com/nvim-lua/plenary.nvim' },
+    'https://github.com/neovim/nvim-lspconfig',
+    'https://github.com/saghen/blink.lib',
+    'https://github.com/saghen/blink.cmp',
+    'https://github.com/rafamadriz/friendly-snippets',
+    'https://github.com/numToStr/Comment.nvim',
+    'https://github.com/vague-theme/vague.nvim',
+    'https://github.com/lewis6991/gitsigns.nvim',
+    'https://github.com/nvim-lualine/lualine.nvim',
+    'https://github.com/akinsho/bufferline.nvim',
+    'https://github.com/stevearc/aerial.nvim',
+    'https://github.com/stevearc/conform.nvim',
+    'https://github.com/nvim-telescope/telescope.nvim',
+    {
+        src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
+        version = vim.version.range('3')
+    },
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/MunifTanjim/nui.nvim",
+    "https://github.com/nvim-tree/nvim-web-devicons",
 })
 require('lualine').setup({
     options = { section_separators = '', component_separators = '' }
@@ -89,6 +93,7 @@ require('conform').setup({
 -- 4. Completion
 -- ============================================================
 local cmp = require('blink.cmp')
+cmp.build():pwait()
 cmp.setup({
     keymap = {
         preset = 'super-tab'
@@ -128,10 +133,54 @@ require('Comment').setup({
 -- ============================================================
 -- 7. File Explorer
 -- ============================================================
-require('oil').setup({
-    keymaps = {
-        ['<Backspace>'] = 'actions.parent',
-        ['-'] = 'actions.parent',
+require("neo-tree").setup({
+    close_if_last_window = true,
+    window = {
+        width = 30,
+        mappings = {
+            ["h"] = "toggle_node",
+            ["l"] = "open",
+            ["<space>"] = {
+                "toggle_node",
+                nowait = false,
+            },
+            ["<2-LeftMouse>"] = "open",
+            ["<cr>"] = "open",
+            ["<esc>"] = "revert_preview",
+            ["P"] = { "toggle_preview", config = { use_float = true } },
+            ["S"] = "open_split",
+            ["s"] = "open_vsplit",
+            ["t"] = "open_tabnew",
+            ["w"] = "open_with_window_picker",
+            ["C"] = "close_node",
+            ["z"] = "close_all_nodes",
+            ["Z"] = "expand_all_nodes",
+            ["a"] = {
+                "add",
+                config = {
+                    show_path = "none",
+                },
+            },
+            ["A"] = "add_directory",
+            ["d"] = "delete",
+            ["r"] = "rename",
+            ["y"] = "copy_to_clipboard",
+            ["x"] = "cut_to_clipboard",
+            ["p"] = "paste_from_clipboard",
+            ["c"] = "copy",
+            ["m"] = "move",
+            ["q"] = "close_window",
+            ["R"] = "refresh",
+            ["?"] = "show_help",
+            ["<"] = "prev_source",
+            [">"] = "next_source",
+        },
+    },
+    filesystem = {
+        follow_current_file = {
+            enabled = true,
+            leave_dirs_open = false,
+        },
     },
 })
 
@@ -171,20 +220,18 @@ vim.keymap.set({ "n", "i", "v" }, '<C-S-I>', function()
 end)
 vim.keymap.set({ 'n', 'i', 'v' }, '<leader>lf', vim.lsp.buf.format)
 vim.keymap.set({ 'n', 'i', 'v' }, '<leader>ld', vim.diagnostic.open_float)
-vim.keymap.set({ 'n', 'i', 'v' }, '<leader>sf', '<CMD>Oil<CR>')
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-j>', '<CMD>bp<CR>')
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-k>', '<CMD>bn<CR>')
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-w>', '<CMD>bp|bd #<CR>')
+vim.keymap.set({ 'n', 'i', 'v' }, '<M-1>', '<CMD>Neotree toggle focus<CR>')
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-2>', '<CMD>AerialToggle!<CR>')
-
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>ft', builtin.tags, { desc = 'Telescope help tags' })
-
-vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<C-S-f>', builtin.live_grep, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<C-t>', builtin.tags, { desc = 'Telescope find files' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<leader>ft', builtin.tags, { desc = 'Telescope help tags' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-f>', builtin.live_grep, { desc = 'Telescope find files' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-t>', builtin.tags, { desc = 'Telescope find files' })
 
 vim.cmd.colorscheme('vague')
