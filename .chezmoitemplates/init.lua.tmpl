@@ -37,39 +37,194 @@ vim.g.mapleader = ";"
 -- ============================================================
 -- 2. Packages
 -- ============================================================
-vim.pack.add({
-	"https://github.com/neovim/nvim-lspconfig",
-	"https://github.com/saghen/blink.lib",
-	"https://github.com/saghen/blink.cmp",
-	"https://github.com/rafamadriz/friendly-snippets",
-	"https://github.com/numToStr/Comment.nvim",
-	"https://github.com/vague-theme/vague.nvim",
-	"https://github.com/lewis6991/gitsigns.nvim",
-	"https://github.com/nvim-lualine/lualine.nvim",
-	"https://github.com/akinsho/bufferline.nvim",
-	"https://github.com/stevearc/aerial.nvim",
-	"https://github.com/stevearc/conform.nvim",
-	"https://github.com/nvim-telescope/telescope.nvim",
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out, "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+	{ "vague-theme/vague.nvim" },
+	{ "neovim/nvim-lspconfig" },
 	{
-		src = "https://github.com/nvim-neo-tree/neo-tree.nvim",
-		version = vim.version.range("3"),
+		"saghen/blink.cmp",
+		dependencies = {
+			"saghen/blink.lib",
+			"rafamadriz/friendly-snippets",
+		},
+		opts = {
+			fuzzy = { implementation = "lua" },
+			keymap = {
+				preset = "super-tab",
+			},
+		},
 	},
-	"https://github.com/nvim-lua/plenary.nvim",
-	"https://github.com/MunifTanjim/nui.nvim",
-	"https://github.com/nvim-tree/nvim-web-devicons",
-})
-require("lualine").setup({
-	options = { section_separators = "", component_separators = "" },
-})
-require("bufferline").setup({
-	options = {
-		offsets = { { filetype = "neo-tree", text = " ", padding = 0 } },
-		show_close_icon = false,
-		show_buffer_close_icons = false,
-		separator_style = "thick",
+	{
+		"numToStr/Comment.nvim",
+		opts = {
+			toggler = {
+				line = "<C-_>",
+				block = "gbc",
+			},
+			opleader = {
+				line = "<C-_>",
+				block = "gb",
+			},
+		},
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		opts = {
+			signs = {
+				add = { text = "▐" },
+				change = { text = "▐" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+				untracked = { text = "┆" },
+			},
+			signs_staged = {
+				add = { text = "▐" },
+				change = { text = "▐" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+				untracked = { text = "┆" },
+			},
+			current_line_blame = true,
+		},
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		opts = {
+			options = { section_separators = "", component_separators = "" },
+		},
+	},
+	{
+		"akinsho/bufferline.nvim",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		opts = {
+			options = {
+				offsets = { { filetype = "neo-tree", text = " ", padding = 0 } },
+				show_close_icon = false,
+				show_buffer_close_icons = false,
+				separator_style = "thick",
+			},
+		},
+	},
+	{
+		"stevearc/aerial.nvim",
+		opts = {},
+		-- Optional dependencies
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
+	{
+		"stevearc/conform.nvim",
+		opts = {
+			lsp_fallback = "fallback",
+			formatters_by_ft = {
+				lua = { "stylua" },
+				markdown = { "prettier" },
+			},
+		},
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		opts = function()
+			-- 在函数内部 require，此时插件已加载
+			local actions = require("telescope.actions")
+
+			return {
+				defaults = {
+					mappings = {
+						i = {
+							["<ESC>"] = actions.close,
+						},
+						n = {
+							["<ESC>"] = actions.close,
+						},
+					},
+				},
+			}
+		end,
+	},
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
+		lazy = false,
+		opts = {
+			close_if_last_window = true,
+			window = {
+				width = 30,
+				mappings = {
+					["h"] = "toggle_node",
+					["l"] = "open",
+					["<space>"] = {
+						"toggle_node",
+						nowait = false,
+					},
+					["<2-LeftMouse>"] = "open",
+					["<cr>"] = "open",
+					["<esc>"] = "revert_preview",
+					["P"] = { "toggle_preview", config = { use_float = true } },
+					["S"] = "open_split",
+					["s"] = "open_vsplit",
+					["t"] = "open_tabnew",
+					["w"] = "open_with_window_picker",
+					["C"] = "close_node",
+					["z"] = "close_all_nodes",
+					["Z"] = "expand_all_nodes",
+					["a"] = {
+						"add",
+						config = {
+							show_path = "none",
+						},
+					},
+					["A"] = "add_directory",
+					["d"] = "delete",
+					["r"] = "rename",
+					["y"] = "copy_to_clipboard",
+					["x"] = "cut_to_clipboard",
+					["p"] = "paste_from_clipboard",
+					["c"] = "copy",
+					["m"] = "move",
+					["q"] = "close_window",
+					["R"] = "refresh",
+					["?"] = "show_help",
+					["<"] = "prev_source",
+					[">"] = "next_source",
+				},
+			},
+			filesystem = {
+				follow_current_file = {
+					enabled = true,
+					leave_dirs_open = false,
+				},
+			},
+		},
 	},
 })
-require("aerial").setup()
 
 -- ============================================================
 -- 3. LSPs
@@ -85,134 +240,8 @@ vim.lsp.config("lua_ls", {
 	},
 })
 
-require("conform").setup({
-	lsp_fallback = "fallback",
-	formatters_by_ft = {
-		lua = { "stylua" },
-		markdown = { "prettier" },
-	},
-})
-
 -- ============================================================
--- 4. Completion
--- ============================================================
-local cmp = require("blink.cmp")
-cmp.setup({
-	fuzzy = { implementation = "lua" },
-	keymap = {
-		preset = "super-tab",
-	},
-})
-
--- ============================================================
--- 5. Telescope
--- ============================================================
-require("telescope").setup({
-	defaults = {
-		mappings = {
-			i = {
-				["<ESC>"] = require("telescope.actions").close,
-			},
-			n = {
-				["<ESC>"] = require("telescope.actions").close,
-			},
-		},
-	},
-})
-
--- ============================================================
--- 6. Comment
--- ============================================================
-require("Comment").setup({
-	toggler = {
-		line = "<C-_>",
-		block = "gbc",
-	},
-	opleader = {
-		line = "<C-_>",
-		block = "gb",
-	},
-})
-
--- ============================================================
--- 7. File Explorer
--- ============================================================
-require("neo-tree").setup({
-	close_if_last_window = true,
-	window = {
-		width = 30,
-		mappings = {
-			["h"] = "toggle_node",
-			["l"] = "open",
-			["<space>"] = {
-				"toggle_node",
-				nowait = false,
-			},
-			["<2-LeftMouse>"] = "open",
-			["<cr>"] = "open",
-			["<esc>"] = "revert_preview",
-			["P"] = { "toggle_preview", config = { use_float = true } },
-			["S"] = "open_split",
-			["s"] = "open_vsplit",
-			["t"] = "open_tabnew",
-			["w"] = "open_with_window_picker",
-			["C"] = "close_node",
-			["z"] = "close_all_nodes",
-			["Z"] = "expand_all_nodes",
-			["a"] = {
-				"add",
-				config = {
-					show_path = "none",
-				},
-			},
-			["A"] = "add_directory",
-			["d"] = "delete",
-			["r"] = "rename",
-			["y"] = "copy_to_clipboard",
-			["x"] = "cut_to_clipboard",
-			["p"] = "paste_from_clipboard",
-			["c"] = "copy",
-			["m"] = "move",
-			["q"] = "close_window",
-			["R"] = "refresh",
-			["?"] = "show_help",
-			["<"] = "prev_source",
-			[">"] = "next_source",
-		},
-	},
-	filesystem = {
-		follow_current_file = {
-			enabled = true,
-			leave_dirs_open = false,
-		},
-	},
-})
-
--- ============================================================
--- 8. Git
--- ============================================================
-require("gitsigns").setup({
-	signs = {
-		add = { text = "▐" },
-		change = { text = "▐" },
-		delete = { text = "_" },
-		topdelete = { text = "‾" },
-		changedelete = { text = "~" },
-		untracked = { text = "┆" },
-	},
-	signs_staged = {
-		add = { text = "▐" },
-		change = { text = "▐" },
-		delete = { text = "_" },
-		topdelete = { text = "‾" },
-		changedelete = { text = "~" },
-		untracked = { text = "┆" },
-	},
-	current_line_blame = true,
-})
-
--- ============================================================
--- 9. Keymaps
+-- 4. Keymaps
 -- ============================================================
 vim.keymap.set("n", "<C-s>", ":write<CR>")
 
