@@ -3,5 +3,8 @@
 sudo pacman -Sy --noconfirm --needed \
     bash-language-server \
     lua-language-server \
-    prettier \
     shellcheck
+
+sudo pacman -Sy --noconfirm --needed \
+    prettier \
+    stylua
