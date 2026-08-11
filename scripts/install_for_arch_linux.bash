@@ -11,6 +11,7 @@ fi
 sudo pacman -Syyu --noconfirm && \
 sudo pacman -Sy --noconfirm --needed \
     bat \
+    celluloid \
     chezmoi \
     clash-verge-rev \
     copyq \
@@ -25,6 +26,8 @@ sudo pacman -Sy --noconfirm --needed \
     gnome-tweaks \
     go \
     ibus-libpinyin \
+    kdl-lsp \
+    kdlfmt \
     lazygit \
     mpv \
     neovim \

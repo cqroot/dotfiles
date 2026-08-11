@@ -136,6 +136,7 @@ require("lazy").setup({
 		opts = {
 			lsp_fallback = "fallback",
 			formatters_by_ft = {
+				kdl = { "kdlfmt" },
 				lua = { "stylua" },
 				markdown = { "prettier" },
 			},
@@ -229,7 +230,7 @@ require("lazy").setup({
 -- ============================================================
 -- 3. LSPs
 -- ============================================================
-vim.lsp.enable({ "bashls", "gopls", "lua_ls" })
+vim.lsp.enable({ "bashls", "gopls", "kdl-lsp", "lua_ls" })
 vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {

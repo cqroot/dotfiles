@@ -1,0 +1,106 @@
+keybinds clear-defaults=true {
+    normal {
+        bind "Alt e" {
+            SwitchToMode "Tmux"
+        }
+        bind "Alt enter" {
+            ToggleFloatingPanes
+        }
+    }
+    renametab {
+        bind "enter" {
+            SwitchToMode "Normal"
+        }
+    }
+    renamepane {
+        bind "enter" {
+            SwitchToMode "Normal"
+        }
+    }
+    tmux {
+        bind "esc" {
+            SwitchToMode "Normal"
+        }
+        bind "d" {
+            Detach
+            SwitchToMode "Normal"
+        }
+        // ==================================================
+        // Tab
+        // ==================================================
+        bind "c" {
+            NewTab
+            SwitchToMode "Normal"
+        }
+        bind "," {
+            SwitchToMode "RenameTab"
+        }
+        bind "n" {
+            GoToNextTab
+            SwitchToMode "Normal"
+        }
+        bind "p" {
+            GoToPreviousTab
+            SwitchToMode "Normal"
+        }
+        bind "{" {
+            MoveTab "Left"
+        }
+        bind "}" {
+            MoveTab "Right"
+        }
+        // ==================================================
+        // Pane
+        // ==================================================
+        bind "v" {
+            NewPane "Right"
+            SwitchToMode "Normal"
+        }
+        bind "b" {
+            NewPane "Down"
+            SwitchToMode "Normal"
+        }
+        bind "z" {
+            ToggleFocusFullscreen
+            SwitchToMode "Normal"
+        }
+        bind "h" {
+            MoveFocus "Left"
+            SwitchToMode "Normal"
+        }
+        bind "j" {
+            MoveFocus "Down"
+            SwitchToMode "Normal"
+        }
+        bind "k" {
+            MoveFocus "Up"
+            SwitchToMode "Normal"
+        }
+        bind "l" {
+            MoveFocus "Right"
+            SwitchToMode "Normal"
+        }
+        // ==================================================
+        // Session
+        // ==================================================
+        bind "d" {
+            Detach
+        }
+    }
+}
+plugins {
+    compact-bar location="zellij:compact-bar"
+}
+load_plugins {
+    zellij:compact-bar
+}
+theme "vesper"
+default_mode "normal"
+show_startup_tips false
+default_layout "compact"
+simplified_ui true
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}

@@ -44,6 +44,7 @@ abbr cma 'chezmoi add'
 abbr cmaa 'chezmoi apply'
 abbr cme 'chezmoi edit'
 abbr cmm 'chezmoi managed'
+abbr ze 'zellij'
 function cmcd
     cd (chezmoi source-path $argv)
 end
