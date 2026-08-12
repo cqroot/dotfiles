@@ -44,6 +44,7 @@ sudo pacman -Sy --noconfirm --needed \
     ttf-cascadia-code-nerd \
     ttf-firacode-nerd \
     vim \
+    yazi \
     zellij \
     zoxide
 
