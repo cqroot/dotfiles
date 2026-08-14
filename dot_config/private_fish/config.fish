@@ -15,9 +15,8 @@ fish_add_path $HOME/.bin
 fish_add_path $HOME/.secret_bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
-if set -q GOPATH
-    fish_add_path $GOPATH/bin
-end
+fish_add_path $GOPATH/bin
+fish_add_path /home/linuxbrew/.linuxbrew/bin/
 
 abbr srcfish 'source ~/.config/fish/config.fish'
 abbr ls 'ls --color=auto'

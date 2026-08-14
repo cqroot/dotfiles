@@ -56,7 +56,22 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{ "vague-theme/vague.nvim" },
-	{ "neovim/nvim-lspconfig" },
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			vim.lsp.enable("pyright")
+			vim.lsp.enable({ "bashls", "gopls", "kdl-lsp", "lua_ls" })
+			vim.lsp.config("lua_ls", {
+				settings = {
+					Lua = {
+						workspace = {
+							library = vim.api.nvim_get_runtime_file("", true),
+						},
+					},
+				},
+			})
+		end,
+	},
 	{
 		"saghen/blink.cmp",
 		dependencies = {
@@ -139,6 +154,7 @@ require("lazy").setup({
 				kdl = { "kdlfmt" },
 				lua = { "stylua" },
 				markdown = { "prettier" },
+				sh = { "shfmt" },
 			},
 		},
 	},
@@ -230,16 +246,6 @@ require("lazy").setup({
 -- ============================================================
 -- 3. LSPs
 -- ============================================================
-vim.lsp.enable({ "bashls", "gopls", "kdl-lsp", "lua_ls" })
-vim.lsp.config("lua_ls", {
-	settings = {
-		Lua = {
-			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
-		},
-	},
-})
 
 -- ============================================================
 -- 4. Keymaps
