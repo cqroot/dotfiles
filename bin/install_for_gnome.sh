@@ -26,15 +26,15 @@ function dump_gnome_settings() {
 }
 
 function load_gnome_settings() {
-    echo "Loading GNOME settings from {{ .chezmoi.sourceDir }}/dconf"
-    dconf load /com/github/libpinyin/ibus-libpinyin/libpinyin/ <"{{ .chezmoi.sourceDir }}/dconf/ibus-libpinyin.dconf"
-    dconf load /org/gnome/desktop/input-sources/ <"{{ .chezmoi.sourceDir }}/dconf/input-sources.dconf"
-    dconf load /org/gnome/desktop/interface/ <"{{ .chezmoi.sourceDir }}/dconf/interface.dconf"
-    dconf load /org/gnome/desktop/session/ <"{{ .chezmoi.sourceDir }}/dconf/session.dconf"
-    dconf load /org/gnome/desktop/screensaver/ <"{{ .chezmoi.sourceDir }}/dconf/screensaver.dconf"
-    dconf load /org/gnome/desktop/wm/preferences/ <"{{ .chezmoi.sourceDir }}/dconf/wm-preferences.dconf"
-    dconf load /org/gnome/desktop/wm/keybindings/ <"{{ .chezmoi.sourceDir }}/dconf/keybindings.dconf"
-    dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ <"{{ .chezmoi.sourceDir }}/dconf/custom-keybindings.dconf"
+    echo "Loading GNOME settings from ${DCONF_DIR}"
+    dconf load /com/github/libpinyin/ibus-libpinyin/libpinyin/ <"${DCONF_DIR}/ibus-libpinyin.dconf"
+    dconf load /org/gnome/desktop/input-sources/ <"${DCONF_DIR}/input-sources.dconf"
+    dconf load /org/gnome/desktop/interface/ <"${DCONF_DIR}/interface.dconf"
+    dconf load /org/gnome/desktop/session/ <"${DCONF_DIR}/session.dconf"
+    dconf load /org/gnome/desktop/screensaver/ <"${DCONF_DIR}/screensaver.dconf"
+    dconf load /org/gnome/desktop/wm/preferences/ <"${DCONF_DIR}/wm-preferences.dconf"
+    dconf load /org/gnome/desktop/wm/keybindings/ <"${DCONF_DIR}/keybindings.dconf"
+    dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ <"${DCONF_DIR}/custom-keybindings.dconf"
     gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"
     echo "Load completed"
 }
