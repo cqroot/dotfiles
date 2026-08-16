@@ -7,5 +7,8 @@ sudo pacman -Sy --noconfirm --needed \
     kdlfmt \
     lua-language-server \
     prettier \
+    pyright \
+    python-black \
+    shellcheck \
     shfmt \
     stylua
