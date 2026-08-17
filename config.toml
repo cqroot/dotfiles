@@ -1,3 +1,8 @@
+[fish]
+path = "fish"
+[fish.target]
+linux = "~/.config/fish"
+
 [niri]
 path = "niri"
 [niri.target]
