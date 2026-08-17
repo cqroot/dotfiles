@@ -85,7 +85,7 @@ binds {
         show-hotkey-overlay
     }
     Mod+Return hotkey-overlay-title="Open a Terminal" {
-        spawn "ghostty"
+        spawn "alacritty"
     }
     Mod+S hotkey-overlay-title="Run an Application" {
         spawn-sh "dms ipc call spotlight toggle"

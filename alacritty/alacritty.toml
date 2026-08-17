@@ -1,0 +1,10 @@
+[font]
+size = 14
+
+[font.normal]
+family = "CaskaydiaCove Nerd Font"
+
+[[keyboard.bindings]]
+key = "Slash"
+mods = "Control"
+chars = "\u001F"

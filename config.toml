@@ -1,3 +1,8 @@
+[alacritty]
+path = "alacritty"
+[alacritty.target]
+linux = "~/.config/alacritty"
+
 [fish]
 path = "fish"
 [fish.target]
