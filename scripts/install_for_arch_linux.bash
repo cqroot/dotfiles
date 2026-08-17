@@ -35,8 +35,6 @@ sudo pacman -Syyu --noconfirm &&
         sqlite3 \
         starship \
         thunderbird \
-        ttf-cascadia-code-nerd \
-        ttf-firacode-nerd \
         yazi \
         zellij \
         zoxide
