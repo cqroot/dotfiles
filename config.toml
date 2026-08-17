@@ -3,6 +3,11 @@ path = "fish"
 [fish.target]
 linux = "~/.config/fish"
 
+[ghostty]
+path = "ghostty"
+[ghostty.target]
+linux = "~/.config/ghostty"
+
 [go]
 path = "go"
 [go.target]
