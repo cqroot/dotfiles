@@ -28,6 +28,11 @@ path = "lazygit"
 [lazygit.target]
 linux = "~/.config/lazygit"
 
+[mpv]
+path = "mpv"
+[mpv.target]
+linux = "~/.config/mpv"
+
 [niri]
 path = "niri"
 [niri.target]
