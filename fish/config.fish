@@ -37,15 +37,9 @@ abbr ta 'tmux attach -t'
 abbr nvi nvim
 abbr lg lazygit
 abbr oc opencode
-abbr cm chezmoi
-abbr cms 'chezmoi status'
-abbr cma 'chezmoi add'
-abbr cmaa 'chezmoi apply'
-abbr cme 'chezmoi edit'
-abbr cmm 'chezmoi managed'
-abbr ze 'zellij'
-function cmcd
-    cd (chezmoi source-path $argv)
+abbr dm domic
+function dmcd
+    cd (domic configdir)
 end
 
 set -gx FZF_DEFAULT_OPTS '--cycle --border=rounded --pointer=• --prompt="❯ "'
