@@ -61,5 +61,5 @@ linux = "~/.config/sqlite3"
 
 [zellij]
 path = "zellij"
-[zellij.targets]
+[zellij.target]
 linux = "~/.config/zellij"
