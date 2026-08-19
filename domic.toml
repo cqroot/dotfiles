@@ -43,6 +43,11 @@ path = "niri"
 [niri.target]
 linux = "~/.config/niri"
 
+[npm]
+path = "npm/npmrc"
+[npm.target]
+linux = "~/.npmrc"
+
 [nvim]
 path = "nvim"
 [nvim.target]
