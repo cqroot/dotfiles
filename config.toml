@@ -3,6 +3,11 @@ path = "alacritty"
 [alacritty.target]
 linux = "~/.config/alacritty"
 
+[cargo]
+path = "cargo"
+[cargo.target]
+linux = "~/.cargo"
+
 [fish]
 path = "fish"
 [fish.target]
