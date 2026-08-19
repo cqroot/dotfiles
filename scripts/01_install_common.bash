@@ -14,7 +14,6 @@ sudo pacman -Syyu --noconfirm &&
         brave-bin \
         chezmoi \
         clash-verge-rev \
-        copyq \
         fish \
         flameshot \
         flatpak \

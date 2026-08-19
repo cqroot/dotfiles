@@ -60,7 +60,6 @@ spawn-at-startup "kwalletd6"
 // sudo ln -s /etc/xdg/menus/arch-applications.menu /etc/xdg/menus/applications.menu
 // spawn-sh-at-startup "sleep 3s && XDG_MENU_PREFIX=arch- kbuildsycoca6"
 spawn-at-startup "swayidle" "-w" "timeout" "1800" "dms ipc call lock lock" "timeout" "3600" "systemctl suspend" "before-sleep" "dms ipc call lock lock"
-spawn-at-startup "copyq"
 spawn-at-startup "flatpak" "run" "net.cozic.joplin_desktop"
 hotkey-overlay {
     skip-at-startup
@@ -76,10 +75,6 @@ window-rule {
     clip-to-geometry true
     open-maximized true
 }
-window-rule {
-    match app-id="^com\\.github\\.hluk\\.copyq$"
-    open-floating true
-}
 binds {
     Mod+Shift+Slash {
         show-hotkey-overlay
@@ -93,8 +88,8 @@ binds {
     Mod+P hotkey-overlay-title="Open Power Menu" {
         spawn-sh "dms ipc call powermenu toggle"
     }
-    Ctrl+Alt+V hotkey-overlay-title="Open CopyQ" {
-        spawn-sh "copyq toggle"
+    Ctrl+Alt+V hotkey-overlay-title="Open Clipboard History" {
+        spawn-sh "dms ipc clipboard toggle"
     }
     Ctrl+Alt+A hotkey-overlay-title="Screenshot" {
         spawn-sh "grim -g \"$(slurp)\" - | satty -f -"
