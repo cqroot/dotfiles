@@ -38,3 +38,8 @@ windows = "~/AppData/Local/nvim"
 path = "sqlite3"
 [sqlite3.target]
 linux = "~/.config/sqlite3"
+
+[zellij]
+path = "zellij"
+[zellij.targets]
+linux = "~/.config/zellij"

@@ -1,0 +1,227 @@
+keybinds clear-defaults=true {
+    normal {
+        bind "Alt e" {
+            SwitchToMode "Tmux"
+        }
+        bind "Alt enter" {
+            ToggleFloatingPanes
+        }
+    }
+    renametab {
+        bind "enter" {
+            SwitchToMode "Normal"
+        }
+    }
+    renamepane {
+        bind "enter" {
+            SwitchToMode "Normal"
+        }
+    }
+    tmux {
+        bind "esc" {
+            SwitchToMode "Normal"
+        }
+        bind "d" {
+            Detach
+            SwitchToMode "Normal"
+        }
+        // ==================================================
+        // Tab
+        // ==================================================
+        bind "c" {
+            NewTab
+            SwitchToMode "Normal"
+        }
+        bind "," {
+            SwitchToMode "RenameTab"
+        }
+        bind "n" {
+            GoToNextTab
+            SwitchToMode "Normal"
+        }
+        bind "p" {
+            GoToPreviousTab
+            SwitchToMode "Normal"
+        }
+        bind "{" {
+            MoveTab "Left"
+        }
+        bind "}" {
+            MoveTab "Right"
+        }
+        // ==================================================
+        // Pane
+        // ==================================================
+        bind "v" {
+            NewPane "Right"
+            SwitchToMode "Normal"
+        }
+        bind "b" {
+            NewPane "Down"
+            SwitchToMode "Normal"
+        }
+        bind "z" {
+            ToggleFocusFullscreen
+            SwitchToMode "Normal"
+        }
+        bind "h" {
+            MoveFocus "Left"
+            SwitchToMode "Normal"
+        }
+        bind "j" {
+            MoveFocus "Down"
+            SwitchToMode "Normal"
+        }
+        bind "k" {
+            MoveFocus "Up"
+            SwitchToMode "Normal"
+        }
+        bind "l" {
+            MoveFocus "Right"
+            SwitchToMode "Normal"
+        }
+        // ==================================================
+        // Session
+        // ==================================================
+        bind "d" {
+            Detach
+        }
+    }
+}
+plugins {
+    compact-bar location="zellij:compact-bar"
+}
+load_plugins {
+    zellij:compact-bar
+}
+default_mode "normal"
+show_startup_tips false
+default_layout "compact"
+simplified_ui true
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}
+
+theme "vesper_custom"
+themes {
+    vesper_custom {
+        text_unselected {
+            base 160 160 160
+            background 16 16 16
+            emphasis_0 255 199 153
+            emphasis_1 234 131 165
+            emphasis_2 144 185 159
+            emphasis_3 226 158 202
+        }
+        text_selected {
+            base 160 160 160
+            background 16 16 16
+            emphasis_0 255 199 153
+            emphasis_1 234 131 165
+            emphasis_2 144 185 159
+            emphasis_3 226 158 202
+        }
+        ribbon_selected {
+            base 16 16 16
+            background 144 185 159
+            emphasis_0 245 161 145
+            emphasis_1 255 199 153
+            emphasis_2 226 158 202
+            emphasis_3 172 161 207
+        }
+        ribbon_unselected {
+            base 234 234 234
+            background 40 42 46
+            emphasis_0 245 161 145
+            emphasis_1 40 42 46
+            emphasis_2 172 161 207
+            emphasis_3 226 158 202
+        }
+        table_title {
+            base 144 185 159
+            background 0
+            emphasis_0 255 199 153
+            emphasis_1 234 131 165
+            emphasis_2 144 185 159
+            emphasis_3 226 158 202
+        }
+        table_cell_selected {
+            base 160 160 160
+            background 16 16 16
+            emphasis_0 255 199 153
+            emphasis_1 234 131 165
+            emphasis_2 144 185 159
+            emphasis_3 226 158 202
+        }
+        table_cell_unselected {
+            base 160 160 160
+            background 16 16 16
+            emphasis_0 255 199 153
+            emphasis_1 234 131 165
+            emphasis_2 144 185 159
+            emphasis_3 226 158 202
+        }
+        list_selected {
+            base 160 160 160
+            background 16 16 16
+            emphasis_0 255 199 153
+            emphasis_1 234 131 165
+            emphasis_2 144 185 159
+            emphasis_3 226 158 202
+        }
+        list_unselected {
+            base 160 160 160
+            background 16 16 16
+            emphasis_0 255 199 153
+            emphasis_1 234 131 165
+            emphasis_2 144 185 159
+            emphasis_3 226 158 202
+        }
+        frame_selected {
+            base 144 185 159
+            background 0
+            emphasis_0 255 199 153
+            emphasis_1 234 131 165
+            emphasis_2 226 158 202
+            emphasis_3 0
+        }
+        frame_highlight {
+            base 255 199 153
+            background 0
+            emphasis_0 226 158 202
+            emphasis_1 255 199 153
+            emphasis_2 255 199 153
+            emphasis_3 255 199 153
+        }
+        exit_code_success {
+            base 144 185 159
+            background 0
+            emphasis_0 234 131 165
+            emphasis_1 16 16 16
+            emphasis_2 226 158 202
+            emphasis_3 172 161 207
+        }
+        exit_code_error {
+            base 245 161 145
+            background 0
+            emphasis_0 230 185 157
+            emphasis_1 0
+            emphasis_2 0
+            emphasis_3 0
+        }
+        multiplayer_user_colors {
+            player_1 226 158 202
+            player_2 172 161 207
+            player_3 0
+            player_4 230 185 157
+            player_5 234 131 165
+            player_6 0
+            player_7 245 161 145
+            player_8 0
+            player_9 0
+            player_10 0
+        }
+    }
+}
