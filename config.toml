@@ -13,6 +13,11 @@ path = "ghostty"
 [ghostty.target]
 linux = "~/.config/ghostty"
 
+[git]
+path = "git"
+[git.target]
+linux = "~/.config/git"
+
 [go]
 path = "go"
 [go.target]
