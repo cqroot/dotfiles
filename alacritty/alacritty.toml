@@ -8,3 +8,11 @@ family = "CaskaydiaCove Nerd Font"
 key = "Slash"
 mods = "Control"
 chars = "\u001F"
+
+[mouse]
+bindings = [
+  { mouse = "Right", action = "Paste" },
+]
+
+[selection]
+save_to_clipboard = true
