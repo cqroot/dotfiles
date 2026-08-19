@@ -44,6 +44,11 @@ path = "nvim"
 linux = "~/.config/nvim"
 windows = "~/AppData/Local/nvim"
 
+[pip]
+path = "pip"
+[pip.target]
+linux = "~/.config/pip"
+
 [sqlite3]
 path = "sqlite3"
 [sqlite3.target]
