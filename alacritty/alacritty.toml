@@ -9,6 +9,11 @@ key = "Slash"
 mods = "Control"
 chars = "\u001F"
 
+[[keyboard.bindings]]
+key = "Insert"
+mods = "Shift"
+action = "Paste"
+
 [mouse]
 bindings = [
   { mouse = "Right", action = "Paste" },
