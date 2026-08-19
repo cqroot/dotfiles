@@ -11,6 +11,7 @@ fi
 sudo pacman -Syyu --noconfirm &&
     sudo pacman -Sy --noconfirm --needed \
         bat \
+        brave-bin \
         chezmoi \
         clash-verge-rev \
         copyq \
@@ -39,14 +40,8 @@ sudo pacman -Syyu --noconfirm &&
         zellij \
         zoxide
 
-# gnome
-# celluloid \
-# gnome-tweaks \
-# extension-manager \
-# ibus-libpinyin \
-
-sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-sudo flatpak remote-modify flathub --url=https://mirrors.ustc.edu.cn/flathub
+# sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+# sudo flatpak remote-modify flathub --url=https://mirrors.ustc.edu.cn/flathub
 # sudo flatpak remote-modify flathub --url=https://mirrors.sjtug.sjtu.edu.cn/flathub
 
-sudo flatpak install -y flathub com.google.Chrome
+# sudo flatpak install -y flathub com.google.Chrome
