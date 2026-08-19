@@ -23,6 +23,11 @@ path = "go"
 [go.target]
 linux = "~/.config/go"
 
+[lazygit]
+path = "lazygit"
+[lazygit.target]
+linux = "~/.config/lazygit"
+
 [niri]
 path = "niri"
 [niri.target]
