@@ -24,6 +24,7 @@ readonly PACKAGES=(
     xdg-desktop-portal-gnome   # Portal backend for Flatpak/Snap, screenshots, etc.
     nautilus-open-any-terminal # "Open Terminal Here" extension for Nautilus
     papirus-icon-theme         # Papirus icon theme
+    loupe                      # GNOME image viewer
 
     # Apps
     alacritty         # GPU-accelerated terminal emulator

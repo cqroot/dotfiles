@@ -1,6 +1,6 @@
-environment {
-    XDG_MENU_PREFIX "plasma-"
-}
+// environment {
+//     XDG_MENU_PREFIX "plasma-"
+// }
 input {
     keyboard {
         xkb {
@@ -56,11 +56,11 @@ layout {
     }
 }
 spawn-sh-at-startup "dms run"
-spawn-at-startup "kwalletd6"
+// spawn-at-startup "kwalletd6"
 // sudo ln -s /etc/xdg/menus/arch-applications.menu /etc/xdg/menus/applications.menu
 // spawn-sh-at-startup "sleep 3s && XDG_MENU_PREFIX=arch- kbuildsycoca6"
 spawn-at-startup "swayidle" "-w" "timeout" "1800" "dms ipc call lock lock" "timeout" "3600" "systemctl suspend" "before-sleep" "dms ipc call lock lock"
-spawn-at-startup "flatpak" "run" "net.cozic.joplin_desktop"
+// spawn-at-startup "flatpak" "run" "net.cozic.joplin_desktop"
 hotkey-overlay {
     skip-at-startup
     hide-not-bound
