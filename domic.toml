@@ -1,5 +1,6 @@
 [alacritty]
 path = "alacritty"
+template = true
 [alacritty.target]
 linux = "~/.config/alacritty"
 windows = "~/AppData/Roaming/alacritty"

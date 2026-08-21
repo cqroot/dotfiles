@@ -10,10 +10,14 @@ scoop bucket add main
 scoop bucket add extras
 scoop bucket add nerd-fonts
 
+scoop bucket add nerd-fontsjj
+scoop install nerd-fonts/
+
 scoop install `
     alacritty `
     bat `
     brave `
+    CascadiaCode-NF `
     delta `
     fzf `
     lazygit `
@@ -30,7 +34,6 @@ scoop install `
     zoxide
 
 scoop install `
-    bash-language-server `
     gopls `
     lua-language-server `
     prettier `

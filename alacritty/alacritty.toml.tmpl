@@ -21,3 +21,8 @@ bindings = [
 
 [selection]
 save_to_clipboard = true
+
+{{ if eq .domic.os "windows" }}
+[terminal]
+shell = { program = "C:\\Users\\cqroot\\scoop\\apps\\pwsh\\current\\pwsh.exe" }
+{{ end }}
