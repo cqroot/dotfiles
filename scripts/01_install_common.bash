@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ ! -f /etc/arch-release ]; then
+    echo "This script is only for Arch Linux. Exiting."
+    exit 0
+fi
+
 if ! grep -q 'archlinuxcn' /etc/pacman.conf; then
     echo '
 [archlinuxcn]
