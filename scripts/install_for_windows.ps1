@@ -11,20 +11,17 @@ scoop bucket add extras
 scoop bucket add nerd-fonts
 
 scoop install `
+    alacritty `
     bat `
     brave `
-    chezmoi `
     delta `
-    fish `
     fzf `
-    ghostty `
-    git `
-    go `
     lazygit `
     mpv `
     neovim `
     obsidian `
     opencode `
+    pwsh `
     python `
     ripgrep `
     sqlite `

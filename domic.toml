@@ -2,6 +2,7 @@
 path = "alacritty"
 [alacritty.target]
 linux = "~/.config/alacritty"
+windows = "~/AppData/Roaming/alacritty"
 
 [cargo]
 path = "cargo"
@@ -22,21 +23,25 @@ linux = "~/.config/ghostty"
 path = "git"
 [git.target]
 linux = "~/.config/git"
+windows = "~/.config/git"
 
 [go]
 path = "go"
 [go.target]
 linux = "~/.config/go"
+windows = "~/AppData/Roaming/go"
 
 [lazygit]
 path = "lazygit"
 [lazygit.target]
 linux = "~/.config/lazygit"
+windows = "~/AppData/Local/lazygit"
 
 [mpv]
 path = "mpv"
 [mpv.target]
 linux = "~/.config/mpv"
+windows = "~/AppData/Roaming/mpv"
 
 [niri]
 path = "niri"
@@ -59,6 +64,11 @@ path = "pip"
 [pip.target]
 linux = "~/.config/pip"
 
+[pwsh]
+path = "pwsh/Microsoft.PowerShell_profile.ps1"
+[pwsh.target]
+windows = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+
 [sqlite3]
 path = "sqlite3"
 [sqlite3.target]
@@ -68,3 +78,4 @@ linux = "~/.config/sqlite3"
 path = "zellij"
 [zellij.target]
 linux = "~/.config/zellij"
+windows = "~/AppData/Roaming/zellij"
