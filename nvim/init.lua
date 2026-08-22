@@ -84,19 +84,6 @@ require("lazy").setup({
 			},
 		},
 	},
-	-- {
-	-- 	"numToStr/Comment.nvim",
-	-- 	opts = {
-	-- 		toggler = {
-	-- 			line = "<C-_>",
-	-- 			block = "gbc",
-	-- 		},
-	-- 		opleader = {
-	-- 			line = "<C-_>",
-	-- 			block = "gb",
-	-- 		},
-	-- 	},
-	-- },
 	{
 		"nvim-mini/mini.comment",
 		version = "*",
@@ -253,14 +240,16 @@ require("lazy").setup({
 			},
 		},
 	},
+	{
+		"keaising/im-select.nvim",
+		config = function()
+			require("im_select").setup({})
+		end,
+	},
 })
 
 -- ============================================================
--- 3. LSPs
--- ============================================================
-
--- ============================================================
--- 4. Keymaps
+-- 3. Keymaps
 -- ============================================================
 vim.keymap.set("n", "<C-s>", ":write<CR>")
 
