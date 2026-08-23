@@ -35,6 +35,7 @@ abbr tl 'tmux ls'
 abbr tn 'tmux new -s (basename $PWD)'
 abbr ta 'tmux attach -t'
 abbr nvi nvim
+abbr vim nvim
 abbr lg lazygit
 abbr oc opencode
 abbr dm domic

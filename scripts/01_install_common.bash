@@ -30,6 +30,7 @@ sudo pacman -Syyu --noconfirm &&
         lazygit \
         mpv \
         neovim \
+        npm \
         nfs-utils \
         noto-fonts-cjk \
         obsidian \

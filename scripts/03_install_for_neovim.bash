@@ -17,6 +17,7 @@ readonly PACKAGES=(
     shellcheck
     shfmt
     stylua
+    tombi
 )
 
 sudo pacman -Sy --noconfirm --needed "${PACKAGES[@]}"

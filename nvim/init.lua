@@ -59,7 +59,7 @@ require("lazy").setup({
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			vim.lsp.enable({ "bashls", "gopls", "kdl-lsp", "lua_ls", "pyright" })
+			vim.lsp.enable({ "bashls", "gopls", "kdl-lsp", "lua_ls", "pyright", "tombi" })
 			vim.lsp.config("lua_ls", {
 				settings = {
 					Lua = {
@@ -154,6 +154,7 @@ require("lazy").setup({
 				markdown = { "prettier" },
 				python = { "black" },
 				sh = { "shfmt" },
+				toml = { "tombi" },
 			},
 		},
 	},
