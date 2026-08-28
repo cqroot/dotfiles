@@ -27,6 +27,7 @@ sudo pacman -Syyu --noconfirm &&
         git \
         git-delta \
         go \
+        go-tools \
         lazygit \
         mpv \
         neovim \

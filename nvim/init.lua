@@ -57,6 +57,20 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ "vague-theme/vague.nvim" },
 	{
+		"nvim-mini/mini.cursorword",
+		version = "*",
+		config = function()
+			require("mini.cursorword").setup()
+		end,
+	},
+	{
+		"nvim-mini/mini.hipatterns",
+		version = "*",
+		config = function()
+			require("mini.hipatterns").setup()
+		end,
+	},
+	{
 		"neovim/nvim-lspconfig",
 		config = function()
 			vim.lsp.enable({ "bashls", "gopls", "kdl-lsp", "lua_ls", "pyright", "tombi" })
@@ -149,6 +163,7 @@ require("lazy").setup({
 		opts = {
 			lsp_fallback = "fallback",
 			formatters_by_ft = {
+				go = { "goimports" },
 				kdl = { "kdlfmt" },
 				lua = { "stylua" },
 				markdown = { "prettier" },

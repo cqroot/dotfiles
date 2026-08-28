@@ -36,6 +36,8 @@ readonly PACKAGES=(
     fcitx5            # Input method framework
     fcitx5-configtool # Graphical configuration tool for fcitx5
     fcitx5-rime       # Rime input engine
+
+    localsend
 )
 
 sudo pacman -Sy --noconfirm --needed "${PACKAGES[@]}"
