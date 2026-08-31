@@ -98,6 +98,7 @@ default_mode "normal"
 show_startup_tips false
 default_layout "compact"
 simplified_ui true
+pane_frames: false
 ui {
     pane_frames {
         rounded_corners true
