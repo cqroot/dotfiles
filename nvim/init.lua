@@ -5,7 +5,7 @@ vim.opt.number = true
 vim.opt.mouse = "a"
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.winborder = "rounded"
 
 vim.opt.ignorecase = true
