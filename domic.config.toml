@@ -1,0 +1,2 @@
+verbose = false
+diff = ["delta", "--side-by-side"]

@@ -1,5 +1,6 @@
 [alacritty]
 path = "alacritty"
+bin = "alacritty"
 template = true
 [alacritty.target]
 linux = "~/.config/alacritty"
@@ -7,76 +8,96 @@ windows = "~/AppData/Roaming/alacritty"
 
 [cargo]
 path = "cargo"
+bin = "cargo"
 [cargo.target]
 linux = "~/.cargo"
 
 [fish]
 path = "fish"
+bin = "fish"
 [fish.target]
 linux = "~/.config/fish"
 
 [ghostty]
 path = "ghostty"
+bin = "ghostty"
 [ghostty.target]
 linux = "~/.config/ghostty"
 
 [git]
 path = "git"
+bin = "git"
 [git.target]
 linux = "~/.config/git"
 windows = "~/.config/git"
 
 [go]
 path = "go"
+bin = "go"
 [go.target]
 linux = "~/.config/go"
 windows = "~/AppData/Roaming/go"
 
 [lazygit]
 path = "lazygit"
+bin = "lazygit"
 [lazygit.target]
 linux = "~/.config/lazygit"
 windows = "~/AppData/Local/lazygit"
 
 [mpv]
 path = "mpv"
+bin = "mpv"
 [mpv.target]
 linux = "~/.config/mpv"
 windows = "~/AppData/Roaming/mpv"
 
 [niri]
 path = "niri"
+bin = "niri"
 [niri.target]
 linux = "~/.config/niri"
 
 [npm]
 path = "npm/npmrc"
+bin = "npm"
 [npm.target]
 linux = "~/.npmrc"
 
 [nvim]
 path = "nvim"
+bin = "nvim"
 [nvim.target]
 linux = "~/.config/nvim"
 windows = "~/AppData/Local/nvim"
 
 [pip]
 path = "pip"
+bin = "pip"
 [pip.target]
 linux = "~/.config/pip"
 
+[podman]
+path = "podman"
+bin = "podman"
+[podman.target]
+linux = "~/.config/containers"
+
 [pwsh]
 path = "pwsh/Microsoft.PowerShell_profile.ps1"
+bin = "pwsh"
 [pwsh.target]
 windows = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
 
 [sqlite3]
 path = "sqlite3"
+bin = "sqlite3"
 [sqlite3.target]
 linux = "~/.config/sqlite3"
 
 [zellij]
 path = "zellij"
+bin = "zellij"
 [zellij.target]
 linux = "~/.config/zellij"
 windows = "~/AppData/Roaming/zellij"
