@@ -100,4 +100,4 @@ path = "zellij"
 bin = "zellij"
 [zellij.target]
 linux = "~/.config/zellij"
-windows = "~/AppData/Roaming/zellij"
+windows = "~/AppData/Roaming/Zellij"
