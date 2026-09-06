@@ -64,6 +64,12 @@ bin = "npm"
 [npm.target]
 linux = "~/.npmrc"
 
+[nu]
+path = "nushell"
+bin = "nu"
+[nu.target]
+linux = "~/.config/nushell"
+
 [nvim]
 path = "nvim"
 bin = "nvim"
