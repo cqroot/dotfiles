@@ -30,6 +30,5 @@ function dmcd {
 }
 
 $env:FZF_DEFAULT_OPTS = "--cycle --border=rounded --pointer=• --prompt=""❯ """
-Invoke-Expression (& { (fzf --powershell) | Out-String })
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 Invoke-Expression (& { (starship init powershell | Out-String) })
