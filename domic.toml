@@ -38,6 +38,11 @@ bin = "go"
 linux = "~/.config/go"
 windows = "~/AppData/Roaming/go"
 
+[ideavim]
+path = "ideavim/ideavimrc"
+[ideavim.target]
+linux = "~/.ideavimrc"
+
 [lazygit]
 path = "lazygit"
 bin = "lazygit"

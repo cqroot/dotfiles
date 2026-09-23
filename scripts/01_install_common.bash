@@ -27,8 +27,10 @@ sudo pacman -Syyu --noconfirm &&
         git \
         git-delta \
         go \
+        golangci-lint \
         go-tools \
         lazygit \
+        less \
         mpv \
         neovim \
         npm \
