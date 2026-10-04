@@ -43,6 +43,11 @@ path = "ideavim/ideavimrc"
 [ideavim.target]
 linux = "~/.ideavimrc"
 
+[joplin-desktop]
+path = "joplin-desktop"
+[joplin-desktop.target]
+linux = "~/.config/joplin-desktop"
+
 [lazygit]
 path = "lazygit"
 bin = "lazygit"
