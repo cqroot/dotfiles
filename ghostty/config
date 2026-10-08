@@ -16,6 +16,18 @@ keybind = alt+6=unbind
 keybind = alt+7=unbind
 keybind = alt+8=unbind
 keybind = alt+9=unbind
+
+keybind = alt+digit_0=unbind
+keybind = alt+digit_1=unbind
+keybind = alt+digit_2=unbind
+keybind = alt+digit_3=unbind
+keybind = alt+digit_4=unbind
+keybind = alt+digit_5=unbind
+keybind = alt+digit_6=unbind
+keybind = alt+digit_7=unbind
+keybind = alt+digit_8=unbind
+keybind = alt+digit_9=unbind
+
 keybind = ctrl+slash=text:\x1f
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+j=goto_split:down
