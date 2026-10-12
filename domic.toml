@@ -48,6 +48,11 @@ path = "joplin-desktop"
 [joplin-desktop.target]
 linux = "~/.config/joplin-desktop"
 
+[keyd]
+path = "keyd"
+[keyd.target]
+linux = "/etc/keyd"
+
 [lazygit]
 path = "lazygit"
 bin = "lazygit"
