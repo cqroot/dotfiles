@@ -170,6 +170,7 @@ require("lazy").setup({
 				python = { "black" },
 				sh = { "shfmt" },
 				toml = { "tombi" },
+                typescript = { "prettier" },
 			},
 		},
 	},
@@ -263,6 +264,55 @@ require("lazy").setup({
 		end,
 	},
 })
+
+-- ============================================================
+-- 3. Floating Terminal
+-- ============================================================
+local term_buf = nil
+local term_win = nil
+
+local function toggle_floating_term()
+	if term_win and vim.api.nvim_win_is_valid(term_win) then
+		vim.api.nvim_win_hide(term_win)
+		term_win = nil
+		return
+	end
+
+	if not term_buf or not vim.api.nvim_buf_is_valid(term_buf) then
+		term_buf = vim.api.nvim_create_buf(false, true)
+		vim.api.nvim_set_option_value("buflisted", false, { buf = term_buf })
+		vim.api.nvim_set_option_value("bufhidden", "hide", { buf = term_buf })
+		vim.api.nvim_set_option_value("swapfile", false, { buf = term_buf })
+	end
+
+	local width = math.floor(vim.o.columns * 0.8)
+	local height = math.floor(vim.o.lines * 0.8)
+	local col = math.floor((vim.o.columns - width) / 2)
+	local row = math.floor((vim.o.lines - height) / 2)
+
+	term_win = vim.api.nvim_open_win(term_buf, true, {
+		relative = "editor",
+		width = width,
+		height = height,
+		col = col,
+		row = row,
+		style = "minimal",
+		border = "rounded",
+	})
+
+	if vim.api.nvim_get_option_value("buftype", { buf = term_buf }) ~= "terminal" then
+		vim.cmd.terminal()
+		vim.api.nvim_set_option_value("buflisted", false, { buf = term_buf })
+	end
+
+	vim.cmd.startinsert()
+end
+
+vim.keymap.set("n", "<A-CR>", toggle_floating_term, { desc = "Toggle floating terminal" })
+vim.keymap.set("t", "<A-CR>", function()
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, false, true), "n", false)
+	toggle_floating_term()
+end, { desc = "Toggle floating terminal" })
 
 -- ============================================================
 -- 3. Keymaps
