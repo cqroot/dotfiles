@@ -6,6 +6,11 @@ template = true
 linux = "~/.config/alacritty"
 windows = "~/AppData/Roaming/alacritty"
 
+[bin]
+path = "bin"
+[bin.target]
+linux = "~/.bin"
+
 [cargo]
 path = "cargo"
 bin = "cargo"

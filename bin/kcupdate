@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+declare -A TASKS=(
+    ["pacman"]="sudo pacman -Syyu --noconfirm"
+    ["flatpak"]="sudo flatpak update --assumeyes"
+)
+readonly TASKS
+
+function main() {
+    for pkgmgr in "${!TASKS[@]}"; do
+        if ! command -v "${pkgmgr}" >/dev/null 2>&1; then
+            echo "${pkgmgr}: Ignored"
+            return 0
+        fi
+
+        eval "${TASKS[${pkgmgr}]}"
+    done
+}
+
+main "$@"
+
+# vim: set filetype=bash :
