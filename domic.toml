@@ -23,6 +23,12 @@ bin = "fish"
 [fish.target]
 linux = "~/.config/fish"
 
+[flatpak]
+path = "flatpak"
+bin = "flatpak"
+[flatpak.target]
+linux = "~/.local/share/flatpak"
+
 [ghostty]
 path = "ghostty"
 bin = "ghostty"

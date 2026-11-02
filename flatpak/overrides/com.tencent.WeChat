@@ -1,0 +1,9 @@
+[Context]
+sockets=x11
+filesystems=xdg-config/fcitx5:ro
+
+[Environment]
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+QT_QPA_PLATFORM=xcb
