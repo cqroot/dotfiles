@@ -108,7 +108,7 @@ binds {
         spawn-sh "dms ipc clipboard toggle"
     }
     Ctrl+Alt+A hotkey-overlay-title="Screenshot" {
-        spawn-sh "grim -g \"$(slurp)\" - | satty -f -"
+        spawn-sh "grim -g \"$(slurp)\" - | satty -f - --copy-command=wl-copy"
     }
     XF86AudioRaiseVolume allow-when-locked=true {
         spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.0"

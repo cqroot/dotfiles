@@ -38,6 +38,11 @@ readonly PACKAGES=(
     fcitx5-rime       # Rime input engine
 
     localsend
+
+    wl-clipboard
+    grim
+    slurp
+    satty
 )
 
 sudo pacman -Sy --noconfirm --needed "${PACKAGES[@]}"
