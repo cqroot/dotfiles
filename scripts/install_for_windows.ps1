@@ -6,25 +6,27 @@ if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
     Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 }
 
+scoop install git
+
 scoop bucket add main
 scoop bucket add extras
+scoop bucket add versions
 scoop bucket add nerd-fonts
-
-scoop bucket add nerd-fontsjj
-scoop install nerd-fonts/
 
 scoop install `
     alacritty `
     bat `
     brave `
-    CascadiaCode-NF `
+    nerd-fonts/CascadiaCode-NF `
     delta `
+    extras/firefox `
     fzf `
+    extras/geekuninstaller `
     lazygit `
     mpv `
     neovim `
     obsidian `
-    opencode `
+    versions/opencode2 `
     pwsh `
     python `
     ripgrep `
@@ -34,11 +36,7 @@ scoop install `
     zoxide
 
 scoop install `
-    gopls `
     lua-language-server `
-    prettier `
-    pyright `
-    black `
     shellcheck `
     shfmt `
     stylua
