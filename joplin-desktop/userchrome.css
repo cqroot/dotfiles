@@ -1,0 +1,11 @@
+/* Flat sync button */
+button.sidebar-sync-button {
+  border: none !important;
+  background-color: var(--joplin-background-color3) !important;
+  border-radius: 5px !important;
+}
+
+button.sidebar-sync-button:hover {
+  background-color: var(--joplin-background-color-hover3) !important;
+}
+
