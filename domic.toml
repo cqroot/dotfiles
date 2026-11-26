@@ -96,6 +96,12 @@ bin = "nu"
 [nu.target]
 linux = "~/.config/nushell"
 
+[opencode]
+path = "opencode"
+bin = "opencode"
+[opencode.target]
+linux = "~/.config/opencode"
+
 [nvim]
 path = "nvim"
 bin = "nvim"
