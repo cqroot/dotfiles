@@ -25,7 +25,7 @@ readonly PACKAGES=(
     xwayland-satellite # Embed X11 windows into Wayland
 
     # Desktop Integration
-    dms-shell-niri             # Desktop shell UI for niri
+    dux-shell                  # Desktop shell UI for niri
     xdg-desktop-portal-gnome   # Portal backend for Flatpak/Snap, screenshots, etc.
     nautilus-open-any-terminal # "Open Terminal Here" extension for Nautilus
     papirus-icon-theme         # Papirus icon theme

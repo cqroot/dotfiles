@@ -19,6 +19,7 @@ sudo pacman -Syyu --noconfirm &&
         brave-bin \
         chezmoi \
         clash-verge-rev \
+        firefox \
         fish \
         flameshot \
         flatpak \
@@ -48,8 +49,9 @@ sudo pacman -Syyu --noconfirm &&
         zellij \
         zoxide
 
-# sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-# sudo flatpak remote-modify flathub --url=https://mirrors.ustc.edu.cn/flathub
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-modify flathub --url=https://mirrors.ustc.edu.cn/flathub
 # sudo flatpak remote-modify flathub --url=https://mirrors.sjtug.sjtu.edu.cn/flathub
 #
 # sudo flatpak install -y flathub com.google.Chrome
+sudo flatpak install -y flathub org.b3log.siyuan
